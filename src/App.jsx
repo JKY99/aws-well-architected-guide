@@ -75,6 +75,50 @@ import DocumentRevisionsPage from "./pages/DocumentRevisionsPage";
 import AppendixPage from "./pages/AppendixPage";
 import NoticesPage from "./pages/NoticesPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import AppendixOps1Page from "./pages/AppendixOps1Page";
+import AppendixOps2Page from "./pages/AppendixOps2Page";
+import AppendixOps3Page from "./pages/AppendixOps3Page";
+import AppendixOps4Page from "./pages/AppendixOps4Page";
+import AppendixOps5Page from "./pages/AppendixOps5Page";
+import AppendixSec1Page from "./pages/AppendixSec1Page";
+import AppendixSec2Page from "./pages/AppendixSec2Page";
+import AppendixSec3Page from "./pages/AppendixSec3Page";
+import AppendixSec4Page from "./pages/AppendixSec4Page";
+import AppendixSec5Page from "./pages/AppendixSec5Page";
+import AppendixSec6Page from "./pages/AppendixSec6Page";
+import AppendixSec7Page from "./pages/AppendixSec7Page";
+import AppendixSec8Page from "./pages/AppendixSec8Page";
+import AppendixSec9Page from "./pages/AppendixSec9Page";
+import AppendixRel1Page from "./pages/AppendixRel1Page";
+import AppendixRel2Page from "./pages/AppendixRel2Page";
+import AppendixRel3Page from "./pages/AppendixRel3Page";
+import AppendixRel4Page from "./pages/AppendixRel4Page";
+import AppendixRel5Page from "./pages/AppendixRel5Page";
+import AppendixRel6Page from "./pages/AppendixRel6Page";
+import AppendixRel7Page from "./pages/AppendixRel7Page";
+import AppendixRel8Page from "./pages/AppendixRel8Page";
+import AppendixRel9Page from "./pages/AppendixRel9Page";
+import AppendixPerf1Page from "./pages/AppendixPerf1Page";
+import AppendixPerf2Page from "./pages/AppendixPerf2Page";
+import AppendixPerf3Page from "./pages/AppendixPerf3Page";
+import AppendixPerf4Page from "./pages/AppendixPerf4Page";
+import AppendixPerf5Page from "./pages/AppendixPerf5Page";
+import AppendixPerf6Page from "./pages/AppendixPerf6Page";
+import AppendixPerf7Page from "./pages/AppendixPerf7Page";
+import AppendixPerf8Page from "./pages/AppendixPerf8Page";
+import AppendixCost1Page from "./pages/AppendixCost1Page";
+import AppendixCost2Page from "./pages/AppendixCost2Page";
+import AppendixCost3Page from "./pages/AppendixCost3Page";
+import AppendixCost4Page from "./pages/AppendixCost4Page";
+import AppendixCost5Page from "./pages/AppendixCost5Page";
+import AppendixCost6Page from "./pages/AppendixCost6Page";
+import AppendixCost7Page from "./pages/AppendixCost7Page";
+import AppendixSus1Page from "./pages/AppendixSus1Page";
+import AppendixSus2Page from "./pages/AppendixSus2Page";
+import AppendixSus3Page from "./pages/AppendixSus3Page";
+import AppendixSus4Page from "./pages/AppendixSus4Page";
+import AppendixSus5Page from "./pages/AppendixSus5Page";
+import AppendixSus6Page from "./pages/AppendixSus6Page";
 
 export default function App() {
   return (
@@ -168,11 +212,55 @@ export default function App() {
           <Route path="/document-revisions" element={<DocumentRevisionsPage />} />
           <Route path="/appendix" element={<AppendixPage />} />
           <Route path="/appendix/operational-excellence" element={<PlaceholderPage title="부록: 운영 우수성 질문" />} />
+          <Route path="/appendix/operational-excellence/ops1" element={<AppendixOps1Page />} />
+          <Route path="/appendix/operational-excellence/ops2" element={<AppendixOps2Page />} />
+          <Route path="/appendix/operational-excellence/ops3" element={<AppendixOps3Page />} />
+          <Route path="/appendix/operational-excellence/ops4" element={<AppendixOps4Page />} />
+          <Route path="/appendix/operational-excellence/ops5" element={<AppendixOps5Page />} />
           <Route path="/appendix/security" element={<PlaceholderPage title="부록: 보안 질문" />} />
+          <Route path="/appendix/security/sec1" element={<AppendixSec1Page />} />
+          <Route path="/appendix/security/sec2" element={<AppendixSec2Page />} />
+          <Route path="/appendix/security/sec3" element={<AppendixSec3Page />} />
+          <Route path="/appendix/security/sec4" element={<AppendixSec4Page />} />
+          <Route path="/appendix/security/sec5" element={<AppendixSec5Page />} />
+          <Route path="/appendix/security/sec6" element={<AppendixSec6Page />} />
+          <Route path="/appendix/security/sec7" element={<AppendixSec7Page />} />
+          <Route path="/appendix/security/sec8" element={<AppendixSec8Page />} />
+          <Route path="/appendix/security/sec9" element={<AppendixSec9Page />} />
           <Route path="/appendix/reliability" element={<PlaceholderPage title="부록: 안정성 질문" />} />
+          <Route path="/appendix/reliability/rel1" element={<AppendixRel1Page />} />
+          <Route path="/appendix/reliability/rel2" element={<AppendixRel2Page />} />
+          <Route path="/appendix/reliability/rel3" element={<AppendixRel3Page />} />
+          <Route path="/appendix/reliability/rel4" element={<AppendixRel4Page />} />
+          <Route path="/appendix/reliability/rel5" element={<AppendixRel5Page />} />
+          <Route path="/appendix/reliability/rel6" element={<AppendixRel6Page />} />
+          <Route path="/appendix/reliability/rel7" element={<AppendixRel7Page />} />
+          <Route path="/appendix/reliability/rel8" element={<AppendixRel8Page />} />
+          <Route path="/appendix/reliability/rel9" element={<AppendixRel9Page />} />
           <Route path="/appendix/performance-efficiency" element={<PlaceholderPage title="부록: 성능 효율성 질문" />} />
+          <Route path="/appendix/performance-efficiency/perf1" element={<AppendixPerf1Page />} />
+          <Route path="/appendix/performance-efficiency/perf2" element={<AppendixPerf2Page />} />
+          <Route path="/appendix/performance-efficiency/perf3" element={<AppendixPerf3Page />} />
+          <Route path="/appendix/performance-efficiency/perf4" element={<AppendixPerf4Page />} />
+          <Route path="/appendix/performance-efficiency/perf5" element={<AppendixPerf5Page />} />
+          <Route path="/appendix/performance-efficiency/perf6" element={<AppendixPerf6Page />} />
+          <Route path="/appendix/performance-efficiency/perf7" element={<AppendixPerf7Page />} />
+          <Route path="/appendix/performance-efficiency/perf8" element={<AppendixPerf8Page />} />
           <Route path="/appendix/cost-optimization" element={<PlaceholderPage title="부록: 비용 최적화 질문" />} />
+          <Route path="/appendix/cost-optimization/cost1" element={<AppendixCost1Page />} />
+          <Route path="/appendix/cost-optimization/cost2" element={<AppendixCost2Page />} />
+          <Route path="/appendix/cost-optimization/cost3" element={<AppendixCost3Page />} />
+          <Route path="/appendix/cost-optimization/cost4" element={<AppendixCost4Page />} />
+          <Route path="/appendix/cost-optimization/cost5" element={<AppendixCost5Page />} />
+          <Route path="/appendix/cost-optimization/cost6" element={<AppendixCost6Page />} />
+          <Route path="/appendix/cost-optimization/cost7" element={<AppendixCost7Page />} />
           <Route path="/appendix/sustainability" element={<PlaceholderPage title="부록: 지속 가능성 질문" />} />
+          <Route path="/appendix/sustainability/sus1" element={<AppendixSus1Page />} />
+          <Route path="/appendix/sustainability/sus2" element={<AppendixSus2Page />} />
+          <Route path="/appendix/sustainability/sus3" element={<AppendixSus3Page />} />
+          <Route path="/appendix/sustainability/sus4" element={<AppendixSus4Page />} />
+          <Route path="/appendix/sustainability/sus5" element={<AppendixSus5Page />} />
+          <Route path="/appendix/sustainability/sus6" element={<AppendixSus6Page />} />
           <Route path="/notices" element={<NoticesPage />} />
           <Route path="/aws-glossary" element={<PlaceholderPage title="AWS 용어집" />} />
         </Routes>
