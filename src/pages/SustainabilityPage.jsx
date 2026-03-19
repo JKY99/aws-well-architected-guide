@@ -4,101 +4,101 @@ import "../components/DocContent.css";
 export default function SustainabilityPage() {
   return (
     <article className="doc-content">
-      <h1>Sustainability</h1>
+      <h1>지속 가능성 (Sustainability)</h1>
 
       <p>
-        The discipline of sustainability addresses the long-term environmental, economic, and societal impact of your business activities. Your business or organization can have negative environmental impacts like direct or indirect carbon emissions, unrecyclable hardware, or large amounts of water used in operations.
+        지속 가능성의 원칙은 비즈니스 활동이 장기적으로 미치는 환경적, 경제적, 사회적 영향을 다룹니다. 비즈니스나 조직은 직간접 탄소 배출, 재활용 불가 하드웨어, 운영에서의 대량 물 사용 등 부정적인 환경적 영향을 미칠 수 있습니다.
       </p>
 
       <p>
-        The sustainability pillar focuses on environmental impacts, especially energy consumption and efficiency, since they are important levers for architects to inform direct action to reduce resource usage.
+        지속 가능성 기둥은 환경적 영향, 특히 에너지 소비와 효율성에 초점을 맞춥니다. 아키텍트가 리소스 사용량을 줄이기 위한 직접적인 조치를 취할 수 있도록 안내하는 중요한 레버 역할을 하기 때문입니다.
       </p>
 
-      <h2>Design principles</h2>
+      <h2>설계 원칙</h2>
 
       <p>
-        There are six design principles for sustainability in the cloud:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Understand your impact:</strong> Measure the impact of your cloud workload and model the future impact of your workload. Include all sources of impact, including impacts resulting from customer use of your products, and impacts resulting from their eventual decommissioning and replacement. Compare the productive output with the total impact of your cloud workloads by reviewing the resources and emissions required per unit of work. Use this data to establish key performance indicators (KPIs), evaluate ways to improve productivity while reducing impact, and estimate the impact of proposed changes over time.
-        </li>
-        <li>
-          <strong>Establish sustainability goals:</strong> For each cloud workload, establish long-term sustainability goals such as reducing the compute and storage resources required per transaction. Model the return on investment of sustainability improvements for existing workloads, and give sustainability improvement the same priority as other business goals. Use goal-setting methodologies such as the science based targets initiative (SBTi) to guide target setting for your organization.
-        </li>
-        <li>
-          <strong>Maximize utilization:</strong> Right-size workloads and implement efficient design to verify high utilization and maximize the energy efficiency of the underlying hardware. Two hosts running at 30% utilization are less efficient than one host running at 60% due to baseline power consumption per host. At the same time, eliminate or minimize idle resources, processing, and storage to reduce the total energy required to power your workload.
-        </li>
-        <li>
-          <strong>Anticipate and adopt new, more efficient hardware and software offerings:</strong> Support the upstream improvements your partners and suppliers make to help you reduce the impact of your cloud workloads. Continually monitor and evaluate new, more efficient hardware and software offerings. Design for flexibility to allow for the rapid adoption of new efficient technologies.
-        </li>
-        <li>
-          <strong>Use managed services:</strong> Sharing services across a broad customer base helps maximize resource utilization, which reduces the amount of infrastructure needed to support cloud workloads. For example, customers can share the impact of common data center components like power and networking by migrating workloads to the AWS Cloud and adopting managed services, such as AWS Fargate for serverless containers, where AWS operates the infrastructure in an efficient, shared manner. Use managed services that can help minimize your impact, such as automatically moving infrequently accessed data to cold storage with Amazon S3 Lifecycle configurations or Amazon EC2 Auto Scaling to adjust capacity to meet demand.
-        </li>
-        <li>
-          <strong>Reduce the downstream impact of your cloud workloads:</strong> Reduce the amount of energy or resources required to use your services. Reduce or eliminate the need for customers to upgrade their devices to use your services. Test using device farms to understand expected impact and test with older device versions to ensure you can support older hardware.
-        </li>
-      </ul>
-
-      <h2>Definition</h2>
-
-      <p>
-        The following focus areas are addressed by the sustainability pillar:
+        클라우드에서의 지속 가능성을 위한 여섯 가지 설계 원칙이 있습니다:
       </p>
 
       <ul>
-        <li>Region selection</li>
-        <li>Alignment to demand</li>
-        <li>Software and architecture</li>
-        <li>Data</li>
-        <li>Hardware and services</li>
-        <li>Process and culture</li>
+        <li>
+          <strong>영향을 이해하세요:</strong> 클라우드 워크로드의 영향을 측정하고 워크로드의 미래 영향을 모델링하세요. 고객의 제품 사용으로 인한 영향과 최종 폐기 및 교체로 인한 영향을 포함하여 모든 영향 원천을 포함하세요. 단위 작업당 필요한 리소스와 배출량을 검토하여 생산적 출력과 클라우드 워크로드의 총 영향을 비교하세요. 이 데이터를 사용하여 핵심 성과 지표(KPI)를 설정하고, 영향을 줄이면서 생산성을 향상시키는 방법을 평가하며, 시간이 지남에 따라 제안된 변경의 영향을 추정하세요.
+        </li>
+        <li>
+          <strong>지속 가능성 목표를 설정하세요:</strong> 각 클라우드 워크로드에 대해 트랜잭션당 필요한 컴퓨팅 및 스토리지 리소스 줄이기와 같은 장기적인 지속 가능성 목표를 설정하세요. 기존 워크로드의 지속 가능성 개선에 대한 투자 수익률을 모델링하고, 지속 가능성 개선에 다른 비즈니스 목표와 동일한 우선순위를 부여하세요. 과학 기반 목표 이니셔티브(SBTi)와 같은 목표 설정 방법론을 사용하여 조직의 목표 설정을 안내하세요.
+        </li>
+        <li>
+          <strong>활용도를 극대화하세요:</strong> 워크로드를 적절한 크기로 조정하고 효율적인 설계를 구현하여 높은 활용도를 확인하고 기본 하드웨어의 에너지 효율성을 극대화하세요. 두 대의 호스트가 각각 30% 활용률로 실행되는 것은 호스트당 기본 전력 소비로 인해 한 대의 호스트가 60% 활용률로 실행되는 것보다 효율이 낮습니다. 동시에 유휴 리소스, 처리, 스토리지를 제거하거나 최소화하여 워크로드를 구동하는 데 필요한 총 에너지를 줄이세요.
+        </li>
+        <li>
+          <strong>더 효율적인 새 하드웨어 및 소프트웨어 제품을 예상하고 채택하세요:</strong> 파트너와 공급업체가 클라우드 워크로드의 영향을 줄이는 데 도움이 되는 업스트림 개선을 지원하세요. 새롭고 더 효율적인 하드웨어 및 소프트웨어 제품을 지속적으로 모니터링하고 평가하세요. 새로운 효율적인 기술을 신속하게 채택할 수 있도록 유연성을 고려하여 설계하세요.
+        </li>
+        <li>
+          <strong>관리형 서비스를 사용하세요:</strong> 광범위한 고객 기반에 걸쳐 서비스를 공유하면 리소스 활용도를 극대화하는 데 도움이 되어 클라우드 워크로드를 지원하는 데 필요한 인프라 양을 줄입니다. 예를 들어, 고객은 워크로드를 AWS 클라우드로 마이그레이션하고 관리형 서비스를 채택함으로써 전원 및 네트워킹과 같은 일반적인 데이터 센터 구성 요소의 영향을 공유할 수 있습니다. Amazon S3 수명 주기 구성으로 자주 접근하지 않는 데이터를 콜드 스토리지로 자동 이동하거나, Amazon EC2 Auto Scaling으로 수요에 맞게 용량을 조정하는 것과 같이 영향을 최소화하는 데 도움이 되는 관리형 서비스를 사용하세요.
+        </li>
+        <li>
+          <strong>클라우드 워크로드의 다운스트림 영향을 줄이세요:</strong> 서비스를 사용하는 데 필요한 에너지나 리소스를 줄이세요. 고객이 서비스를 사용하기 위해 기기를 업그레이드해야 하는 필요성을 줄이거나 없애세요. 기기 팜을 사용하여 예상 영향을 이해하고 이전 기기 버전으로 테스트하여 이전 하드웨어를 지원할 수 있는지 확인하세요.
+        </li>
       </ul>
 
-      <h2>Best practices</h2>
+      <h2>정의</h2>
 
-      <h3>Region selection</h3>
       <p>
-        The choice of AWS Region for your workload significantly impacts your sustainability goals. The carbon intensity of the electricity used by the data centers in each AWS Region differs based on the power mix available in the geographic area. Identify and use AWS Regions where renewable electricity sources are used to power the AWS infrastructure.
+        지속 가능성 기둥이 다루는 초점 영역은 다음과 같습니다:
       </p>
 
-      <h3>Alignment to demand</h3>
+      <ul>
+        <li>리전 선택 (Region selection)</li>
+        <li>수요에 맞는 조정 (Alignment to demand)</li>
+        <li>소프트웨어 및 아키텍처 (Software and architecture)</li>
+        <li>데이터 (Data)</li>
+        <li>하드웨어 및 서비스 (Hardware and services)</li>
+        <li>프로세스 및 문화 (Process and culture)</li>
+      </ul>
+
+      <h2>모범 사례</h2>
+
+      <h3>리전 선택 (Region selection)</h3>
       <p>
-        The way users and applications consume your workloads and other resources can help you identify improvements to meet sustainability goals. Scale infrastructure to continually match user load and ensure that only the minimum resources required to support users are deployed. Align SLAs with sustainability goals and communicate them to your users to let them adjust their workload demand to your infrastructure requirements.
+        워크로드에 대한 AWS 리전 선택은 지속 가능성 목표에 상당한 영향을 미칩니다. 각 AWS 리전의 데이터 센터에서 사용하는 전기의 탄소 강도는 해당 지역에서 사용 가능한 전력 조합에 따라 다릅니다. AWS 인프라를 구동하는 데 재생 가능 에너지가 사용되는 AWS 리전을 식별하고 사용하세요.
       </p>
 
-      <h3>Software and architecture</h3>
+      <h3>수요에 맞는 조정 (Alignment to demand)</h3>
       <p>
-        Implement patterns for performing load smoothing and maintaining consistent high utilization of deployed resources to minimize the resources consumed. Components might become idle from lack of use because of changes in user behavior over time. Revise patterns and architecture to consolidate under-utilized components to increase overall utilization. Retire components that are no longer required. Understand the performance of your workload components, and optimize the components that consume the most resources.
+        사용자와 애플리케이션이 워크로드와 기타 리소스를 소비하는 방식이 지속 가능성 목표를 달성하기 위한 개선 사항을 파악하는 데 도움이 됩니다. 사용자 부하에 맞게 인프라를 지속적으로 조정하고 사용자를 지원하는 데 필요한 최소한의 리소스만 배포되도록 하세요. 지속 가능성 목표에 맞게 SLA를 조정하고 사용자에게 이를 전달하여 워크로드 수요를 인프라 요구사항에 맞게 조정할 수 있도록 하세요.
       </p>
 
-      <h3>Data</h3>
+      <h3>소프트웨어 및 아키텍처 (Software and architecture)</h3>
       <p>
-        The data you store and process reflects choices you've made and your customer needs. Reducing the amount of data you create and retain is the most effective way to reduce the storage and processing resources you need. Use shared file systems or object storage to access common data and avoid creating data copies with different lifecycle policies. Review the data retention policies of your workloads to determine if you're storing data past its useful life.
+        부하 평활화 패턴을 구현하고 배포된 리소스의 일관된 높은 활용도를 유지하여 워크로드를 구동하는 데 소비되는 리소스를 최소화하세요. 구성 요소는 시간이 지남에 따라 사용자 행동 변화로 인해 유휴 상태가 될 수 있습니다. 패턴과 아키텍처를 수정하여 활용도가 낮은 구성 요소를 통합하여 전체 활용도를 높이세요. 더 이상 필요하지 않은 구성 요소를 폐기하세요. 워크로드 구성 요소의 성능을 이해하고 리소스를 가장 많이 소비하는 구성 요소를 최적화하세요.
       </p>
 
-      <h3>Hardware and services</h3>
+      <h3>데이터 (Data)</h3>
       <p>
-        Look for opportunities to reduce workload sustainability impacts by making changes to your development, test, and production environments. Use managed device farms to test using physical hardware without owning, operating, and disposing of the hardware when it becomes obsolete.
+        저장하고 처리하는 데이터는 여러분이 한 선택과 고객 필요를 반영합니다. 생성하고 보유하는 데이터의 양을 줄이는 것이 필요한 스토리지 및 처리 리소스를 줄이는 가장 효과적인 방법입니다. 공유 파일 시스템이나 객체 스토리지를 사용하여 일반 데이터에 접근하고 다른 수명 주기 정책으로 데이터 복사본을 만드는 것을 피하세요. 워크로드의 데이터 보존 정책을 검토하여 유용한 수명이 지난 데이터를 저장하고 있지 않은지 확인하세요.
       </p>
 
-      <h3>Process and culture</h3>
+      <h3>하드웨어 및 서비스 (Hardware and services)</h3>
       <p>
-        Implement sustainability principles and set sustainability targets for your team and project. Teach sustainability best practices and how to measure impact within your team and as part of your broader organizational programs. Establish mechanisms to measure the sustainability impact of your workload regularly.
+        개발, 테스트, 프로덕션 환경을 변경하여 워크로드 지속 가능성 영향을 줄일 기회를 찾으세요. 관리형 기기 팜을 사용하여 물리적 하드웨어를 소유, 운영, 폐기하지 않고도 실제 하드웨어로 테스트하세요.
+      </p>
+
+      <h3>프로세스 및 문화 (Process and culture)</h3>
+      <p>
+        팀과 프로젝트에 대한 지속 가능성 원칙을 구현하고 지속 가능성 목표를 설정하세요. 팀 내와 더 넓은 조직 프로그램의 일부로 지속 가능성 모범 사례와 영향 측정 방법을 가르치세요. 워크로드의 지속 가능성 영향을 정기적으로 측정하는 메커니즘을 수립하세요.
       </p>
 
       <div className="doc-note">
-        <div className="doc-note-title">Note</div>
+        <div className="doc-note-title">참고</div>
         <p>
-          For prescriptive implementation guidance, see the{" "}
+          규범적 구현 지침은{" "}
           <a
             href="https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Sustainability Pillar whitepaper
-          </a>.
+            지속 가능성 기둥 백서
+          </a>를 참조하세요.
         </p>
       </div>
 

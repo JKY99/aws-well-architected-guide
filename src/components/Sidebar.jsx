@@ -71,8 +71,8 @@ export default function Sidebar({ isOpen, onClose }) {
 
       <aside className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-header">
-          <span className="sidebar-title">AWS Well-Architected Framework</span>
-          <button className="sidebar-close-btn" onClick={onClose} aria-label="Close menu">
+          <span className="sidebar-title">AWS Well-Architected</span>
+          <button className="sidebar-close-btn" onClick={onClose} aria-label="메뉴 닫기">
             ×
           </button>
         </div>

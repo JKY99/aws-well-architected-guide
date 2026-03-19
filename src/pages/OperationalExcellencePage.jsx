@@ -4,90 +4,90 @@ import "../components/DocContent.css";
 export default function OperationalExcellencePage() {
   return (
     <article className="doc-content">
-      <h1>Operational Excellence</h1>
+      <h1>운영 우수성 (Operational Excellence)</h1>
 
       <p>
-        The operational excellence pillar includes the ability to support development and run workloads effectively, gain insight into their operations, and to continuously improve supporting processes and procedures to deliver business value.
+        운영 우수성 기둥에는 개발을 지원하고 워크로드를 효과적으로 실행하며, 운영에 대한 통찰력을 확보하고, 비즈니스 가치를 제공하기 위해 지원 프로세스와 절차를 지속적으로 개선하는 능력이 포함됩니다.
       </p>
 
       <p>
-        This pillar is a commitment to building software correctly while consistently delivering a great customer experience. It contains best practices for organizing your teams, designing your workload, operating it at scale, and evolving it over time.
+        이 기둥은 지속적으로 훌륭한 고객 경험을 제공하면서 소프트웨어를 올바르게 구축하는 것에 대한 약속입니다. 팀 구성, 워크로드 설계, 대규모 운영, 시간에 따른 진화를 위한 모범 사례를 포함합니다.
       </p>
 
-      <h2>Design principles</h2>
+      <h2>설계 원칙</h2>
 
       <p>
-        There are five design principles for operational excellence in the cloud:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Perform operations as code:</strong> In the cloud, you can apply the same engineering discipline that you use for application code to your entire environment. You can define your entire workload (applications, infrastructure, etc.) as code and update it with code. You can script your operations procedures and automate their execution by triggering them in response to events. By performing operations as code, you limit human error and enable consistent responses to events.
-        </li>
-        <li>
-          <strong>Make frequent, small, reversible changes:</strong> Design workloads to allow components to be updated regularly. Make changes in small increments that can be reversed if they fail (without affecting customers when possible). This allows you to apply regular small improvements and avoid the risk of large, irreversible changes.
-        </li>
-        <li>
-          <strong>Refine operations procedures frequently:</strong> As you use operations procedures, look for opportunities to improve them. As you evolve your workload, evolve your procedures appropriately. Set up regular game days to review and validate that all procedures are effective and that teams are familiar with them.
-        </li>
-        <li>
-          <strong>Anticipate failure:</strong> Perform "pre-mortem" exercises to identify potential sources of failure so that they can be removed or mitigated. Test your failure scenarios and validate your understanding of their impact. Test your response procedures to ensure that they are effective, and that teams are familiar with their execution. Set up regular game days to test workloads and team responses to simulated events.
-        </li>
-        <li>
-          <strong>Learn from all operational failures:</strong> Drive improvement through lessons learned from all operational events and failures. Share what is learned across teams and through the entire organization.
-        </li>
-      </ul>
-
-      <h2>Definition</h2>
-
-      <p>
-        There are four best practice areas for operational excellence in the cloud:
+        클라우드에서의 운영 우수성을 위한 다섯 가지 설계 원칙이 있습니다:
       </p>
 
       <ul>
-        <li>Organization</li>
-        <li>Prepare</li>
-        <li>Operate</li>
-        <li>Evolve</li>
+        <li>
+          <strong>운영을 코드로 수행하세요:</strong> 클라우드에서는 애플리케이션 코드에 적용하는 것과 동일한 엔지니어링 규율을 전체 환경에 적용할 수 있습니다. 전체 워크로드(애플리케이션, 인프라 등)를 코드로 정의하고 코드로 업데이트할 수 있습니다. 운영 절차를 스크립트화하고 이벤트에 반응하여 자동으로 실행할 수 있습니다. 운영을 코드로 수행함으로써 인적 오류를 제한하고 이벤트에 일관된 방식으로 대응할 수 있습니다.
+        </li>
+        <li>
+          <strong>작고 자주, 되돌릴 수 있는 변경을 하세요:</strong> 구성 요소를 정기적으로 업데이트할 수 있도록 워크로드를 설계하세요. 실패 시 되돌릴 수 있는 작은 단위의 변경을 수행하세요(가능한 경우 고객에게 영향을 주지 않도록). 이를 통해 정기적인 소규모 개선을 적용하고 크고 되돌릴 수 없는 변경의 위험을 피할 수 있습니다.
+        </li>
+        <li>
+          <strong>운영 절차를 자주 개선하세요:</strong> 운영 절차를 사용하면서 개선할 기회를 찾으세요. 워크로드가 진화함에 따라 절차도 적절하게 발전시키세요. 정기적인 게임 데이를 설정하여 모든 절차가 효과적인지, 팀이 절차에 익숙한지 검토하고 검증하세요.
+        </li>
+        <li>
+          <strong>실패를 예상하세요:</strong> "사전 검시(pre-mortem)" 훈련을 수행하여 잠재적인 실패 원인을 파악하고 제거하거나 완화하세요. 실패 시나리오를 테스트하고 그 영향에 대한 이해를 검증하세요. 대응 절차를 테스트하여 효과적인지, 팀이 실행에 익숙한지 확인하세요. 정기적인 게임 데이를 설정하여 워크로드와 팀이 시뮬레이션된 이벤트에 어떻게 대응하는지 테스트하세요.
+        </li>
+        <li>
+          <strong>모든 운영 실패에서 배우세요:</strong> 모든 운영 이벤트와 실패에서 얻은 교훈을 통해 개선을 이끌어 내세요. 배운 것을 팀 간에, 그리고 조직 전체에 공유하세요.
+        </li>
+      </ul>
+
+      <h2>정의</h2>
+
+      <p>
+        클라우드에서의 운영 우수성을 위한 네 가지 모범 사례 영역이 있습니다:
+      </p>
+
+      <ul>
+        <li>조직 (Organization)</li>
+        <li>준비 (Prepare)</li>
+        <li>운영 (Operate)</li>
+        <li>진화 (Evolve)</li>
       </ul>
 
       <p>
-        Your organization's leadership defines business objectives. Your organization must understand requirements and priorities and use these to organize and conduct work to support the achievement of business outcomes. Your workload must emit the information necessary to support it. Implementing services to enable integration, deployment, and delivery of your workload will enable you to provide rapid feedback on your efforts to improve operational outcomes. Adopting approaches that improve flow of changes into production and that help refactoring, fast feedback on quality, and bug fixing will positively impact your organization's performance.
+        조직의 리더십은 비즈니스 목표를 정의합니다. 조직은 요구사항과 우선순위를 이해하고 이를 활용하여 비즈니스 결과 달성을 지원하기 위한 업무를 구성하고 수행해야 합니다. 워크로드는 이를 지원하는 데 필요한 정보를 내보내야 합니다. 워크로드의 통합, 배포, 전달을 가능하게 하는 서비스를 구현하면 운영 결과를 개선하기 위한 노력에 대한 신속한 피드백을 제공할 수 있습니다. 변경 사항이 프로덕션으로 흐르는 속도를 개선하고 리팩터링, 품질에 대한 빠른 피드백, 버그 수정을 돕는 접근 방식을 채택하면 조직 성과에 긍정적인 영향을 미칠 것입니다.
       </p>
 
-      <h2>Best practices</h2>
+      <h2>모범 사례</h2>
 
-      <h3>Organization</h3>
+      <h3>조직 (Organization)</h3>
       <p>
-        Your teams need to have a shared understanding of your entire workload, their role in it, and shared business goals to set the priorities that will enable business success. Well-defined priorities will enable you to make trade-offs as you design, manage, and improve your workload.
+        팀은 전체 워크로드, 그 안에서 자신의 역할, 그리고 비즈니스 성공을 가능하게 하는 우선순위를 설정하기 위한 공유된 비즈니스 목표에 대한 공통적인 이해가 필요합니다. 잘 정의된 우선순위를 통해 워크로드를 설계, 관리, 개선하면서 트레이드오프를 결정할 수 있습니다.
       </p>
 
-      <h3>Prepare</h3>
+      <h3>준비 (Prepare)</h3>
       <p>
-        To prepare for operational excellence, you have to understand your workloads and their expected behaviors. You will then be able to design them to provide insight to their status and build the procedures to support them.
+        운영 우수성을 준비하기 위해서는 워크로드와 예상 동작을 이해해야 합니다. 그런 다음 상태에 대한 통찰력을 제공하고 이를 지원하는 절차를 구축하도록 설계할 수 있습니다.
       </p>
 
-      <h3>Operate</h3>
+      <h3>운영 (Operate)</h3>
       <p>
-        Successful operation of a workload is measured by the achievement of business and customer outcomes. Define expected outcomes, determine how success will be measured, and identify the workload and operations metrics that will be used in those calculations to determine if operations are successful.
+        워크로드의 성공적인 운영은 비즈니스 및 고객 결과 달성으로 측정됩니다. 예상 결과를 정의하고, 성공을 어떻게 측정할지 결정하며, 운영이 성공적인지 판단하는 데 사용될 워크로드 및 운영 지표를 식별하세요.
       </p>
 
-      <h3>Evolve</h3>
+      <h3>진화 (Evolve)</h3>
       <p>
-        You must learn, share, and continuously improve to sustain operational excellence. Dedicate work cycles to making continuous incremental improvements. Include feedback loops within your procedures to rapidly identify areas for improvement and capture learnings from the execution of operations.
+        운영 우수성을 유지하려면 배우고, 공유하고, 지속적으로 개선해야 합니다. 지속적인 점진적 개선을 위한 업무 사이클을 할당하세요. 절차에 피드백 루프를 포함시켜 개선 영역을 신속하게 파악하고 운영 실행에서 얻은 교훈을 수집하세요.
       </p>
 
       <div className="doc-note">
-        <div className="doc-note-title">Note</div>
+        <div className="doc-note-title">참고</div>
         <p>
-          For prescriptive implementation guidance, see the{" "}
+          규범적 구현 지침은{" "}
           <a
             href="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Operational Excellence Pillar whitepaper
-          </a>.
+            운영 우수성 기둥 백서
+          </a>를 참조하세요.
         </p>
       </div>
 

@@ -4,27 +4,27 @@ import "../components/DocContent.css";
 export default function FurtherReadingPage() {
   return (
     <article className="doc-content">
-      <h1>Further reading</h1>
+      <h1>추가 참고 자료 (Further Reading)</h1>
 
       <p>
-        The following resources provide additional information about the topics covered in this document.
+        다음 리소스는 이 문서에서 다루는 주제에 대한 추가 정보를 제공합니다.
       </p>
 
-      <h2>AWS resources</h2>
+      <h2>AWS 리소스</h2>
 
       <ul>
         <li>
           <a href="https://aws.amazon.com/architecture/" target="_blank" rel="noopener noreferrer">
-            AWS Architecture Center
+            AWS 아키텍처 센터 (AWS Architecture Center)
           </a>
         </li>
         <li>
           <a href="https://aws.amazon.com/compliance/" target="_blank" rel="noopener noreferrer">
-            AWS Cloud Compliance
+            AWS 클라우드 컴플라이언스 (AWS Cloud Compliance)
           </a>
         </li>
         <li>
-          <a href="https://aws.amazon.com/console/resources/aws-well-architected-tool/" target="_blank" rel="noopener noreferrer">
+          <a href="https://aws.amazon.com/well-architected-tool/" target="_blank" rel="noopener noreferrer">
             AWS Well-Architected Tool
           </a>
         </li>
@@ -35,53 +35,53 @@ export default function FurtherReadingPage() {
         </li>
       </ul>
 
-      <h2>Pillar whitepapers</h2>
+      <h2>기둥별 백서</h2>
 
       <ul>
         <li>
           <a href="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html" target="_blank" rel="noopener noreferrer">
-            Operational Excellence Pillar
+            운영 우수성 기둥 (Operational Excellence Pillar)
           </a>
         </li>
         <li>
           <a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html" target="_blank" rel="noopener noreferrer">
-            Security Pillar
+            보안 기둥 (Security Pillar)
           </a>
         </li>
         <li>
           <a href="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html" target="_blank" rel="noopener noreferrer">
-            Reliability Pillar
+            안정성 기둥 (Reliability Pillar)
           </a>
         </li>
         <li>
           <a href="https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html" target="_blank" rel="noopener noreferrer">
-            Performance Efficiency Pillar
+            성능 효율성 기둥 (Performance Efficiency Pillar)
           </a>
         </li>
         <li>
           <a href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html" target="_blank" rel="noopener noreferrer">
-            Cost Optimization Pillar
+            비용 최적화 기둥 (Cost Optimization Pillar)
           </a>
         </li>
         <li>
           <a href="https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html" target="_blank" rel="noopener noreferrer">
-            Sustainability Pillar
+            지속 가능성 기둥 (Sustainability Pillar)
           </a>
         </li>
       </ul>
 
-      <h2>Additional resources</h2>
+      <h2>추가 자료</h2>
 
       <ul>
         <li>
           <a href="https://aws.amazon.com/builders-library/" target="_blank" rel="noopener noreferrer">
             Amazon Builders' Library
           </a>
-          {" "}— How Amazon builds and operates software
+          {" "}— Amazon이 소프트웨어를 구축하고 운영하는 방법
         </li>
         <li>
           <a href="https://docs.aws.amazon.com/" target="_blank" rel="noopener noreferrer">
-            AWS Documentation
+            AWS 문서 (AWS Documentation)
           </a>
         </li>
       </ul>

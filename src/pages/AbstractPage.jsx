@@ -4,70 +4,70 @@ import "../components/DocContent.css";
 export default function AbstractPage() {
   return (
     <article className="doc-content">
-      <h1>Abstract and introduction</h1>
+      <h1>개요 및 소개</h1>
 
       <p>
-        This paper describes the AWS Well-Architected Framework, which enables customers and partners to review their architectures using a consistent approach and provides guidance to help implement designs that will scale with your application needs over time.
+        이 문서는 AWS Well-Architected Framework를 설명합니다. 이 Framework는 고객과 파트너가 일관된 접근 방식으로 아키텍처를 검토하고, 애플리케이션 요구사항에 맞게 확장 가능한 설계를 구현하는 데 도움이 되는 지침을 제공합니다.
       </p>
 
-      <h2>Introduction</h2>
+      <h2>소개</h2>
 
       <p>
-        The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud. It provides a way for you to consistently measure your architectures against best practices and identify areas for improvement. The process for reviewing an architecture is a constructive conversation about architectural decisions, and is not an audit mechanism.
-      </p>
-
-      <p>
-        We believe that having well-architected systems greatly increases the likelihood of business success. This paper is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. After reading this paper, you will understand AWS best practices and strategies to use when designing systems for the cloud. This paper does not provide implementation details or architectural patterns, but does provide references to relevant technical resources.
-      </p>
-
-      <h2>Definitions</h2>
-
-      <p>
-        The AWS Well-Architected Framework is based on six pillars — operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.
+        AWS Well-Architected Framework는 AWS에서 시스템을 구축할 때 내리는 의사결정의 장단점을 이해할 수 있도록 돕습니다. 이 Framework를 활용하면 클라우드에서 신뢰할 수 있고, 안전하며, 효율적이고, 비용 효율적이며, 지속 가능한 시스템을 설계하고 운영하기 위한 아키텍처 모범 사례를 배울 수 있습니다. 또한 아키텍처를 모범 사례와 일관되게 비교 측정하고 개선이 필요한 영역을 식별하는 방법을 제공합니다. 아키텍처를 검토하는 과정은 아키텍처 결정에 관한 건설적인 대화이며, 감사 메커니즘이 아닙니다.
       </p>
 
       <p>
-        When architecting technology solutions, if you neglect these six pillars, it becomes more difficult to build a system that delivers on your expectations and requirements. Incorporating these pillars into your architecture helps you produce stable and efficient systems. This allows you to focus on the other aspects of design, such as functional requirements.
+        우리는 잘 설계된 시스템이 비즈니스 성공 가능성을 크게 높인다고 믿습니다. 이 문서는 최고기술책임자(CTO), 아키텍트, 개발자, 운영팀 구성원 등 기술 역할을 담당하는 분들을 위해 작성되었습니다. 이 문서를 읽고 나면 클라우드용 시스템을 설계할 때 활용할 수 있는 AWS 모범 사례와 전략을 이해하게 됩니다. 이 문서는 구현 세부 정보나 아키텍처 패턴을 제공하지는 않지만, 관련 기술 리소스에 대한 참조를 포함합니다.
       </p>
 
-      <h2>On architecture</h2>
+      <h2>정의</h2>
 
       <p>
-        In on-premises environments, customers often have a central team for technology architecture that acts as an overlay to other product or feature teams to ensure they are following best practice. Technology architecture teams are often composed of a set of roles such as Technical Architect (infrastructure), Solutions Architect (software), Data Architect, Networking Architect, and Security Architect. Often these teams use TOGAF or the Zachman Framework as part of their architecture control and governance process.
-      </p>
-
-      <p>
-        At AWS, we prefer to distribute capabilities into teams rather than having a centralized team with that capability. There are risks when you choose to distribute this, but there are also significant benefits. If you have distributed teams and organizations you need to make sure that you have standards and best practices that each of the teams can use. The Well-Architected Framework is a scalable mechanism that lets you take advantage of these practices without requiring a large and expensive central team.
+        AWS Well-Architected Framework는 여섯 가지 기둥을 기반으로 합니다. 운영 우수성(Operational Excellence), 보안(Security), 안정성(Reliability), 성능 효율성(Performance Efficiency), 비용 최적화(Cost Optimization), 그리고 지속 가능성(Sustainability)입니다.
       </p>
 
       <p>
-        One of the ways that we've tried to make it easier for companies to adopt our recommendations is to create tools that are accessible to a wider community. Not everyone can write a dissertation on big data processing, but they can use a tool that asks the right questions and tells them how to improve their architectures.
+        기술 솔루션을 설계할 때 이 여섯 가지 기둥을 무시하면 기대와 요구사항을 충족하는 시스템을 구축하기가 더욱 어려워집니다. 이 기둥들을 아키텍처에 통합하면 안정적이고 효율적인 시스템을 구축하는 데 도움이 됩니다. 이를 통해 기능 요구사항과 같은 다른 설계 측면에 집중할 수 있습니다.
       </p>
 
-      <h2>General design principles</h2>
+      <h2>아키텍처에 대하여</h2>
 
       <p>
-        The Well-Architected Framework identifies a set of general design principles to facilitate good design in the cloud:
+        온프레미스 환경에서는 일반적으로 제품 또는 기능 팀에 오버레이로 작동하여 모범 사례를 따르도록 보장하는 중앙 기술 아키텍처 팀이 있습니다. 기술 아키텍처 팀은 보통 기술 아키텍트(인프라), 솔루션 아키텍트(소프트웨어), 데이터 아키텍트, 네트워킹 아키텍트, 보안 아키텍트 등의 역할로 구성됩니다. 이러한 팀들은 종종 아키텍처 제어 및 거버넌스 프로세스의 일환으로 TOGAF나 Zachman Framework를 활용합니다.
+      </p>
+
+      <p>
+        AWS에서는 해당 역량을 중앙 집중식 팀에 두기보다 각 팀에 분산하는 방식을 선호합니다. 이를 선택할 때 위험이 있지만 상당한 이점도 있습니다. 팀과 조직이 분산되어 있다면 각 팀이 활용할 수 있는 표준과 모범 사례가 필요합니다. Well-Architected Framework는 크고 비용이 많이 드는 중앙 팀 없이도 이러한 사례들을 활용할 수 있게 해주는 확장 가능한 메커니즘입니다.
+      </p>
+
+      <p>
+        더 많은 기업이 권장 사항을 쉽게 채택할 수 있도록 하는 방법 중 하나는 더 넓은 커뮤니티가 접근할 수 있는 도구를 만드는 것입니다. 모든 사람이 빅데이터 처리에 관한 논문을 쓸 수 있는 것은 아니지만, 올바른 질문을 하고 아키텍처를 개선하는 방법을 알려주는 도구는 사용할 수 있습니다.
+      </p>
+
+      <h2>일반 설계 원칙</h2>
+
+      <p>
+        Well-Architected Framework는 클라우드에서 좋은 설계를 촉진하기 위한 일련의 일반 설계 원칙을 제시합니다:
       </p>
 
       <ul>
         <li>
-          <strong>Stop guessing your capacity needs:</strong> Eliminate guessing about your infrastructure capacity needs. When you make a capacity decision before you deploy a system, you might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. You can use as much or as little capacity as you need, and scale up and down automatically.
+          <strong>용량 추측을 멈추세요:</strong> 인프라 용량 요구사항에 대한 추측을 없애세요. 시스템을 배포하기 전에 용량을 결정하면 비싼 유휴 리소스를 낭비하거나 제한된 용량으로 인한 성능 문제를 겪을 수 있습니다. 클라우드 컴퓨팅을 사용하면 이러한 문제를 해결할 수 있습니다. 필요한 만큼만 용량을 사용하고 자동으로 확장하거나 축소할 수 있습니다.
         </li>
         <li>
-          <strong>Test systems at production scale:</strong> In the cloud, you can create a production-scale test environment on demand, complete your testing, and then decommission the resources. Because you only pay for the test environment when it's running, you can simulate your live environment for a fraction of the cost of testing on premises.
+          <strong>프로덕션 규모로 시스템을 테스트하세요:</strong> 클라우드에서는 필요에 따라 프로덕션 규모의 테스트 환경을 생성하고, 테스트를 완료한 후 리소스를 해제할 수 있습니다. 테스트 환경이 실행 중일 때만 비용을 지불하기 때문에 온프레미스 테스트 비용의 일부만으로 실제 환경을 시뮬레이션할 수 있습니다.
         </li>
         <li>
-          <strong>Automate with architectural experimentation in mind:</strong> Automation allows you to create and replicate your systems at low cost and avoid the expense of manual effort. You can track changes to your automation, audit the impact, and revert to previous parameters when necessary.
+          <strong>아키텍처 실험을 염두에 두고 자동화하세요:</strong> 자동화를 통해 낮은 비용으로 시스템을 생성하고 복제하며 수동 작업 비용을 피할 수 있습니다. 자동화에 대한 변경 사항을 추적하고, 영향을 감사하며, 필요한 경우 이전 파라미터로 되돌릴 수 있습니다.
         </li>
         <li>
-          <strong>Consider evolutionary architectures:</strong> In a traditional environment, architectural decisions are often implemented as static, one-time events, with a few major versions of a system during its lifetime. As a business and its context continue to change, these initial decisions might hinder the system's ability to deliver changing business requirements. In the cloud, the capability to automate and test on demand lowers the risk of impact from design changes. This allows systems to evolve over time so that businesses can take advantage of innovations as a standard practice.
+          <strong>진화적 아키텍처를 고려하세요:</strong> 전통적인 환경에서는 아키텍처 결정이 종종 정적이고 일회성 이벤트로 구현됩니다. 비즈니스와 그 맥락이 계속 변화함에 따라, 초기 결정이 변화하는 비즈니스 요구사항을 충족하는 시스템의 능력을 저해할 수 있습니다. 클라우드에서는 자동화하고 온디맨드로 테스트하는 능력이 설계 변경으로 인한 영향 위험을 낮춥니다. 이를 통해 시스템이 시간이 지남에 따라 진화하여 비즈니스가 표준 관행으로 혁신을 활용할 수 있습니다.
         </li>
         <li>
-          <strong>Drive architectures using data:</strong> In the cloud, you can collect data on how your architectural choices affect the behavior of your workload. This lets you make fact-based decisions on how to improve your workload. Your cloud infrastructure is code, so you can use that data to inform your architecture choices and improvements over time.
+          <strong>데이터를 기반으로 아키텍처를 개선하세요:</strong> 클라우드에서는 아키텍처 선택이 워크로드 동작에 미치는 영향에 대한 데이터를 수집할 수 있습니다. 이를 통해 워크로드 개선 방법에 대한 사실 기반 결정을 내릴 수 있습니다. 클라우드 인프라는 코드이므로 해당 데이터를 사용하여 시간이 지남에 따라 아키텍처 선택과 개선 사항을 알릴 수 있습니다.
         </li>
         <li>
-          <strong>Improve through game days:</strong> Test how your architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
+          <strong>게임 데이를 통해 개선하세요:</strong> 프로덕션에서 이벤트를 시뮬레이션하는 게임 데이를 정기적으로 예약하여 아키텍처와 프로세스가 어떻게 수행되는지 테스트하세요. 이를 통해 개선이 필요한 부분을 파악하고 이벤트 처리에 관한 조직적 경험을 쌓을 수 있습니다.
         </li>
       </ul>
 

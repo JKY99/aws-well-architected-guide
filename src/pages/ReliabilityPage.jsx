@@ -4,103 +4,103 @@ import "../components/DocContent.css";
 export default function ReliabilityPage() {
   return (
     <article className="doc-content">
-      <h1>Reliability</h1>
+      <h1>안정성 (Reliability)</h1>
 
       <p>
-        The reliability pillar encompasses the ability of a workload to perform its intended function correctly and consistently when it's expected to. This includes the ability to operate and test the workload through its total lifecycle. This paper provides in-depth, best practice guidance for implementing reliable workloads on AWS.
+        안정성 기둥은 워크로드가 예상된 시점에 의도한 기능을 올바르고 일관되게 수행하는 능력을 포괄합니다. 여기에는 전체 수명 주기 동안 워크로드를 운영하고 테스트하는 능력도 포함됩니다. 이 문서는 AWS에서 신뢰할 수 있는 워크로드를 구현하기 위한 심층적인 모범 사례 지침을 제공합니다.
       </p>
 
-      <h2>Design principles</h2>
+      <h2>설계 원칙</h2>
 
       <p>
-        There are five design principles for reliability in the cloud:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Automatically recover from failure:</strong> By monitoring a workload for key performance indicators (KPIs), you can trigger automation when a threshold is breached. This allows for automatic notification and tracking of failures, and for automated recovery processes that work around or repair the failure. With more sophisticated automation, it's possible to anticipate and remediate failures before they occur.
-        </li>
-        <li>
-          <strong>Test recovery procedures:</strong> In an on-premises environment, testing is often conducted to prove that the workload works in a particular scenario. Testing is not typically used to validate recovery strategies. In the cloud, you can test how your workload fails, and you can validate your recovery procedures. You can use automation to simulate different failures or to recreate scenarios that led to failures before. This approach exposes failure pathways that you can test and fix before a real failure scenario occurs, reducing the risk that scenarios replicate in production.
-        </li>
-        <li>
-          <strong>Scale horizontally to increase aggregate workload availability:</strong> Replace one large resource with multiple small resources to reduce the impact of a single failure on the overall workload. Distribute requests across multiple, smaller resources to ensure that they don't share a common point of failure.
-        </li>
-        <li>
-          <strong>Stop guessing capacity:</strong> A common cause of failure in on-premises workloads is resource saturation, when the demands placed on a workload exceed the capacity of that workload (this is often the objective of denial of service attacks). In the cloud, you can monitor demand and workload utilization, and automate the addition or removal of resources to maintain the optimal level to satisfy demand without over- or under-provisioning. There are still limits, but some quotas can be controlled and others can be managed (see Manage Service Quotas and Constraints).
-        </li>
-        <li>
-          <strong>Manage change through automation:</strong> Changes to your infrastructure should be made using automation. The changes that need to be managed include changes to the automation, which then can be tracked and reviewed.
-        </li>
-      </ul>
-
-      <h2>Definition</h2>
-
-      <p>
-        Reliability of a workload in the cloud depends on several factors, the primary of which is Resiliency:
+        클라우드에서의 안정성을 위한 다섯 가지 설계 원칙이 있습니다:
       </p>
 
       <ul>
         <li>
-          <strong>Resiliency</strong> is the ability of a workload to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
+          <strong>실패에서 자동으로 복구하세요:</strong> 핵심 성과 지표(KPI)에 대한 워크로드를 모니터링하여 임계값이 초과될 때 자동화를 트리거할 수 있습니다. 이를 통해 실패에 대한 자동 알림 및 추적, 실패를 우회하거나 복구하는 자동화된 복구 프로세스가 가능합니다. 보다 정교한 자동화를 통해 실패가 발생하기 전에 예측하고 수정하는 것도 가능합니다.
+        </li>
+        <li>
+          <strong>복구 절차를 테스트하세요:</strong> 온프레미스 환경에서 테스트는 종종 특정 시나리오에서 워크로드가 작동함을 증명하기 위해 수행됩니다. 테스트는 일반적으로 복구 전략을 검증하는 데 사용되지 않습니다. 클라우드에서는 워크로드가 어떻게 실패하는지 테스트하고 복구 절차를 검증할 수 있습니다. 자동화를 사용하여 다양한 실패를 시뮬레이션하거나 과거에 실패로 이어진 시나리오를 재현할 수 있습니다. 이 접근 방식은 실제 실패 시나리오가 프로덕션에서 재현되기 전에 테스트하고 수정할 수 있는 실패 경로를 노출합니다.
+        </li>
+        <li>
+          <strong>수평적으로 확장하여 전체 워크로드 가용성을 높이세요:</strong> 하나의 대형 리소스를 여러 소형 리소스로 교체하여 단일 실패가 전체 워크로드에 미치는 영향을 줄이세요. 공통 장애점을 공유하지 않도록 여러 소형 리소스 전반에 요청을 분산하세요.
+        </li>
+        <li>
+          <strong>용량 추측을 멈추세요:</strong> 온프레미스 워크로드에서 흔한 실패 원인은 리소스 포화입니다. 워크로드에 가해지는 요구가 워크로드의 용량을 초과할 때(이는 종종 서비스 거부 공격의 목표입니다) 발생합니다. 클라우드에서는 수요와 워크로드 활용도를 모니터링하고, 리소스의 추가 또는 제거를 자동화하여 과도하거나 부족한 프로비저닝 없이 수요를 충족하는 최적의 수준을 유지할 수 있습니다.
+        </li>
+        <li>
+          <strong>자동화를 통해 변경을 관리하세요:</strong> 인프라에 대한 변경은 자동화를 사용하여 이루어져야 합니다. 관리해야 하는 변경 사항에는 자동화에 대한 변경 사항도 포함되며, 이는 추적하고 검토할 수 있습니다.
+        </li>
+      </ul>
+
+      <h2>정의</h2>
+
+      <p>
+        클라우드에서 워크로드의 안정성은 여러 요소에 달려 있으며, 그 중 가장 중요한 것은 탄력성(Resiliency)입니다:
+      </p>
+
+      <ul>
+        <li>
+          <strong>탄력성(Resiliency)</strong>은 인프라 또는 서비스 중단으로부터 복구하고, 수요를 충족하기 위해 동적으로 컴퓨팅 리소스를 획득하며, 잘못된 구성이나 일시적인 네트워크 문제와 같은 장애를 완화하는 워크로드의 능력입니다.
         </li>
       </ul>
 
       <p>
-        The other factors important to reliability are:
+        안정성에 중요한 다른 요소들은 다음과 같습니다:
       </p>
 
       <ul>
-        <li>Operational Excellence, which includes automation of changes, use of playbooks, and communication</li>
-        <li>Security, which includes preventing harm to data or infrastructure from malicious actors</li>
-        <li>Performance Efficiency, which includes preventing loss of availability due to insufficient capacity</li>
-        <li>Cost Optimization, which includes preventing loss of availability by eliminating unused capacity</li>
+        <li>운영 우수성 — 변경 자동화, 플레이북 사용, 커뮤니케이션 포함</li>
+        <li>보안 — 악의적인 행위자로부터 데이터나 인프라 피해 방지</li>
+        <li>성능 효율성 — 불충분한 용량으로 인한 가용성 손실 방지</li>
+        <li>비용 최적화 — 미사용 용량 제거로 가용성 손실 방지</li>
       </ul>
 
       <p>
-        There are four best practice areas for reliability in the cloud:
+        클라우드에서의 안정성을 위한 네 가지 모범 사례 영역이 있습니다:
       </p>
 
       <ul>
-        <li>Foundations</li>
-        <li>Workload Architecture</li>
-        <li>Change Management</li>
-        <li>Failure Management</li>
+        <li>기반 (Foundations)</li>
+        <li>워크로드 아키텍처 (Workload Architecture)</li>
+        <li>변경 관리 (Change Management)</li>
+        <li>실패 관리 (Failure Management)</li>
       </ul>
 
-      <h2>Best practices</h2>
+      <h2>모범 사례</h2>
 
-      <h3>Foundations</h3>
+      <h3>기반 (Foundations)</h3>
       <p>
-        Foundational requirements are those whose scope extends beyond a single workload or project. Before architecting any system, foundational requirements that influence reliability should be in place. For example, you must have sufficient network bandwidth to your data center.
+        기반 요구사항은 단일 워크로드나 프로젝트를 넘어서는 범위를 가집니다. 어떤 시스템을 설계하기 전에 안정성에 영향을 미치는 기반 요구사항이 갖추어져 있어야 합니다. 예를 들어, 데이터 센터에 충분한 네트워크 대역폭이 있어야 합니다.
       </p>
 
-      <h3>Workload architecture</h3>
+      <h3>워크로드 아키텍처 (Workload Architecture)</h3>
       <p>
-        A reliable workload starts with upfront design decisions for both software and infrastructure. Your architecture choices will impact your workload behavior across all of the Well-Architected pillars. For reliability, there are specific patterns you must follow.
+        신뢰할 수 있는 워크로드는 소프트웨어와 인프라 모두에 대한 사전 설계 결정에서 시작됩니다. 아키텍처 선택은 Well-Architected의 모든 기둥에 걸쳐 워크로드 동작에 영향을 미칩니다. 안정성을 위해 따라야 할 특정 패턴이 있습니다.
       </p>
 
-      <h3>Change management</h3>
+      <h3>변경 관리 (Change Management)</h3>
       <p>
-        Changes to your workload or its environment must be anticipated and accommodated to achieve reliable operation of the workload. Changes include those imposed on your workload like a spikes in demand, as well as those from within such as feature deployments and security patches.
+        워크로드 또는 환경에 대한 변경은 워크로드의 신뢰할 수 있는 운영을 달성하기 위해 예측하고 수용되어야 합니다. 변경에는 수요 급증처럼 워크로드에 부과되는 것들과, 기능 배포 및 보안 패치처럼 내부에서 발생하는 것들이 포함됩니다.
       </p>
 
-      <h3>Failure management</h3>
+      <h3>실패 관리 (Failure Management)</h3>
       <p>
-        In any system of reasonable complexity, it is expected that failures will occur. Reliability requires that your workload be aware of failures as they occur and take action to avoid impact on availability. Workloads must be able to both withstand failures and automatically repair issues.
+        합리적인 복잡성을 가진 모든 시스템에서 실패는 발생할 것으로 예상됩니다. 안정성을 위해서는 워크로드가 실패가 발생할 때 인식하고 가용성에 대한 영향을 피하기 위한 조치를 취해야 합니다. 워크로드는 실패를 견디고 자동으로 문제를 복구할 수 있어야 합니다.
       </p>
 
       <div className="doc-note">
-        <div className="doc-note-title">Note</div>
+        <div className="doc-note-title">참고</div>
         <p>
-          For prescriptive implementation guidance, see the{" "}
+          규범적 구현 지침은{" "}
           <a
             href="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Reliability Pillar whitepaper
-          </a>.
+            안정성 기둥 백서
+          </a>를 참조하세요.
         </p>
       </div>
 

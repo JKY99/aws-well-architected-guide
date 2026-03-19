@@ -4,86 +4,86 @@ import "../components/DocContent.css";
 export default function CostOptimizationPage() {
   return (
     <article className="doc-content">
-      <h1>Cost Optimization</h1>
+      <h1>비용 최적화 (Cost Optimization)</h1>
 
       <p>
-        The cost optimization pillar includes the ability to run systems to deliver business value at the lowest price point.
+        비용 최적화 기둥에는 최저 비용으로 비즈니스 가치를 제공하는 시스템을 운영하는 능력이 포함됩니다.
       </p>
 
       <p>
-        This pillar provides an overview of design principles, best practices, and questions. For prescriptive implementation guidance, see the{" "}
+        이 기둥은 설계 원칙, 모범 사례, 질문에 대한 개요를 제공합니다. 규범적 구현 지침은{" "}
         <a
           href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Cost Optimization Pillar whitepaper
-        </a>.
+          비용 최적화 기둥 백서
+        </a>를 참조하세요.
       </p>
 
-      <h2>Design principles</h2>
+      <h2>설계 원칙</h2>
 
       <p>
-        There are five design principles for cost optimization in the cloud:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Implement cloud financial management:</strong> To achieve financial success and accelerate business value realization in the cloud, you must invest in Cloud Financial Management. Your organization must dedicate the necessary time and resources for building capability in this new domain of technology and usage management. Similar to your Security or Operations capability, you need to build capability through knowledge building, programs, resources, and processes to become a cost-efficient organization.
-        </li>
-        <li>
-          <strong>Adopt a consumption model:</strong> Pay only for the computing resources that you require and increase or decrease usage depending on business requirements. For example, development and test environments are typically only used for eight hours a day during the work week. You can stop these resources when they are not in use for a potential cost savings of 75% (40 hours versus 168 hours).
-        </li>
-        <li>
-          <strong>Measure overall efficiency:</strong> Measure the business output of the workload and the costs associated with delivering it. Use this measure to know the gains you make from increasing output and reducing costs.
-        </li>
-        <li>
-          <strong>Stop spending money on undifferentiated heavy lifting:</strong> AWS does the heavy lifting of data center operations like racking, stacking, and powering servers. It also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
-        </li>
-        <li>
-          <strong>Analyze and attribute expenditure:</strong> The cloud makes it easier to accurately identify the usage and cost of systems, which then allows transparent attribution of IT costs to individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
-        </li>
-      </ul>
-
-      <h2>Definition</h2>
-
-      <p>
-        There are five best practice areas for cost optimization in the cloud:
+        클라우드에서의 비용 최적화를 위한 다섯 가지 설계 원칙이 있습니다:
       </p>
 
       <ul>
-        <li>Practice Cloud Financial Management</li>
-        <li>Expenditure and usage awareness</li>
-        <li>Cost-effective resources</li>
-        <li>Manage demand and supply resources</li>
-        <li>Optimize over time</li>
+        <li>
+          <strong>클라우드 재무 관리를 구현하세요:</strong> 클라우드에서 재무적 성공과 비즈니스 가치 실현을 가속화하려면 클라우드 재무 관리(Cloud Financial Management)에 투자해야 합니다. 조직은 기술 및 사용 관리의 새로운 영역에서 역량을 구축하는 데 필요한 시간과 리소스를 할당해야 합니다. 보안 또는 운영 역량과 마찬가지로, 비용 효율적인 조직이 되기 위한 지식 구축, 프로그램, 리소스, 프로세스를 통해 역량을 구축해야 합니다.
+        </li>
+        <li>
+          <strong>소비 모델을 채택하세요:</strong> 필요한 컴퓨팅 리소스에 대해서만 비용을 지불하고, 비즈니스 요구사항에 따라 사용량을 늘리거나 줄이세요. 예를 들어, 개발 및 테스트 환경은 일반적으로 근무일 중 8시간만 사용됩니다. 사용하지 않을 때 이러한 리소스를 중지하면 최대 75%의 비용을 절감할 수 있습니다(40시간 대 168시간).
+        </li>
+        <li>
+          <strong>전체 효율성을 측정하세요:</strong> 워크로드의 비즈니스 출력과 이를 제공하는 데 관련된 비용을 측정하세요. 이 측정값을 사용하여 출력을 늘리고 비용을 줄이는 것에서 얻는 이득을 파악하세요.
+        </li>
+        <li>
+          <strong>차별화되지 않는 무거운 작업에 비용을 쓰지 마세요:</strong> AWS는 서버 랙킹, 스태킹, 전원 공급과 같은 데이터 센터 운영의 무거운 작업을 대신합니다. 또한 관리형 서비스로 운영 체제와 애플리케이션 관리의 운영 부담을 없애줍니다. 이를 통해 IT 인프라보다는 고객과 비즈니스 프로젝트에 집중할 수 있습니다.
+        </li>
+        <li>
+          <strong>지출을 분석하고 귀속시키세요:</strong> 클라우드에서는 시스템의 사용량과 비용을 정확하게 파악하기 쉬우며, 이를 통해 IT 비용을 개별 워크로드 소유자에게 투명하게 귀속시킬 수 있습니다. 이를 통해 투자 수익률(ROI)을 측정하고 워크로드 소유자가 리소스를 최적화하고 비용을 줄일 기회를 얻을 수 있습니다.
+        </li>
       </ul>
 
-      <h2>Best practices</h2>
+      <h2>정의</h2>
 
-      <h3>Practice Cloud Financial Management</h3>
       <p>
-        With the adoption of cloud, technology teams innovate faster due to shortened approval, procurement, and infrastructure deployment cycles. A new approach to financial management in the cloud is required to realize business value and financial success. This approach is Cloud Financial Management, and builds capability across your organization by implementing organizational wide knowledge building, programs, resources, and processes.
+        클라우드에서의 비용 최적화를 위한 다섯 가지 모범 사례 영역이 있습니다:
       </p>
 
-      <h3>Expenditure and usage awareness</h3>
+      <ul>
+        <li>클라우드 재무 관리 실천 (Practice Cloud Financial Management)</li>
+        <li>지출 및 사용량 인식 (Expenditure and usage awareness)</li>
+        <li>비용 효율적인 리소스 (Cost-effective resources)</li>
+        <li>수요 및 공급 리소스 관리 (Manage demand and supply resources)</li>
+        <li>시간에 따른 최적화 (Optimize over time)</li>
+      </ul>
+
+      <h2>모범 사례</h2>
+
+      <h3>클라우드 재무 관리 실천 (Practice Cloud Financial Management)</h3>
       <p>
-        Many businesses are composed of multiple systems run by various teams. The capability to attribute resource costs to the individual organization or product owners drives efficient usage behavior and helps reduce waste. Accurate cost attribution allows you to know which products are truly profitable, and allows you to make more informed decisions about where to allocate budget.
+        클라우드 채택으로 기술 팀은 단축된 승인, 조달, 인프라 배포 사이클로 인해 더 빠르게 혁신합니다. 비즈니스 가치와 재무적 성공을 실현하려면 클라우드 재무 관리라는 새로운 재무 관리 접근 방식이 필요합니다. 이 접근 방식은 조직 전반에 걸쳐 지식 구축, 프로그램, 리소스, 프로세스를 구현하여 역량을 구축합니다.
       </p>
 
-      <h3>Cost-effective resources</h3>
+      <h3>지출 및 사용량 인식 (Expenditure and usage awareness)</h3>
       <p>
-        Using the appropriate instances and resources for your workload is key to cost savings. For example, a reporting process might take five hours to run on a smaller server but one hour to run on a larger server that is twice as expensive. Both servers give you the same outcome, but the smaller server incurs more cost over time.
+        많은 기업은 다양한 팀이 운영하는 여러 시스템으로 구성됩니다. 리소스 비용을 개별 조직 또는 제품 소유자에게 귀속시키는 능력은 효율적인 사용 행동을 유도하고 낭비를 줄이는 데 도움이 됩니다. 정확한 비용 귀속을 통해 어떤 제품이 진정으로 수익성이 있는지 파악하고 예산을 어디에 배분할지 더 정보에 입각한 결정을 내릴 수 있습니다.
       </p>
 
-      <h3>Manage demand and supply resources</h3>
+      <h3>비용 효율적인 리소스 (Cost-effective resources)</h3>
       <p>
-        When you move to the cloud, you pay only for what you need. You can supply resources to match the workload demand at the time they're needed, this eliminates the need for costly and wasteful over provisioning. You can also modify the demand, using a queue or buffer to smooth the demand and serve it with less resources resulting in a lower cost, or synchronizing supply with demand to avoid the cost of over provisioning.
+        워크로드에 적합한 인스턴스와 리소스를 사용하는 것이 비용 절감의 핵심입니다. 예를 들어, 보고 프로세스가 더 작은 서버에서는 5시간이 걸리지만, 두 배 비싼 더 큰 서버에서는 1시간이 걸릴 수 있습니다. 두 서버 모두 동일한 결과를 제공하지만, 더 작은 서버는 시간이 지남에 따라 더 많은 비용이 발생합니다.
       </p>
 
-      <h3>Optimize over time</h3>
+      <h3>수요 및 공급 리소스 관리 (Manage demand and supply resources)</h3>
       <p>
-        As AWS releases new services and features, it's a best practice to review your existing architectural decisions to ensure they continue to be the most cost effective. As your requirements change, be aggressive in decommissioning resources, entire services, and systems that you no longer require.
+        클라우드로 이동하면 필요한 것에 대해서만 비용을 지불합니다. 필요한 시점에 워크로드 수요에 맞게 리소스를 공급하여 비용이 많이 드는 과도한 프로비저닝을 없앨 수 있습니다. 또한 큐나 버퍼를 사용하여 수요를 평탄화하고 더 적은 리소스로 처리하거나, 공급을 수요와 동기화하여 과도한 프로비저닝 비용을 방지할 수 있습니다.
+      </p>
+
+      <h3>시간에 따른 최적화 (Optimize over time)</h3>
+      <p>
+        AWS가 새로운 서비스와 기능을 출시함에 따라 기존 아키텍처 결정을 검토하여 비용 효율적인지 확인하는 것이 모범 사례입니다. 요구사항이 변경됨에 따라 더 이상 필요하지 않은 리소스, 서비스 전체, 시스템을 적극적으로 폐기하세요.
       </p>
 
       <PageNav />

@@ -4,80 +4,80 @@ import "../components/DocContent.css";
 export default function ReviewProcessPage() {
   return (
     <article className="doc-content">
-      <h1>The review process</h1>
+      <h1>검토 프로세스 (The Review Process)</h1>
 
       <p>
-        The review process is not meant to be a single "gate" review that you go through at the end of your project, but rather a continuous approach integrated into the lifecycle of your workload. A Well-Architected review should be used throughout the lifecycle of your workload as an ongoing process rather than a one-time event.
+        검토 프로세스는 프로젝트 말에 통과해야 하는 단일 "게이트" 검토가 아니라, 워크로드의 수명 주기에 통합된 지속적인 접근 방식입니다. Well-Architected 검토는 일회성 이벤트가 아닌 진행 중인 프로세스로서 워크로드의 전체 수명 주기에 걸쳐 사용해야 합니다.
       </p>
 
-      <h2>How to approach a Well-Architected review</h2>
+      <h2>Well-Architected 검토 접근 방법</h2>
 
       <p>
-        We recommend that you approach a Well-Architected review in a blame-free, blameless manner. The review is not meant to uncover failures or to assign blame, but to identify areas for improvement. The goal is to make sure that your team is delivering business value and to identify any risks that might prevent them from doing so.
-      </p>
-
-      <p>
-        The review process is a constructive conversation about architectural decisions, and is not an audit mechanism. It is important to note that the review is not a pass/fail process. Instead, it is a conversation that helps you understand the trade-offs you have made, and gives you the information you need to make informed decisions about your architecture.
-      </p>
-
-      <h2>Continuous reviews</h2>
-
-      <p>
-        Rather than a formal review meeting, we recommend that team members regularly use the Well-Architected Framework as a guide when they are making architectural decisions. This allows you to integrate the review process into the day-to-day operations of your team, rather than it being a separate activity.
+        Well-Architected 검토는 비난 없는(blameless) 방식으로 접근하는 것을 권장합니다. 검토는 실패를 밝히거나 비난을 할당하기 위한 것이 아니라, 개선 영역을 파악하기 위한 것입니다. 목표는 팀이 비즈니스 가치를 제공하고 있는지 확인하고, 그것을 방해할 수 있는 위험을 파악하는 것입니다.
       </p>
 
       <p>
-        As your architecture evolves, regularly update your answers to reflect the current state of your architecture. This will help you track your progress and identify new areas for improvement.
+        검토 프로세스는 아키텍처 결정에 관한 건설적인 대화이며, 감사 메커니즘이 아닙니다. 검토는 합격/불합격 프로세스가 아닙니다. 대신 여러분이 내린 트레이드오프를 이해하고, 아키텍처에 대한 정보에 입각한 결정을 내리는 데 필요한 정보를 제공하는 대화입니다.
       </p>
 
-      <h2>When to perform a review</h2>
+      <h2>지속적인 검토</h2>
 
       <p>
-        We recommend performing a Well-Architected review at the following points:
+        공식적인 검토 회의보다는, 팀 구성원이 아키텍처 결정을 내릴 때 정기적으로 Well-Architected Framework를 지침으로 사용하는 것을 권장합니다. 이를 통해 검토 프로세스를 별도의 활동이 아닌 팀의 일상적인 운영에 통합할 수 있습니다.
       </p>
 
-      <ul>
-        <li>Early in the design process, before you make any one-way decisions</li>
-        <li>At major milestones in the product lifecycle</li>
-        <li>Before launch, when you are about to go live</li>
-        <li>After you go live, as you continue to make architectural changes</li>
-      </ul>
+      <p>
+        아키텍처가 발전함에 따라 현재 아키텍처 상태를 반영하도록 답변을 정기적으로 업데이트하세요. 이를 통해 진행 상황을 추적하고 새로운 개선 영역을 파악할 수 있습니다.
+      </p>
 
-      <h2>Preparing for a review</h2>
+      <h2>검토 시기</h2>
 
       <p>
-        You should have the following materials available for a Well-Architected review:
+        다음 시점에 Well-Architected 검토를 수행하는 것을 권장합니다:
       </p>
 
       <ul>
-        <li>A room with a whiteboard</li>
-        <li>An architecture diagram of the workload you are reviewing</li>
-        <li>Design notes and any other documentation about the workload</li>
-        <li>A list of questions that you have about the workload that need further investigation</li>
+        <li>되돌릴 수 없는 결정을 내리기 전인 설계 프로세스 초기 단계</li>
+        <li>제품 수명 주기의 주요 이정표에서</li>
+        <li>라이브로 전환하기 직전 출시 전 단계</li>
+        <li>라이브 이후 아키텍처 변경을 계속하면서</li>
       </ul>
 
-      <h2>Overcoming team resistance</h2>
+      <h2>검토 준비</h2>
 
       <p>
-        You might encounter resistance from your team when you first start doing Well-Architected reviews. Here are some common objections and how to address them:
+        Well-Architected 검토를 위해 다음 자료를 준비하는 것이 좋습니다:
+      </p>
+
+      <ul>
+        <li>화이트보드가 있는 회의실</li>
+        <li>검토 중인 워크로드의 아키텍처 다이어그램</li>
+        <li>워크로드에 대한 설계 노트 및 기타 문서</li>
+        <li>추가 조사가 필요한 워크로드에 관한 질문 목록</li>
+      </ul>
+
+      <h2>팀 저항 극복</h2>
+
+      <p>
+        Well-Architected 검토를 처음 시작할 때 팀의 저항에 부딪힐 수 있습니다. 다음은 일반적인 반대 의견과 그 대응 방법입니다:
       </p>
 
       <ul>
         <li>
-          <strong>We don't have time for this:</strong> Doing a review early in the process can reduce the risk of costly architectural changes later. A short review now can save significant time later.
+          <strong>시간이 없습니다:</strong> 프로세스 초기에 검토를 수행하면 나중에 비용이 많이 드는 아키텍처 변경의 위험을 줄일 수 있습니다. 지금 짧은 검토를 하면 나중에 상당한 시간을 절약할 수 있습니다.
         </li>
         <li>
-          <strong>We don't have time to deal with the results:</strong> Consider using a playbook approach where you write down the issues you find and create a plan to address them over time. This allows you to continue making progress without being blocked by the results of the review.
+          <strong>결과를 처리할 시간이 없습니다:</strong> 발견된 문제를 기록하고 시간이 지남에 따라 해결하는 계획을 세우는 플레이북 접근 방식을 고려하세요. 이를 통해 검토 결과에 막히지 않고 계속 진전을 이룰 수 있습니다.
         </li>
         <li>
-          <strong>We don't want to expose our technology choices:</strong> The Well-Architected questions are about best practices, not about specific technology choices. You can answer the questions without revealing proprietary information about your technology choices.
+          <strong>기술 선택을 공개하고 싶지 않습니다:</strong> Well-Architected 질문은 모범 사례에 관한 것이며, 특정 기술 선택에 관한 것이 아닙니다. 독점 기술 선택 정보를 공개하지 않고도 질문에 답할 수 있습니다.
         </li>
       </ul>
 
-      <h2>Organizational benefits</h2>
+      <h2>조직적 이점</h2>
 
       <p>
-        When you do reviews across multiple teams, you can identify common themes and issues that affect multiple workloads. This allows you to create common training programs and improvements that benefit the entire organization. It also allows you to identify systemic issues that might affect multiple workloads.
+        여러 팀에 걸쳐 검토를 수행하면 여러 워크로드에 영향을 미치는 공통 주제와 문제를 파악할 수 있습니다. 이를 통해 전체 조직에 이로운 공통 교육 프로그램과 개선 사항을 만들 수 있습니다. 또한 여러 워크로드에 영향을 미칠 수 있는 시스템적 문제를 파악할 수 있습니다.
       </p>
 
       <PageNav />

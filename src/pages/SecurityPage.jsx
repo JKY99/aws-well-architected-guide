@@ -4,104 +4,104 @@ import "../components/DocContent.css";
 export default function SecurityPage() {
   return (
     <article className="doc-content">
-      <h1>Security</h1>
+      <h1>보안 (Security)</h1>
 
       <p>
-        The security pillar encompasses the ability to protect data, systems, and assets to take advantage of cloud technologies to improve your security.
+        보안 기둥은 클라우드 기술을 활용하여 보안을 향상시키고 데이터, 시스템, 자산을 보호하는 능력을 포괄합니다.
       </p>
 
       <p>
-        This pillar provides an overview of design principles, best practices, and questions. For prescriptive implementation guidance, see the{" "}
+        이 기둥은 설계 원칙, 모범 사례, 질문에 대한 개요를 제공합니다. 규범적 구현 지침은{" "}
         <a
           href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Security Pillar whitepaper
-        </a>.
+          보안 기둥 백서
+        </a>를 참조하세요.
       </p>
 
-      <h2>Design principles</h2>
+      <h2>설계 원칙</h2>
 
       <p>
-        There are seven design principles for security in the cloud:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Implement a strong identity foundation:</strong> Implement the principle of least privilege and enforce separation of duties with appropriate authorization for each interaction with your AWS resources. Centralize identity management, and aim to eliminate reliance on long-term static credentials.
-        </li>
-        <li>
-          <strong>Maintain traceability:</strong> Monitor, alert, and audit actions and changes to your environment in real time. Integrate log and metric collection with systems to automatically investigate and take action.
-        </li>
-        <li>
-          <strong>Apply security at all layers:</strong> Apply a defense in depth approach with multiple security controls. Apply security to all layers (for example, edge of network, VPC, load balancing, every instance and compute service, operating system, application, and code).
-        </li>
-        <li>
-          <strong>Automate security best practices:</strong> Automated software-based security mechanisms improve your ability to securely scale more rapidly and cost-effectively. Create secure architectures, including the implementation of controls that are defined and managed as code in version-controlled templates.
-        </li>
-        <li>
-          <strong>Protect data in transit and at rest:</strong> Classify your data into sensitivity levels and use mechanisms, such as encryption, tokenization, and access control where appropriate.
-        </li>
-        <li>
-          <strong>Keep people away from data:</strong> Use mechanisms and tools to reduce or eliminate the need for direct access or manual processing of data. This reduces the risk of mishandling or modification and human error when handling sensitive data.
-        </li>
-        <li>
-          <strong>Prepare for security events:</strong> Prepare for an incident by having incident management and investigation policies and processes that align to your organizational requirements. Run incident response simulations and use tools with automation to increase your speed for detection, investigation, and recovery.
-        </li>
-      </ul>
-
-      <h2>Definition</h2>
-
-      <p>
-        Security in the cloud is composed of seven areas:
+        클라우드에서의 보안을 위한 일곱 가지 설계 원칙이 있습니다:
       </p>
 
       <ul>
-        <li>Security foundations</li>
-        <li>Identity and access management</li>
-        <li>Detection</li>
-        <li>Infrastructure protection</li>
-        <li>Data protection</li>
-        <li>Incident response</li>
-        <li>Application security</li>
+        <li>
+          <strong>강력한 자격 증명 기반을 구현하세요:</strong> 최소 권한 원칙을 구현하고, AWS 리소스와의 각 상호작용에 대해 적절한 인증으로 직무 분리를 강제하세요. 자격 증명 관리를 중앙화하고, 장기 정적 자격 증명에 대한 의존도를 줄이도록 노력하세요.
+        </li>
+        <li>
+          <strong>추적 가능성을 유지하세요:</strong> 환경의 작업과 변경 사항을 실시간으로 모니터링, 경고, 감사하세요. 로그 및 지표 수집을 시스템과 통합하여 자동으로 조사하고 조치를 취하세요.
+        </li>
+        <li>
+          <strong>모든 레이어에 보안을 적용하세요:</strong> 여러 보안 제어로 심층 방어(defense in depth) 접근 방식을 적용하세요. 모든 레이어(예: 네트워크 에지, VPC, 로드 밸런싱, 모든 인스턴스와 컴퓨팅 서비스, 운영 체제, 애플리케이션, 코드)에 보안을 적용하세요.
+        </li>
+        <li>
+          <strong>보안 모범 사례를 자동화하세요:</strong> 자동화된 소프트웨어 기반 보안 메커니즘은 더 신속하고 비용 효율적으로 확장할 수 있는 능력을 향상시킵니다. 버전 관리 템플릿에 코드로 정의되고 관리되는 제어를 구현하는 것을 포함하여 안전한 아키텍처를 생성하세요.
+        </li>
+        <li>
+          <strong>전송 중 및 저장 중 데이터를 보호하세요:</strong> 민감도 수준에 따라 데이터를 분류하고 적절한 경우 암호화, 토큰화, 접근 제어와 같은 메커니즘을 사용하세요.
+        </li>
+        <li>
+          <strong>사람이 데이터에 접근하지 않도록 하세요:</strong> 데이터에 대한 직접 접근이나 수동 처리의 필요성을 줄이거나 없애기 위해 메커니즘과 도구를 사용하세요. 이를 통해 민감한 데이터를 처리할 때 잘못된 취급이나 수정 및 인적 오류의 위험을 줄입니다.
+        </li>
+        <li>
+          <strong>보안 이벤트를 준비하세요:</strong> 조직 요구사항에 맞는 인시던트 관리 및 조사 정책과 프로세스를 갖추어 인시던트를 준비하세요. 인시던트 대응 시뮬레이션을 실행하고 자동화가 포함된 도구를 사용하여 탐지, 조사, 복구 속도를 높이세요.
+        </li>
       </ul>
 
-      <h2>Best practices</h2>
+      <h2>정의</h2>
 
-      <h3>Security foundations</h3>
       <p>
-        Before you architect any system, you need to put in place practices that influence security. To operate your workload securely, you must apply overarching best practices to every area of security. Take requirements and processes that you have defined in operational excellence at an organizational and workload level, and apply them to all areas.
+        클라우드에서의 보안은 일곱 가지 영역으로 구성됩니다:
       </p>
 
-      <h3>Identity and access management</h3>
+      <ul>
+        <li>보안 기반 (Security foundations)</li>
+        <li>자격 증명 및 접근 관리 (Identity and access management)</li>
+        <li>탐지 (Detection)</li>
+        <li>인프라 보호 (Infrastructure protection)</li>
+        <li>데이터 보호 (Data protection)</li>
+        <li>인시던트 대응 (Incident response)</li>
+        <li>애플리케이션 보안 (Application security)</li>
+      </ul>
+
+      <h2>모범 사례</h2>
+
+      <h3>보안 기반 (Security foundations)</h3>
       <p>
-        Identity and access management are key parts of an information security program, ensuring that only authorized and authenticated users and components are able to access your resources, and only in a manner that you intend. For example, you should define principals (that is, accounts, users, roles, and services that can perform actions in your account), build out policies aligned with these principals, and implement strong credential management.
+        어떤 시스템을 설계하기 전에, 보안에 영향을 미치는 관행을 먼저 갖추어야 합니다. 워크로드를 안전하게 운영하려면 보안의 모든 영역에 전반적인 모범 사례를 적용해야 합니다. 조직 및 워크로드 수준에서 운영 우수성으로 정의한 요구사항과 프로세스를 가져와 모든 영역에 적용하세요.
       </p>
 
-      <h3>Detection</h3>
+      <h3>자격 증명 및 접근 관리 (Identity and access management)</h3>
       <p>
-        You can use detective controls to identify a potential security threat or incident. They are an essential part of governance frameworks and can be used to support a quality process, a legal or compliance obligation, and for threat identification and response efforts.
+        자격 증명 및 접근 관리는 정보 보안 프로그램의 핵심 부분으로, 인증되고 권한이 있는 사용자와 구성 요소만 리소스에 접근하고, 의도한 방식으로만 접근할 수 있도록 보장합니다. 예를 들어, 계정에서 작업을 수행할 수 있는 주체(계정, 사용자, 역할, 서비스)를 정의하고, 이러한 주체에 맞는 정책을 구축하고, 강력한 자격 증명 관리를 구현해야 합니다.
       </p>
 
-      <h3>Infrastructure protection</h3>
+      <h3>탐지 (Detection)</h3>
       <p>
-        Infrastructure protection encompasses control methodologies, such as defense in depth, necessary to meet best practices and organizational or regulatory obligations. Use of these methodologies is critical for successful, ongoing operations in either the cloud or on-premises.
+        탐지 제어를 사용하여 잠재적인 보안 위협이나 인시던트를 식별할 수 있습니다. 이는 거버넌스 프레임워크의 필수적인 부분이며, 품질 프로세스, 법적 또는 규정 준수 의무, 위협 식별 및 대응 노력을 지원하는 데 사용될 수 있습니다.
       </p>
 
-      <h3>Data protection</h3>
+      <h3>인프라 보호 (Infrastructure protection)</h3>
       <p>
-        Before architecting any system, foundational practices that influence security should be in place. For example, data classification provides a way to categorize organizational data based on levels of sensitivity, and encryption protects data by way of rendering it unintelligible to unauthorized access.
+        인프라 보호는 모범 사례 및 조직적 또는 규제적 의무를 충족하는 데 필요한 심층 방어와 같은 제어 방법론을 포괄합니다. 이러한 방법론의 사용은 클라우드 또는 온프레미스에서의 성공적이고 지속적인 운영에 매우 중요합니다.
       </p>
 
-      <h3>Incident response</h3>
+      <h3>데이터 보호 (Data protection)</h3>
       <p>
-        Even with mature preventive and detective controls, your organization should still put processes in place to respond to and mitigate the potential impact of security incidents. The architecture of your workload strongly affects the ability of your teams to operate effectively during an incident, to isolate or contain systems, and to restore operations to a known good state.
+        어떤 시스템을 설계하기 전에, 보안에 영향을 미치는 기반 관행이 갖추어져 있어야 합니다. 예를 들어, 데이터 분류는 민감도 수준에 따라 조직 데이터를 분류하는 방법을 제공하며, 암호화는 무단 접근에 대해 데이터를 이해할 수 없게 만들어 보호합니다.
       </p>
 
-      <h3>Application security</h3>
+      <h3>인시던트 대응 (Incident response)</h3>
       <p>
-        Application security (AppSec) describes the overall process of how you reduce the risk of releasing insecure software systems to the cloud. AppSec helps you perform automated testing of security throughout the development and release process.
+        성숙한 예방 및 탐지 제어가 있더라도, 조직은 보안 인시던트의 잠재적 영향을 대응하고 완화하기 위한 프로세스를 갖추어야 합니다. 워크로드의 아키텍처는 인시던트 중 팀의 효과적인 운영 능력, 시스템 격리 또는 억제, 알려진 양호한 상태로의 운영 복원 능력에 크게 영향을 미칩니다.
+      </p>
+
+      <h3>애플리케이션 보안 (Application security)</h3>
+      <p>
+        애플리케이션 보안(AppSec)은 클라우드에 안전하지 않은 소프트웨어 시스템을 출시할 위험을 줄이는 전반적인 프로세스를 설명합니다. AppSec는 개발 및 릴리스 프로세스 전반에 걸쳐 보안의 자동화된 테스트를 수행하는 데 도움을 줍니다.
       </p>
 
       <PageNav />

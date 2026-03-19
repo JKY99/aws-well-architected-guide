@@ -20,7 +20,7 @@ export default function Breadcrumb() {
 
   const baseCrumbs = [
     { title: "AWS", path: "https://aws.amazon.com", external: true },
-    { title: "Documentation", path: "https://docs.aws.amazon.com", external: true },
+    { title: "문서", path: "https://docs.aws.amazon.com", external: true },
     { title: "AWS Well-Architected", path: "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html", external: true },
   ];
 

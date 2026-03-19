@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-feedback">
-          <p className="footer-feedback-title">Did this page help you?</p>
+          <p className="footer-feedback-title">이 페이지가 도움이 되었나요?</p>
           <div className="footer-feedback-btns">
-            <button className="footer-feedback-btn yes">Yes</button>
-            <button className="footer-feedback-btn no">No</button>
+            <button className="footer-feedback-btn yes">예</button>
+            <button className="footer-feedback-btn no">아니요</button>
           </div>
         </div>
 
@@ -19,7 +19,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Privacy
+              개인정보 보호정책
             </a>
             {" | "}
             <a
@@ -27,10 +27,10 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Site terms
+              이용 약관
             </a>
             {" | "}
-            <span>© 2024, Amazon Web Services, Inc. or its affiliates. All rights reserved.</span>
+            <span>© 2024 Amazon Web Services, Inc. 또는 그 계열사. 모든 권리 보유.</span>
           </p>
         </div>
       </div>

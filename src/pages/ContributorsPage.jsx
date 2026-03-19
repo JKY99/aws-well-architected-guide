@@ -23,10 +23,10 @@ export default function ContributorsPage() {
 
   return (
     <article className="doc-content">
-      <h1>Contributors</h1>
+      <h1>기여자 (Contributors)</h1>
 
       <p>
-        The following AWS staff contributed to the AWS Well-Architected Framework documentation.
+        다음 AWS 직원들이 AWS Well-Architected Framework 문서에 기여했습니다.
       </p>
 
       <ul>

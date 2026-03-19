@@ -4,88 +4,88 @@ import "../components/DocContent.css";
 export default function PerformanceEfficiencyPage() {
   return (
     <article className="doc-content">
-      <h1>Performance Efficiency</h1>
+      <h1>성능 효율성 (Performance Efficiency)</h1>
 
       <p>
-        The performance efficiency pillar includes the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
+        성능 효율성 기둥에는 시스템 요구사항을 충족하기 위해 컴퓨팅 리소스를 효율적으로 사용하고, 수요 변화와 기술 진화에 따라 그 효율성을 유지하는 능력이 포함됩니다.
       </p>
 
-      <h2>Design principles</h2>
+      <h2>설계 원칙</h2>
 
       <p>
-        There are five design principles for performance efficiency in the cloud:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Democratize advanced technologies:</strong> Make advanced technology implementation easier for your team by delegating complex tasks to your cloud vendor. Rather than asking your IT team to learn about hosting and running a new technology, consider consuming the technology as a service. For example, NoSQL databases, media transcoding, and machine learning are all technologies that require expertise that is not evenly dispersed across the technical community. In the cloud, these technologies become services that your team can consume while focusing on product development rather than resource provisioning and management.
-        </li>
-        <li>
-          <strong>Go global in minutes:</strong> Deploying your workload in multiple AWS Regions around the world allows you to provide lower latency and a better experience for your customers at minimal cost.
-        </li>
-        <li>
-          <strong>Use serverless architectures:</strong> Serverless architectures remove the need for you to run and maintain physical servers for traditional compute activities. For example, serverless storage services can act as static websites (removing the need for web servers) and event services can host code. This removes the operational burden of managing physical servers, and can lower transactional costs because managed services operate at cloud scale.
-        </li>
-        <li>
-          <strong>Experiment more often:</strong> With virtual and automatable resources, you can quickly carry out comparative testing using different types of instances, storage, or configurations.
-        </li>
-        <li>
-          <strong>Consider mechanical sympathy:</strong> Understand how cloud services are consumed and always use the technology approach that aligns best with your workload goals. For example, consider data access patterns when you select database or storage approaches.
-        </li>
-      </ul>
-
-      <h2>Definition</h2>
-
-      <p>
-        There are four best practice areas for performance efficiency in the cloud:
+        클라우드에서의 성능 효율성을 위한 다섯 가지 설계 원칙이 있습니다:
       </p>
 
       <ul>
-        <li>Architecture selection</li>
-        <li>Compute and hardware</li>
-        <li>Data management</li>
-        <li>Networking and content delivery</li>
-        <li>Process and culture</li>
+        <li>
+          <strong>고급 기술을 민주화하세요:</strong> 복잡한 작업을 클라우드 벤더에 위임하여 팀이 고급 기술을 쉽게 구현할 수 있도록 하세요. IT 팀에게 새 기술을 호스팅하고 실행하는 방법을 배우도록 요청하는 대신, 해당 기술을 서비스로 사용하는 것을 고려하세요. 예를 들어, NoSQL 데이터베이스, 미디어 트랜스코딩, 기계 학습은 모두 기술 커뮤니티 전반에 고르게 분산되지 않은 전문성이 필요한 기술입니다. 클라우드에서는 이러한 기술들이 서비스가 되어, 팀이 리소스 프로비저닝 및 관리보다는 제품 개발에 집중할 수 있습니다.
+        </li>
+        <li>
+          <strong>몇 분 만에 글로벌로 확장하세요:</strong> 전 세계 여러 AWS 리전에 워크로드를 배포하면 최소한의 비용으로 고객에게 더 낮은 지연 시간과 더 나은 경험을 제공할 수 있습니다.
+        </li>
+        <li>
+          <strong>서버리스 아키텍처를 사용하세요:</strong> 서버리스 아키텍처는 기존 컴퓨팅 활동을 위해 물리적 서버를 실행하고 유지할 필요성을 없애줍니다. 예를 들어, 서버리스 스토리지 서비스는 정적 웹사이트 역할(웹 서버 필요 제거)을 할 수 있고 이벤트 서비스는 코드를 호스팅할 수 있습니다. 이를 통해 물리적 서버 관리의 운영 부담이 제거되며, 관리형 서비스가 클라우드 규모로 운영되기 때문에 트랜잭션 비용도 낮출 수 있습니다.
+        </li>
+        <li>
+          <strong>더 자주 실험하세요:</strong> 가상화 및 자동화 가능한 리소스를 통해 다양한 유형의 인스턴스, 스토리지, 구성을 사용하여 비교 테스트를 신속하게 수행할 수 있습니다.
+        </li>
+        <li>
+          <strong>기계적 공감(Mechanical Sympathy)을 고려하세요:</strong> 클라우드 서비스가 어떻게 소비되는지 이해하고, 워크로드 목표에 가장 잘 맞는 기술 접근 방식을 항상 사용하세요. 예를 들어, 데이터베이스나 스토리지 접근 방식을 선택할 때 데이터 접근 패턴을 고려하세요.
+        </li>
       </ul>
 
-      <h2>Best practices</h2>
+      <h2>정의</h2>
 
-      <h3>Architecture selection</h3>
       <p>
-        The optimal solution for a particular workload varies, and solutions often combine multiple approaches. Well-architected systems use multiple solutions and enable different features to improve performance. This section provides an overview of the patterns and services to consider when architecting workloads for high performance.
+        클라우드에서의 성능 효율성을 위한 네 가지 모범 사례 영역이 있습니다:
       </p>
 
-      <h3>Compute and hardware</h3>
+      <ul>
+        <li>아키텍처 선택 (Architecture selection)</li>
+        <li>컴퓨팅 및 하드웨어 (Compute and hardware)</li>
+        <li>데이터 관리 (Data management)</li>
+        <li>네트워킹 및 콘텐츠 전송 (Networking and content delivery)</li>
+        <li>프로세스 및 문화 (Process and culture)</li>
+      </ul>
+
+      <h2>모범 사례</h2>
+
+      <h3>아키텍처 선택 (Architecture selection)</h3>
       <p>
-        The optimal compute solution for a workload varies based on application design, usage patterns, and configuration settings. Architectures can use different compute solutions for various components and enable different features to improve performance. Selecting the wrong compute solution for an architecture can lead to lower performance efficiency.
+        특정 워크로드에 대한 최적의 솔루션은 다양하며, 솔루션은 종종 여러 접근 방식을 결합합니다. 잘 설계된 시스템은 여러 솔루션을 사용하고 다양한 기능을 활성화하여 성능을 향상시킵니다. 이 섹션은 고성능 워크로드를 설계할 때 고려할 패턴과 서비스에 대한 개요를 제공합니다.
       </p>
 
-      <h3>Data management</h3>
+      <h3>컴퓨팅 및 하드웨어 (Compute and hardware)</h3>
       <p>
-        The optimal data management solution for a system varies based on the kind of data type (object, block, file, and database data) and access patterns (random and sequential). Architectural decisions about data management can greatly impact the performance of your workload.
+        워크로드에 대한 최적의 컴퓨팅 솔루션은 애플리케이션 설계, 사용 패턴, 구성 설정에 따라 다릅니다. 아키텍처는 다양한 구성 요소에 대해 다른 컴퓨팅 솔루션을 사용하고 성능을 향상시키는 다양한 기능을 활성화할 수 있습니다. 아키텍처에 대한 잘못된 컴퓨팅 솔루션 선택은 성능 효율성 저하로 이어질 수 있습니다.
       </p>
 
-      <h3>Networking and content delivery</h3>
+      <h3>데이터 관리 (Data management)</h3>
       <p>
-        The optimal networking solution for a workload varies based on latency, throughput requirements, jitter, and bandwidth. Physical constraints, such as user or on-premises resources, determine location options. These constraints can be offset with edges or content delivery networks (CDNs).
+        시스템에 대한 최적의 데이터 관리 솔루션은 데이터 유형(객체, 블록, 파일, 데이터베이스 데이터)과 접근 패턴(랜덤 및 순차)에 따라 다릅니다. 데이터 관리에 대한 아키텍처 결정은 워크로드의 성능에 큰 영향을 미칠 수 있습니다.
       </p>
 
-      <h3>Process and culture</h3>
+      <h3>네트워킹 및 콘텐츠 전송 (Networking and content delivery)</h3>
       <p>
-        When architecting workloads, there are principles and practices that you can adopt to help you better run high-performance cloud workloads. Understanding the performance of your workload is foundational to making informed decisions and improvements to your architecture.
+        워크로드에 대한 최적의 네트워킹 솔루션은 지연 시간, 처리량 요구사항, 지터, 대역폭에 따라 다릅니다. 사용자 또는 온프레미스 리소스와 같은 물리적 제약이 위치 옵션을 결정합니다. 이러한 제약은 엣지나 콘텐츠 전송 네트워크(CDN)로 상쇄할 수 있습니다.
+      </p>
+
+      <h3>프로세스 및 문화 (Process and culture)</h3>
+      <p>
+        워크로드를 설계할 때 고성능 클라우드 워크로드를 더 잘 실행하는 데 도움이 되는 원칙과 관행을 채택할 수 있습니다. 워크로드의 성능을 이해하는 것은 아키텍처를 개선하기 위한 정보에 입각한 결정을 내리는 데 기반이 됩니다.
       </p>
 
       <div className="doc-note">
-        <div className="doc-note-title">Note</div>
+        <div className="doc-note-title">참고</div>
         <p>
-          For prescriptive implementation guidance, see the{" "}
+          규범적 구현 지침은{" "}
           <a
             href="https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Performance Efficiency Pillar whitepaper
-          </a>.
+            성능 효율성 기둥 백서
+          </a>를 참조하세요.
         </p>
       </div>
 
