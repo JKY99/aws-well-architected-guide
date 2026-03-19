@@ -190,6 +190,37 @@ import AppendixCost4Page from "./pages/AppendixCost4Page";
 import AppendixCost5Page from "./pages/AppendixCost5Page";
 import AppendixCost6Page from "./pages/AppendixCost6Page";
 import AppendixCost7Page from "./pages/AppendixCost7Page";
+import AppendixCost1Bp01Page from "./pages/AppendixCost1Bp01Page";
+import AppendixCost1Bp02Page from "./pages/AppendixCost1Bp02Page";
+import AppendixCost1Bp03Page from "./pages/AppendixCost1Bp03Page";
+import AppendixCost1Bp04Page from "./pages/AppendixCost1Bp04Page";
+import AppendixCost1Bp05Page from "./pages/AppendixCost1Bp05Page";
+import AppendixCost1Bp06Page from "./pages/AppendixCost1Bp06Page";
+import AppendixCost2Bp01Page from "./pages/AppendixCost2Bp01Page";
+import AppendixCost2Bp02Page from "./pages/AppendixCost2Bp02Page";
+import AppendixCost2Bp03Page from "./pages/AppendixCost2Bp03Page";
+import AppendixCost2Bp04Page from "./pages/AppendixCost2Bp04Page";
+import AppendixCost3Bp01Page from "./pages/AppendixCost3Bp01Page";
+import AppendixCost3Bp02Page from "./pages/AppendixCost3Bp02Page";
+import AppendixCost3Bp03Page from "./pages/AppendixCost3Bp03Page";
+import AppendixCost3Bp04Page from "./pages/AppendixCost3Bp04Page";
+import AppendixCost3Bp05Page from "./pages/AppendixCost3Bp05Page";
+import AppendixCost4Bp01Page from "./pages/AppendixCost4Bp01Page";
+import AppendixCost4Bp02Page from "./pages/AppendixCost4Bp02Page";
+import AppendixCost4Bp03Page from "./pages/AppendixCost4Bp03Page";
+import AppendixCost4Bp04Page from "./pages/AppendixCost4Bp04Page";
+import AppendixCost5Bp01Page from "./pages/AppendixCost5Bp01Page";
+import AppendixCost5Bp02Page from "./pages/AppendixCost5Bp02Page";
+import AppendixCost5Bp03Page from "./pages/AppendixCost5Bp03Page";
+import AppendixCost5Bp04Page from "./pages/AppendixCost5Bp04Page";
+import AppendixCost5Bp05Page from "./pages/AppendixCost5Bp05Page";
+import AppendixCost6Bp01Page from "./pages/AppendixCost6Bp01Page";
+import AppendixCost6Bp02Page from "./pages/AppendixCost6Bp02Page";
+import AppendixCost6Bp03Page from "./pages/AppendixCost6Bp03Page";
+import AppendixCost7Bp01Page from "./pages/AppendixCost7Bp01Page";
+import AppendixCost7Bp02Page from "./pages/AppendixCost7Bp02Page";
+import AppendixCost7Bp03Page from "./pages/AppendixCost7Bp03Page";
+import AppendixCost7Bp04Page from "./pages/AppendixCost7Bp04Page";
 import AppendixSus1Page from "./pages/AppendixSus1Page";
 import AppendixSus2Page from "./pages/AppendixSus2Page";
 import AppendixSus3Page from "./pages/AppendixSus3Page";
@@ -554,6 +585,37 @@ export default function App() {
           <Route path="/appendix/cost-optimization/cost5" element={<AppendixCost5Page />} />
           <Route path="/appendix/cost-optimization/cost6" element={<AppendixCost6Page />} />
           <Route path="/appendix/cost-optimization/cost7" element={<AppendixCost7Page />} />
+          <Route path="/appendix/cost-optimization/cost1/bp01" element={<AppendixCost1Bp01Page />} />
+          <Route path="/appendix/cost-optimization/cost1/bp02" element={<AppendixCost1Bp02Page />} />
+          <Route path="/appendix/cost-optimization/cost1/bp03" element={<AppendixCost1Bp03Page />} />
+          <Route path="/appendix/cost-optimization/cost1/bp04" element={<AppendixCost1Bp04Page />} />
+          <Route path="/appendix/cost-optimization/cost1/bp05" element={<AppendixCost1Bp05Page />} />
+          <Route path="/appendix/cost-optimization/cost1/bp06" element={<AppendixCost1Bp06Page />} />
+          <Route path="/appendix/cost-optimization/cost2/bp01" element={<AppendixCost2Bp01Page />} />
+          <Route path="/appendix/cost-optimization/cost2/bp02" element={<AppendixCost2Bp02Page />} />
+          <Route path="/appendix/cost-optimization/cost2/bp03" element={<AppendixCost2Bp03Page />} />
+          <Route path="/appendix/cost-optimization/cost2/bp04" element={<AppendixCost2Bp04Page />} />
+          <Route path="/appendix/cost-optimization/cost3/bp01" element={<AppendixCost3Bp01Page />} />
+          <Route path="/appendix/cost-optimization/cost3/bp02" element={<AppendixCost3Bp02Page />} />
+          <Route path="/appendix/cost-optimization/cost3/bp03" element={<AppendixCost3Bp03Page />} />
+          <Route path="/appendix/cost-optimization/cost3/bp04" element={<AppendixCost3Bp04Page />} />
+          <Route path="/appendix/cost-optimization/cost3/bp05" element={<AppendixCost3Bp05Page />} />
+          <Route path="/appendix/cost-optimization/cost4/bp01" element={<AppendixCost4Bp01Page />} />
+          <Route path="/appendix/cost-optimization/cost4/bp02" element={<AppendixCost4Bp02Page />} />
+          <Route path="/appendix/cost-optimization/cost4/bp03" element={<AppendixCost4Bp03Page />} />
+          <Route path="/appendix/cost-optimization/cost4/bp04" element={<AppendixCost4Bp04Page />} />
+          <Route path="/appendix/cost-optimization/cost5/bp01" element={<AppendixCost5Bp01Page />} />
+          <Route path="/appendix/cost-optimization/cost5/bp02" element={<AppendixCost5Bp02Page />} />
+          <Route path="/appendix/cost-optimization/cost5/bp03" element={<AppendixCost5Bp03Page />} />
+          <Route path="/appendix/cost-optimization/cost5/bp04" element={<AppendixCost5Bp04Page />} />
+          <Route path="/appendix/cost-optimization/cost5/bp05" element={<AppendixCost5Bp05Page />} />
+          <Route path="/appendix/cost-optimization/cost6/bp01" element={<AppendixCost6Bp01Page />} />
+          <Route path="/appendix/cost-optimization/cost6/bp02" element={<AppendixCost6Bp02Page />} />
+          <Route path="/appendix/cost-optimization/cost6/bp03" element={<AppendixCost6Bp03Page />} />
+          <Route path="/appendix/cost-optimization/cost7/bp01" element={<AppendixCost7Bp01Page />} />
+          <Route path="/appendix/cost-optimization/cost7/bp02" element={<AppendixCost7Bp02Page />} />
+          <Route path="/appendix/cost-optimization/cost7/bp03" element={<AppendixCost7Bp03Page />} />
+          <Route path="/appendix/cost-optimization/cost7/bp04" element={<AppendixCost7Bp04Page />} />
           <Route path="/appendix/sustainability" element={<PlaceholderPage title="부록: 지속 가능성 질문" />} />
           <Route path="/appendix/sustainability/sus1" element={<AppendixSus1Page />} />
           <Route path="/appendix/sustainability/sus2" element={<AppendixSus2Page />} />

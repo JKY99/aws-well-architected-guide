@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
@@ -14,23 +15,23 @@ export default function AppendixCost3Page() {
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong>COST03-BP01:</strong> 서비스 선택 비용 분석<br />
+          <strong><Link to="/appendix/cost-optimization/cost3/bp01">COST03-BP01: 서비스 선택 비용 분석</Link></strong><br />
           <span>EC2 vs. Lambda, RDS vs. DynamoDB 등 서비스 선택이 비용에 미치는 영향을 분석합니다.</span>
         </li>
         <li>
-          <strong>COST03-BP02:</strong> 올바른 리소스 유형, 크기, 수량 선택<br />
+          <strong><Link to="/appendix/cost-optimization/cost3/bp02">COST03-BP02: 올바른 리소스 유형, 크기, 수량 선택</Link></strong><br />
           <span>AWS Compute Optimizer를 사용하여 실제 사용량에 기반한 최적의 인스턴스 크기를 선택합니다.</span>
         </li>
         <li>
-          <strong>COST03-BP03:</strong> 데이터 전송 비용 최소화<br />
+          <strong><Link to="/appendix/cost-optimization/cost3/bp03">COST03-BP03: 데이터 전송 비용 최소화</Link></strong><br />
           <span>리전 간, AZ 간, 인터넷 데이터 전송 비용을 이해하고 아키텍처 설계 시 고려합니다.</span>
         </li>
         <li>
-          <strong>COST03-BP04:</strong> 관리형 서비스로 총소유비용(TCO) 줄이기<br />
+          <strong><Link to="/appendix/cost-optimization/cost3/bp04">COST03-BP04: 관리형 서비스로 총소유비용(TCO) 줄이기</Link></strong><br />
           <span>자체 관리 대신 AWS 관리형 서비스를 사용하여 운영 비용을 줄입니다.</span>
         </li>
         <li>
-          <strong>COST03-BP05:</strong> 지역에 따른 비용 최적화<br />
+          <strong><Link to="/appendix/cost-optimization/cost3/bp05">COST03-BP05: 지역에 따른 비용 최적화</Link></strong><br />
           <span>동일한 서비스도 리전에 따라 가격이 다르므로, 지연 시간 및 규정 요건 내에서 비용이 낮은 리전을 활용합니다.</span>
         </li>
       </ul>
