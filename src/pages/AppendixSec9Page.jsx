@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
@@ -14,19 +15,19 @@ export default function AppendixSec9Page() {
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong>SEC09-BP01:</strong> 안전한 키 및 인증서 관리 구현<br />
+          <strong><Link to="/appendix/security/sec9/bp01">SEC09-BP01: 전송 중 데이터 암호화 구현</Link></strong><br />
           <span>AWS Certificate Manager(ACM)를 사용하여 TLS/SSL 인증서를 자동으로 발급, 갱신, 배포합니다.</span>
         </li>
         <li>
-          <strong>SEC09-BP02:</strong> 전송 중 암호화 적용<br />
+          <strong><Link to="/appendix/security/sec9/bp02">SEC09-BP02: 안전한 키 및 인증서 관리</Link></strong><br />
           <span>모든 서비스 간 통신에 TLS 1.2 이상을 사용합니다. HTTP 트래픽을 HTTPS로 자동 리다이렉트합니다.</span>
         </li>
         <li>
-          <strong>SEC09-BP03:</strong> 비인증 또는 비암호화 통신 인증<br />
+          <strong><Link to="/appendix/security/sec9/bp03">SEC09-BP03: 네트워크 통신 보안</Link></strong><br />
           <span>서비스 메시(AWS App Mesh), mTLS(상호 TLS)를 사용하여 서비스 간 통신을 인증하고 암호화합니다.</span>
         </li>
         <li>
-          <strong>SEC09-BP04:</strong> 액세스 패턴 모니터링<br />
+          <strong><Link to="/appendix/security/sec9/bp04">SEC09-BP04: 전송 데이터 인증</Link></strong><br />
           <span>VPC Flow Logs, ELB 액세스 로그를 통해 네트워크 트래픽 패턴을 모니터링하고 비정상적인 통신을 감지합니다.</span>
         </li>
       </ul>
