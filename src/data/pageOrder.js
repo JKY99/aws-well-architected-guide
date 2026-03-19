@@ -1,0 +1,20 @@
+// Ordered list for prev/next navigation
+export const pageOrder = [
+  { path: "/", title: "AWS Well-Architected Framework" },
+  { path: "/abstract-and-introduction", title: "Abstract and introduction" },
+  { path: "/pillars", title: "The pillars of the framework" },
+  { path: "/pillars/operational-excellence", title: "Operational Excellence" },
+  { path: "/pillars/security", title: "Security" },
+  { path: "/pillars/reliability", title: "Reliability" },
+  { path: "/pillars/performance-efficiency", title: "Performance Efficiency" },
+  { path: "/pillars/cost-optimization", title: "Cost Optimization" },
+  { path: "/pillars/sustainability", title: "Sustainability" },
+  { path: "/review-process", title: "The review process" },
+  { path: "/conclusion", title: "Conclusion" },
+  { path: "/contributors", title: "Contributors" },
+  { path: "/further-reading", title: "Further reading" },
+  { path: "/document-revisions", title: "Document revisions" },
+  { path: "/appendix", title: "Appendix: Questions and best practices" },
+  { path: "/notices", title: "Notices" },
+  { path: "/aws-glossary", title: "AWS Glossary" },
+];

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
+import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 import "./WelcomePage.css";
 
 export default function WelcomePage() {
   return (
     <article className="doc-content">
-      {/* Page metadata */}
       <div className="doc-meta">
         <span className="doc-meta-date">PDF — Publication date: November 6, 2024</span>
         <a
@@ -110,14 +110,7 @@ export default function WelcomePage() {
         ))}
       </div>
 
-      {/* Page navigation */}
-      <div className="doc-pagination">
-        <div />
-        <Link to="/abstract-and-introduction" className="doc-pagination-btn next">
-          <span className="doc-pagination-label">Next</span>
-          <span className="doc-pagination-title">Abstract and introduction →</span>
-        </Link>
-      </div>
+      <PageNav />
     </article>
   );
 }
