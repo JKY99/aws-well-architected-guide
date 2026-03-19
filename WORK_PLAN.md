@@ -1,7 +1,7 @@
 # AWS Well-Architected Guide — Work Plan
 
 > **Last updated:** 2026-03-20
-> **Status:** Phase B IN PROGRESS — 부록 질문 페이지 44개 생성 중
+> **Status:** Phase B 완료 — Phase C 대기 중
 > **Purpose:** Persistent work plan that survives context resets. Always read this file first when resuming.
 >
 > **재개 방법:** 아래 Phase B 체크리스트에서 미완료(`[ ]`) 항목부터 시작. 파일이 `src/pages/` 에 있으면 완료된 것.
@@ -21,6 +21,9 @@
 - [x] **Phase A 완료** — 58개 서브 페이지 (abstract/OE/Security/Reliability/Perf/Cost/Sus 전체)
 - [x] App.jsx — 58개 라우트 추가 완료
 - [x] navigation.js — 3~4단계 깊이 전체 확장 완료
+- [x] **Phase B 완료** — 44개 부록 질문 페이지 (OPS1-5, SEC1-9, REL1-9, PERF1-8, COST1-7, SUS1-6)
+- [x] App.jsx — 44개 부록 라우트 추가 완료
+- [x] navigation.js — 부록 섹션 3단계 깊이 확장 완료
 
 ### Known Bugs (fix before or during Phase A)
 - [ ] **PageNav.jsx** L8: `"← Previous"` → `"← 이전"`, L13: `"Next →"` → `"다음 →"`
