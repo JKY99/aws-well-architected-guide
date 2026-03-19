@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
@@ -14,23 +15,23 @@ export default function AppendixOps3Page() {
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong>OPS03-BP01:</strong> 탁월성 추진 임원 스폰서 확보<br />
+          <strong><Link to="/appendix/operational-excellence/ops3/bp01">OPS03-BP01: 경영진 후원 제공</Link></strong><br />
           <span>운영 우수성 이니셔티브에 대한 경영진의 지원과 후원을 확보합니다.</span>
         </li>
         <li>
-          <strong>OPS03-BP02:</strong> 팀원 발전 지원<br />
+          <strong><Link to="/appendix/operational-excellence/ops3/bp02">OPS03-BP02: 팀 구성원 권한 부여</Link></strong><br />
           <span>교육, 멘토링, 커리어 개발 기회를 제공하여 팀원들의 역량을 지속적으로 향상시킵니다.</span>
         </li>
         <li>
-          <strong>OPS03-BP03:</strong> 다양성, 형평성, 포용성 증진<br />
+          <strong><Link to="/appendix/operational-excellence/ops3/bp03">OPS03-BP03: 경험에서 학습</Link></strong><br />
           <span>다양한 배경과 관점을 가진 팀을 구성하여 더 나은 의사결정과 혁신을 이끌어냅니다.</span>
         </li>
         <li>
-          <strong>OPS03-BP04:</strong> 회사 문화에 맞는 운영 팀 구성원 채용<br />
+          <strong><Link to="/appendix/operational-excellence/ops3/bp04">OPS03-BP04: 커뮤니케이션 및 협업 촉진</Link></strong><br />
           <span>기술 역량뿐만 아니라 조직 가치와 운영 문화에 맞는 인재를 채용합니다.</span>
         </li>
         <li>
-          <strong>OPS03-BP05:</strong> 실험 문화 장려<br />
+          <strong><Link to="/appendix/operational-excellence/ops3/bp05">OPS03-BP05: 다양성과 포용 촉진</Link></strong><br />
           <span>실패를 학습 기회로 보고, 안전한 환경에서 새로운 아이디어와 접근 방식을 실험할 수 있도록 합니다.</span>
         </li>
       </ul>

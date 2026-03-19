@@ -119,6 +119,35 @@ import AppendixSus3Page from "./pages/AppendixSus3Page";
 import AppendixSus4Page from "./pages/AppendixSus4Page";
 import AppendixSus5Page from "./pages/AppendixSus5Page";
 import AppendixSus6Page from "./pages/AppendixSus6Page";
+import AppendixOps1Bp01Page from "./pages/AppendixOps1Bp01Page";
+import AppendixOps1Bp02Page from "./pages/AppendixOps1Bp02Page";
+import AppendixOps1Bp03Page from "./pages/AppendixOps1Bp03Page";
+import AppendixOps1Bp04Page from "./pages/AppendixOps1Bp04Page";
+import AppendixOps1Bp05Page from "./pages/AppendixOps1Bp05Page";
+import AppendixOps1Bp06Page from "./pages/AppendixOps1Bp06Page";
+import AppendixOps2Bp01Page from "./pages/AppendixOps2Bp01Page";
+import AppendixOps2Bp02Page from "./pages/AppendixOps2Bp02Page";
+import AppendixOps2Bp03Page from "./pages/AppendixOps2Bp03Page";
+import AppendixOps2Bp04Page from "./pages/AppendixOps2Bp04Page";
+import AppendixOps2Bp05Page from "./pages/AppendixOps2Bp05Page";
+import AppendixOps3Bp01Page from "./pages/AppendixOps3Bp01Page";
+import AppendixOps3Bp02Page from "./pages/AppendixOps3Bp02Page";
+import AppendixOps3Bp03Page from "./pages/AppendixOps3Bp03Page";
+import AppendixOps3Bp04Page from "./pages/AppendixOps3Bp04Page";
+import AppendixOps3Bp05Page from "./pages/AppendixOps3Bp05Page";
+import AppendixOps4Bp01Page from "./pages/AppendixOps4Bp01Page";
+import AppendixOps4Bp02Page from "./pages/AppendixOps4Bp02Page";
+import AppendixOps4Bp03Page from "./pages/AppendixOps4Bp03Page";
+import AppendixOps4Bp04Page from "./pages/AppendixOps4Bp04Page";
+import AppendixOps4Bp05Page from "./pages/AppendixOps4Bp05Page";
+import AppendixOps4Bp06Page from "./pages/AppendixOps4Bp06Page";
+import AppendixOps5Bp01Page from "./pages/AppendixOps5Bp01Page";
+import AppendixOps5Bp02Page from "./pages/AppendixOps5Bp02Page";
+import AppendixOps5Bp03Page from "./pages/AppendixOps5Bp03Page";
+import AppendixOps5Bp04Page from "./pages/AppendixOps5Bp04Page";
+import AppendixOps5Bp05Page from "./pages/AppendixOps5Bp05Page";
+import AppendixOps5Bp06Page from "./pages/AppendixOps5Bp06Page";
+import AppendixOps5Bp07Page from "./pages/AppendixOps5Bp07Page";
 
 export default function App() {
   return (
@@ -217,6 +246,35 @@ export default function App() {
           <Route path="/appendix/operational-excellence/ops3" element={<AppendixOps3Page />} />
           <Route path="/appendix/operational-excellence/ops4" element={<AppendixOps4Page />} />
           <Route path="/appendix/operational-excellence/ops5" element={<AppendixOps5Page />} />
+          <Route path="/appendix/operational-excellence/ops1/bp01" element={<AppendixOps1Bp01Page />} />
+          <Route path="/appendix/operational-excellence/ops1/bp02" element={<AppendixOps1Bp02Page />} />
+          <Route path="/appendix/operational-excellence/ops1/bp03" element={<AppendixOps1Bp03Page />} />
+          <Route path="/appendix/operational-excellence/ops1/bp04" element={<AppendixOps1Bp04Page />} />
+          <Route path="/appendix/operational-excellence/ops1/bp05" element={<AppendixOps1Bp05Page />} />
+          <Route path="/appendix/operational-excellence/ops1/bp06" element={<AppendixOps1Bp06Page />} />
+          <Route path="/appendix/operational-excellence/ops2/bp01" element={<AppendixOps2Bp01Page />} />
+          <Route path="/appendix/operational-excellence/ops2/bp02" element={<AppendixOps2Bp02Page />} />
+          <Route path="/appendix/operational-excellence/ops2/bp03" element={<AppendixOps2Bp03Page />} />
+          <Route path="/appendix/operational-excellence/ops2/bp04" element={<AppendixOps2Bp04Page />} />
+          <Route path="/appendix/operational-excellence/ops2/bp05" element={<AppendixOps2Bp05Page />} />
+          <Route path="/appendix/operational-excellence/ops3/bp01" element={<AppendixOps3Bp01Page />} />
+          <Route path="/appendix/operational-excellence/ops3/bp02" element={<AppendixOps3Bp02Page />} />
+          <Route path="/appendix/operational-excellence/ops3/bp03" element={<AppendixOps3Bp03Page />} />
+          <Route path="/appendix/operational-excellence/ops3/bp04" element={<AppendixOps3Bp04Page />} />
+          <Route path="/appendix/operational-excellence/ops3/bp05" element={<AppendixOps3Bp05Page />} />
+          <Route path="/appendix/operational-excellence/ops4/bp01" element={<AppendixOps4Bp01Page />} />
+          <Route path="/appendix/operational-excellence/ops4/bp02" element={<AppendixOps4Bp02Page />} />
+          <Route path="/appendix/operational-excellence/ops4/bp03" element={<AppendixOps4Bp03Page />} />
+          <Route path="/appendix/operational-excellence/ops4/bp04" element={<AppendixOps4Bp04Page />} />
+          <Route path="/appendix/operational-excellence/ops4/bp05" element={<AppendixOps4Bp05Page />} />
+          <Route path="/appendix/operational-excellence/ops4/bp06" element={<AppendixOps4Bp06Page />} />
+          <Route path="/appendix/operational-excellence/ops5/bp01" element={<AppendixOps5Bp01Page />} />
+          <Route path="/appendix/operational-excellence/ops5/bp02" element={<AppendixOps5Bp02Page />} />
+          <Route path="/appendix/operational-excellence/ops5/bp03" element={<AppendixOps5Bp03Page />} />
+          <Route path="/appendix/operational-excellence/ops5/bp04" element={<AppendixOps5Bp04Page />} />
+          <Route path="/appendix/operational-excellence/ops5/bp05" element={<AppendixOps5Bp05Page />} />
+          <Route path="/appendix/operational-excellence/ops5/bp06" element={<AppendixOps5Bp06Page />} />
+          <Route path="/appendix/operational-excellence/ops5/bp07" element={<AppendixOps5Bp07Page />} />
           <Route path="/appendix/security" element={<PlaceholderPage title="부록: 보안 질문" />} />
           <Route path="/appendix/security/sec1" element={<AppendixSec1Page />} />
           <Route path="/appendix/security/sec2" element={<AppendixSec2Page />} />
