@@ -1,0 +1,41 @@
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.pillar-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--spacing-md);
+  background: var(--color-bg);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.pillar-card:hover {
+  border-color: var(--color-link);
+  box-shadow: 0 2px 8px rgba(0, 115, 187, 0.1);
+}
+
+.pillar-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  margin-top: 0;
+}
+
+.pillar-card-title a {
+  color: var(--color-link);
+}
+
+.pillar-card-title a:hover {
+  text-decoration: underline;
+}
+
+.pillar-card-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}

@@ -1,0 +1,97 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background-color: var(--color-header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.header-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+}
+
+.header-logo-link:hover {
+  text-decoration: none;
+}
+
+.header-aws-logo {
+  width: 48px;
+  height: 28px;
+}
+
+.header-service-name {
+  color: var(--color-header-text);
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.header-service-name::before {
+  content: "/";
+  margin-right: var(--spacing-sm);
+  opacity: 0.5;
+}
+
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-item {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .header-menu-btn {
+    display: flex;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-service-name {
+    font-size: 13px;
+  }
+}

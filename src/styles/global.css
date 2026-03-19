@@ -1,0 +1,88 @@
+/* AWS Documentation Style - Global CSS */
+
+:root {
+  /* AWS Color Palette */
+  --color-bg: #ffffff;
+  --color-text: #16191f;
+  --color-text-secondary: #545b64;
+  --color-link: #0073bb;
+  --color-link-hover: #005276;
+  --color-orange: #ff9900;
+  --color-header-bg: #232f3e;
+  --color-header-text: #ffffff;
+  --color-sidebar-bg: #fafafa;
+  --color-sidebar-border: #e9ebed;
+  --color-sidebar-active: #0073bb;
+  --color-sidebar-active-bg: #f0f8ff;
+  --color-border: #d5dbdb;
+  --color-code-bg: #f2f3f3;
+  --color-breadcrumb: #545b64;
+  --color-note-bg: #f0f8ff;
+  --color-note-border: #0073bb;
+  --color-warning-bg: #fef9f0;
+  --color-warning-border: #ff9900;
+
+  /* Typography */
+  --font-family: "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+  --font-size-base: 14px;
+  --font-size-sm: 12px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --line-height-base: 1.6;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --header-height: 48px;
+  --content-max-width: 800px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
