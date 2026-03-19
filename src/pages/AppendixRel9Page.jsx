@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
@@ -34,19 +35,19 @@ export default function AppendixRel9Page() {
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong>REL09-BP01:</strong> RTO/RPO 목표 정의<br />
+          <strong><Link to="/appendix/reliability/rel9/bp01">REL09-BP01: RTO/RPO 목표 정의</Link></strong><br />
           <span>비즈니스 영향 분석을 통해 각 워크로드의 복구 목표를 정의합니다.</span>
         </li>
         <li>
-          <strong>REL09-BP02:</strong> DR 전략 사용<br />
+          <strong><Link to="/appendix/reliability/rel9/bp02">REL09-BP02: DR 전략 사용</Link></strong><br />
           <span>RTO/RPO 목표에 맞는 DR 전략을 선택하고 구현합니다.</span>
         </li>
         <li>
-          <strong>REL09-BP03:</strong> DR 테스트<br />
+          <strong><Link to="/appendix/reliability/rel9/bp03">REL09-BP03: DR 테스트</Link></strong><br />
           <span>Game Day, 카오스 엔지니어링을 통해 DR 계획을 정기적으로 테스트합니다.</span>
         </li>
         <li>
-          <strong>REL09-BP04:</strong> 자동화를 통한 복구 절차 관리<br />
+          <strong><Link to="/appendix/reliability/rel9/bp04">REL09-BP04: 자동화를 통한 복구 절차 관리</Link></strong><br />
           <span>수동 복구 절차를 자동화하여 인적 오류를 줄이고 RTO를 단축합니다.</span>
         </li>
       </ul>
