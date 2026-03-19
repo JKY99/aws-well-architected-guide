@@ -146,6 +146,43 @@ import AppendixPerf5Page from "./pages/AppendixPerf5Page";
 import AppendixPerf6Page from "./pages/AppendixPerf6Page";
 import AppendixPerf7Page from "./pages/AppendixPerf7Page";
 import AppendixPerf8Page from "./pages/AppendixPerf8Page";
+import AppendixPerf1Bp01Page from "./pages/AppendixPerf1Bp01Page";
+import AppendixPerf1Bp02Page from "./pages/AppendixPerf1Bp02Page";
+import AppendixPerf1Bp03Page from "./pages/AppendixPerf1Bp03Page";
+import AppendixPerf1Bp04Page from "./pages/AppendixPerf1Bp04Page";
+import AppendixPerf1Bp05Page from "./pages/AppendixPerf1Bp05Page";
+import AppendixPerf2Bp01Page from "./pages/AppendixPerf2Bp01Page";
+import AppendixPerf2Bp02Page from "./pages/AppendixPerf2Bp02Page";
+import AppendixPerf2Bp03Page from "./pages/AppendixPerf2Bp03Page";
+import AppendixPerf2Bp04Page from "./pages/AppendixPerf2Bp04Page";
+import AppendixPerf2Bp05Page from "./pages/AppendixPerf2Bp05Page";
+import AppendixPerf3Bp01Page from "./pages/AppendixPerf3Bp01Page";
+import AppendixPerf3Bp02Page from "./pages/AppendixPerf3Bp02Page";
+import AppendixPerf3Bp03Page from "./pages/AppendixPerf3Bp03Page";
+import AppendixPerf3Bp04Page from "./pages/AppendixPerf3Bp04Page";
+import AppendixPerf4Bp01Page from "./pages/AppendixPerf4Bp01Page";
+import AppendixPerf4Bp02Page from "./pages/AppendixPerf4Bp02Page";
+import AppendixPerf4Bp03Page from "./pages/AppendixPerf4Bp03Page";
+import AppendixPerf4Bp04Page from "./pages/AppendixPerf4Bp04Page";
+import AppendixPerf5Bp01Page from "./pages/AppendixPerf5Bp01Page";
+import AppendixPerf5Bp02Page from "./pages/AppendixPerf5Bp02Page";
+import AppendixPerf5Bp03Page from "./pages/AppendixPerf5Bp03Page";
+import AppendixPerf5Bp04Page from "./pages/AppendixPerf5Bp04Page";
+import AppendixPerf5Bp05Page from "./pages/AppendixPerf5Bp05Page";
+import AppendixPerf6Bp01Page from "./pages/AppendixPerf6Bp01Page";
+import AppendixPerf6Bp02Page from "./pages/AppendixPerf6Bp02Page";
+import AppendixPerf6Bp03Page from "./pages/AppendixPerf6Bp03Page";
+import AppendixPerf6Bp04Page from "./pages/AppendixPerf6Bp04Page";
+import AppendixPerf7Bp01Page from "./pages/AppendixPerf7Bp01Page";
+import AppendixPerf7Bp02Page from "./pages/AppendixPerf7Bp02Page";
+import AppendixPerf7Bp03Page from "./pages/AppendixPerf7Bp03Page";
+import AppendixPerf7Bp04Page from "./pages/AppendixPerf7Bp04Page";
+import AppendixPerf7Bp05Page from "./pages/AppendixPerf7Bp05Page";
+import AppendixPerf8Bp01Page from "./pages/AppendixPerf8Bp01Page";
+import AppendixPerf8Bp02Page from "./pages/AppendixPerf8Bp02Page";
+import AppendixPerf8Bp03Page from "./pages/AppendixPerf8Bp03Page";
+import AppendixPerf8Bp04Page from "./pages/AppendixPerf8Bp04Page";
+import AppendixPerf8Bp05Page from "./pages/AppendixPerf8Bp05Page";
 import AppendixCost1Page from "./pages/AppendixCost1Page";
 import AppendixCost2Page from "./pages/AppendixCost2Page";
 import AppendixCost3Page from "./pages/AppendixCost3Page";
@@ -472,6 +509,43 @@ export default function App() {
           <Route path="/appendix/performance-efficiency/perf6" element={<AppendixPerf6Page />} />
           <Route path="/appendix/performance-efficiency/perf7" element={<AppendixPerf7Page />} />
           <Route path="/appendix/performance-efficiency/perf8" element={<AppendixPerf8Page />} />
+          <Route path="/appendix/performance-efficiency/perf1/bp01" element={<AppendixPerf1Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf1/bp02" element={<AppendixPerf1Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf1/bp03" element={<AppendixPerf1Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf1/bp04" element={<AppendixPerf1Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf1/bp05" element={<AppendixPerf1Bp05Page />} />
+          <Route path="/appendix/performance-efficiency/perf2/bp01" element={<AppendixPerf2Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf2/bp02" element={<AppendixPerf2Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf2/bp03" element={<AppendixPerf2Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf2/bp04" element={<AppendixPerf2Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf2/bp05" element={<AppendixPerf2Bp05Page />} />
+          <Route path="/appendix/performance-efficiency/perf3/bp01" element={<AppendixPerf3Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf3/bp02" element={<AppendixPerf3Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf3/bp03" element={<AppendixPerf3Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf3/bp04" element={<AppendixPerf3Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf4/bp01" element={<AppendixPerf4Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf4/bp02" element={<AppendixPerf4Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf4/bp03" element={<AppendixPerf4Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf4/bp04" element={<AppendixPerf4Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf5/bp01" element={<AppendixPerf5Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf5/bp02" element={<AppendixPerf5Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf5/bp03" element={<AppendixPerf5Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf5/bp04" element={<AppendixPerf5Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf5/bp05" element={<AppendixPerf5Bp05Page />} />
+          <Route path="/appendix/performance-efficiency/perf6/bp01" element={<AppendixPerf6Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf6/bp02" element={<AppendixPerf6Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf6/bp03" element={<AppendixPerf6Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf6/bp04" element={<AppendixPerf6Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf7/bp01" element={<AppendixPerf7Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf7/bp02" element={<AppendixPerf7Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf7/bp03" element={<AppendixPerf7Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf7/bp04" element={<AppendixPerf7Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf7/bp05" element={<AppendixPerf7Bp05Page />} />
+          <Route path="/appendix/performance-efficiency/perf8/bp01" element={<AppendixPerf8Bp01Page />} />
+          <Route path="/appendix/performance-efficiency/perf8/bp02" element={<AppendixPerf8Bp02Page />} />
+          <Route path="/appendix/performance-efficiency/perf8/bp03" element={<AppendixPerf8Bp03Page />} />
+          <Route path="/appendix/performance-efficiency/perf8/bp04" element={<AppendixPerf8Bp04Page />} />
+          <Route path="/appendix/performance-efficiency/perf8/bp05" element={<AppendixPerf8Bp05Page />} />
           <Route path="/appendix/cost-optimization" element={<PlaceholderPage title="부록: 비용 최적화 질문" />} />
           <Route path="/appendix/cost-optimization/cost1" element={<AppendixCost1Page />} />
           <Route path="/appendix/cost-optimization/cost2" element={<AppendixCost2Page />} />

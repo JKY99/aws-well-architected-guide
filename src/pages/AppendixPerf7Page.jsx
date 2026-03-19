@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
@@ -14,23 +15,23 @@ export default function AppendixPerf7Page() {
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong>PERF07-BP01:</strong> 메트릭 기록<br />
+          <strong><Link to="/appendix/performance-efficiency/perf7/bp01">PERF07-BP01: 메트릭 기록</Link></strong><br />
           <span>Amazon CloudWatch를 사용하여 CPU, 메모리, 디스크 I/O, 네트워크, 애플리케이션별 메트릭을 수집합니다.</span>
         </li>
         <li>
-          <strong>PERF07-BP02:</strong> 성능 메트릭 분석<br />
+          <strong><Link to="/appendix/performance-efficiency/perf7/bp02">PERF07-BP02: 성능 메트릭 분석</Link></strong><br />
           <span>수집된 메트릭을 분석하여 성능 트렌드를 파악하고 예상치 못한 변화를 감지합니다.</span>
         </li>
         <li>
-          <strong>PERF07-BP03:</strong> 성능 문제 대응 알림 수립<br />
+          <strong><Link to="/appendix/performance-efficiency/perf7/bp03">PERF07-BP03: 성능 문제 대응 알림 수립</Link></strong><br />
           <span>성능 임계값 초과 시 자동으로 알림을 받고 경우에 따라 자동 조치가 이루어지도록 설정합니다.</span>
         </li>
         <li>
-          <strong>PERF07-BP04:</strong> AWS X-Ray를 사용한 분산 추적<br />
+          <strong><Link to="/appendix/performance-efficiency/perf7/bp04">PERF07-BP04: AWS X-Ray를 사용한 분산 추적</Link></strong><br />
           <span>AWS X-Ray를 활용하여 분산 애플리케이션의 요청 흐름을 추적하고 성능 병목을 시각화합니다.</span>
         </li>
         <li>
-          <strong>PERF07-BP05:</strong> 트레이드오프 수행<br />
+          <strong><Link to="/appendix/performance-efficiency/perf7/bp05">PERF07-BP05: 트레이드오프 수행</Link></strong><br />
           <span>성능 개선을 위한 결정이 비용, 보안, 신뢰성에 미치는 영향을 고려합니다.</span>
         </li>
       </ul>
