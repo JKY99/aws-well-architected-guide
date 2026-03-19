@@ -38,14 +38,14 @@ export default function App() {
           <Route path="/further-reading" element={<FurtherReadingPage />} />
           <Route path="/document-revisions" element={<DocumentRevisionsPage />} />
           <Route path="/appendix" element={<AppendixPage />} />
-          <Route path="/appendix/operational-excellence" element={<PlaceholderPage title="Appendix: Operational Excellence Questions" />} />
-          <Route path="/appendix/security" element={<PlaceholderPage title="Appendix: Security Questions" />} />
-          <Route path="/appendix/reliability" element={<PlaceholderPage title="Appendix: Reliability Questions" />} />
-          <Route path="/appendix/performance-efficiency" element={<PlaceholderPage title="Appendix: Performance Efficiency Questions" />} />
-          <Route path="/appendix/cost-optimization" element={<PlaceholderPage title="Appendix: Cost Optimization Questions" />} />
-          <Route path="/appendix/sustainability" element={<PlaceholderPage title="Appendix: Sustainability Questions" />} />
+          <Route path="/appendix/operational-excellence" element={<PlaceholderPage title="부록: 운영 우수성 질문" />} />
+          <Route path="/appendix/security" element={<PlaceholderPage title="부록: 보안 질문" />} />
+          <Route path="/appendix/reliability" element={<PlaceholderPage title="부록: 안정성 질문" />} />
+          <Route path="/appendix/performance-efficiency" element={<PlaceholderPage title="부록: 성능 효율성 질문" />} />
+          <Route path="/appendix/cost-optimization" element={<PlaceholderPage title="부록: 비용 최적화 질문" />} />
+          <Route path="/appendix/sustainability" element={<PlaceholderPage title="부록: 지속 가능성 질문" />} />
           <Route path="/notices" element={<NoticesPage />} />
-          <Route path="/aws-glossary" element={<PlaceholderPage title="AWS Glossary" />} />
+          <Route path="/aws-glossary" element={<PlaceholderPage title="AWS 용어집" />} />
         </Routes>
       </Layout>
     </BrowserRouter>
