@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
@@ -14,7 +15,7 @@ export default function AppendixSus1Page() {
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong>SUS01-BP01:</strong> 워크로드를 지원하는 지역 선택<br />
+          <strong><Link to="/appendix/sustainability/sus1/bp01">SUS01-BP01: 워크로드를 지원하는 지역 선택</Link></strong><br />
           <span>지연 시간, 데이터 주권, 서비스 가용성 요건을 충족하면서 탄소 집약도가 낮은 지역을 선택합니다.</span>
         </li>
       </ul>

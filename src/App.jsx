@@ -227,6 +227,32 @@ import AppendixSus3Page from "./pages/AppendixSus3Page";
 import AppendixSus4Page from "./pages/AppendixSus4Page";
 import AppendixSus5Page from "./pages/AppendixSus5Page";
 import AppendixSus6Page from "./pages/AppendixSus6Page";
+import AppendixSus1Bp01Page from "./pages/AppendixSus1Bp01Page";
+import AppendixSus2Bp01Page from "./pages/AppendixSus2Bp01Page";
+import AppendixSus2Bp02Page from "./pages/AppendixSus2Bp02Page";
+import AppendixSus2Bp03Page from "./pages/AppendixSus2Bp03Page";
+import AppendixSus2Bp04Page from "./pages/AppendixSus2Bp04Page";
+import AppendixSus2Bp05Page from "./pages/AppendixSus2Bp05Page";
+import AppendixSus3Bp01Page from "./pages/AppendixSus3Bp01Page";
+import AppendixSus3Bp02Page from "./pages/AppendixSus3Bp02Page";
+import AppendixSus3Bp03Page from "./pages/AppendixSus3Bp03Page";
+import AppendixSus3Bp04Page from "./pages/AppendixSus3Bp04Page";
+import AppendixSus3Bp05Page from "./pages/AppendixSus3Bp05Page";
+import AppendixSus4Bp01Page from "./pages/AppendixSus4Bp01Page";
+import AppendixSus4Bp02Page from "./pages/AppendixSus4Bp02Page";
+import AppendixSus4Bp03Page from "./pages/AppendixSus4Bp03Page";
+import AppendixSus4Bp04Page from "./pages/AppendixSus4Bp04Page";
+import AppendixSus4Bp05Page from "./pages/AppendixSus4Bp05Page";
+import AppendixSus5Bp01Page from "./pages/AppendixSus5Bp01Page";
+import AppendixSus5Bp02Page from "./pages/AppendixSus5Bp02Page";
+import AppendixSus5Bp03Page from "./pages/AppendixSus5Bp03Page";
+import AppendixSus5Bp04Page from "./pages/AppendixSus5Bp04Page";
+import AppendixSus5Bp05Page from "./pages/AppendixSus5Bp05Page";
+import AppendixSus6Bp01Page from "./pages/AppendixSus6Bp01Page";
+import AppendixSus6Bp02Page from "./pages/AppendixSus6Bp02Page";
+import AppendixSus6Bp03Page from "./pages/AppendixSus6Bp03Page";
+import AppendixSus6Bp04Page from "./pages/AppendixSus6Bp04Page";
+import AppendixSus6Bp05Page from "./pages/AppendixSus6Bp05Page";
 import AppendixOps1Bp01Page from "./pages/AppendixOps1Bp01Page";
 import AppendixOps1Bp02Page from "./pages/AppendixOps1Bp02Page";
 import AppendixOps1Bp03Page from "./pages/AppendixOps1Bp03Page";
@@ -623,6 +649,32 @@ export default function App() {
           <Route path="/appendix/sustainability/sus4" element={<AppendixSus4Page />} />
           <Route path="/appendix/sustainability/sus5" element={<AppendixSus5Page />} />
           <Route path="/appendix/sustainability/sus6" element={<AppendixSus6Page />} />
+          <Route path="/appendix/sustainability/sus1/bp01" element={<AppendixSus1Bp01Page />} />
+          <Route path="/appendix/sustainability/sus2/bp01" element={<AppendixSus2Bp01Page />} />
+          <Route path="/appendix/sustainability/sus2/bp02" element={<AppendixSus2Bp02Page />} />
+          <Route path="/appendix/sustainability/sus2/bp03" element={<AppendixSus2Bp03Page />} />
+          <Route path="/appendix/sustainability/sus2/bp04" element={<AppendixSus2Bp04Page />} />
+          <Route path="/appendix/sustainability/sus2/bp05" element={<AppendixSus2Bp05Page />} />
+          <Route path="/appendix/sustainability/sus3/bp01" element={<AppendixSus3Bp01Page />} />
+          <Route path="/appendix/sustainability/sus3/bp02" element={<AppendixSus3Bp02Page />} />
+          <Route path="/appendix/sustainability/sus3/bp03" element={<AppendixSus3Bp03Page />} />
+          <Route path="/appendix/sustainability/sus3/bp04" element={<AppendixSus3Bp04Page />} />
+          <Route path="/appendix/sustainability/sus3/bp05" element={<AppendixSus3Bp05Page />} />
+          <Route path="/appendix/sustainability/sus4/bp01" element={<AppendixSus4Bp01Page />} />
+          <Route path="/appendix/sustainability/sus4/bp02" element={<AppendixSus4Bp02Page />} />
+          <Route path="/appendix/sustainability/sus4/bp03" element={<AppendixSus4Bp03Page />} />
+          <Route path="/appendix/sustainability/sus4/bp04" element={<AppendixSus4Bp04Page />} />
+          <Route path="/appendix/sustainability/sus4/bp05" element={<AppendixSus4Bp05Page />} />
+          <Route path="/appendix/sustainability/sus5/bp01" element={<AppendixSus5Bp01Page />} />
+          <Route path="/appendix/sustainability/sus5/bp02" element={<AppendixSus5Bp02Page />} />
+          <Route path="/appendix/sustainability/sus5/bp03" element={<AppendixSus5Bp03Page />} />
+          <Route path="/appendix/sustainability/sus5/bp04" element={<AppendixSus5Bp04Page />} />
+          <Route path="/appendix/sustainability/sus5/bp05" element={<AppendixSus5Bp05Page />} />
+          <Route path="/appendix/sustainability/sus6/bp01" element={<AppendixSus6Bp01Page />} />
+          <Route path="/appendix/sustainability/sus6/bp02" element={<AppendixSus6Bp02Page />} />
+          <Route path="/appendix/sustainability/sus6/bp03" element={<AppendixSus6Bp03Page />} />
+          <Route path="/appendix/sustainability/sus6/bp04" element={<AppendixSus6Bp04Page />} />
+          <Route path="/appendix/sustainability/sus6/bp05" element={<AppendixSus6Bp05Page />} />
           <Route path="/notices" element={<NoticesPage />} />
           <Route path="/aws-glossary" element={<PlaceholderPage title="AWS 용어집" />} />
         </Routes>

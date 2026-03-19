@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
@@ -14,23 +15,23 @@ export default function AppendixSus4Page() {
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong>SUS04-BP01:</strong> 필요한 데이터만 저장<br />
+          <strong><Link to="/appendix/sustainability/sus4/bp01">SUS04-BP01: 필요한 데이터만 저장</Link></strong><br />
           <span>실제 필요한 데이터만 수집, 저장하여 스토리지 사용량을 최소화합니다. 불필요한 데이터를 정기 삭제합니다.</span>
         </li>
         <li>
-          <strong>SUS04-BP02:</strong> 수명 주기 정책으로 데이터 냉각<br />
+          <strong><Link to="/appendix/sustainability/sus4/bp02">SUS04-BP02: 수명 주기 정책으로 데이터 냉각</Link></strong><br />
           <span>S3 수명 주기 정책으로 오래된 데이터를 S3 Glacier 등 저전력 스토리지로 자동 이동합니다.</span>
         </li>
         <li>
-          <strong>SUS04-BP03:</strong> 불필요한 데이터 이동 최소화<br />
+          <strong><Link to="/appendix/sustainability/sus4/bp03">SUS04-BP03: 불필요한 데이터 이동 최소화</Link></strong><br />
           <span>데이터를 처리 위치 가까이 저장하고 불필요한 복제, 전송을 줄여 에너지 소비를 낮춥니다.</span>
         </li>
         <li>
-          <strong>SUS04-BP04:</strong> 압축 및 중복 제거 사용<br />
+          <strong><Link to="/appendix/sustainability/sus4/bp04">SUS04-BP04: 압축 및 중복 제거 사용</Link></strong><br />
           <span>데이터 압축과 중복 제거로 저장 데이터 양을 줄이고 스토리지 에너지 효율을 높입니다.</span>
         </li>
         <li>
-          <strong>SUS04-BP05:</strong> 가장 에너지 효율적인 스토리지 계층에 데이터 저장<br />
+          <strong><Link to="/appendix/sustainability/sus4/bp05">SUS04-BP05: 가장 에너지 효율적인 스토리지 계층에 데이터 저장</Link></strong><br />
           <span>액세스 빈도에 맞는 스토리지 계층을 사용하여 에너지 효율을 최대화합니다.</span>
         </li>
       </ul>
