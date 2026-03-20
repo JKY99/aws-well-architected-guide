@@ -34,6 +34,10 @@ export default function AppendixSus2Page() {
           <strong><Link to="/appendix/sustainability/sus2/bp05">SUS02-BP05: 완전히 활용되는 서비스를 선택하는 IaC 사용</Link></strong><br />
           <span>Infrastructure as Code로 필요한 만큼만 정확하게 프로비저닝하여 낭비를 방지합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/sustainability/sus2/bp06">SUS02-BP06: 버퍼링 또는 스로틀링으로 수요 곡선 평탄화</Link></strong><br />
+          <span>버퍼링과 스로틀링으로 수요 피크를 분산하여 필요한 프로비저닝 용량과 에너지 소비를 줄입니다.</span>
+        </li>
       </ul>
 
       <PageNav />

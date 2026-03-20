@@ -30,10 +30,6 @@ export default function AppendixSus5Page() {
           <strong><Link to="/appendix/sustainability/sus5/bp04">SUS05-BP04: 새로운 에너지 효율적인 하드웨어 빠르게 채택</Link></strong><br />
           <span>AWS가 새로운 인스턴스 세대를 출시하면 더 효율적인 하드웨어로 신속하게 마이그레이션합니다.</span>
         </li>
-        <li>
-          <strong><Link to="/appendix/sustainability/sus5/bp05">SUS05-BP05: 공유 스토리지 액세스 사용</Link></strong><br />
-          <span>EFS, FSx 등 공유 파일 시스템으로 중복 스토리지 하드웨어를 줄입니다.</span>
-        </li>
       </ul>
 
       <PageNav />
