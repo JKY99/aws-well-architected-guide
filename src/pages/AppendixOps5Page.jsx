@@ -42,6 +42,18 @@ export default function AppendixOps5Page() {
           <strong><Link to="/appendix/operational-excellence/ops5/bp07">OPS05-BP07: 팀워크 지원 관행 구현</Link></strong><br />
           <span>Infrastructure as Code와 구성 관리 도구를 사용하여 환경을 일관성 있게 유지합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/operational-excellence/ops5/bp08">OPS05-BP08: 여러 환경 사용</Link></strong><br />
+          <span>컴플라이언스 및 거버넌스 요구사항을 반영하는 여러 환경을 통해 코드를 테스트하고 프로덕션으로 프로모션합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/operational-excellence/ops5/bp09">OPS05-BP09: 빈번하고 소규모의 되돌릴 수 있는 변경 수행</Link></strong><br />
+          <span>소규모 변경을 자주 배포하여 변경의 영향 범위를 줄이고, 문제 발생 시 빠르게 롤백할 수 있도록 합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/operational-excellence/ops5/bp10">OPS05-BP10: 통합 및 배포 완전 자동화</Link></strong><br />
+          <span>코드 체크인부터 빌드, 테스트, 배포, 검증까지 전체 CI/CD 파이프라인을 자동화하여 배포 속도와 품질을 향상시킵니다.</span>
+        </li>
       </ul>
 
       <PageNav />

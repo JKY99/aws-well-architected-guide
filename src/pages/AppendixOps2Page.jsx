@@ -34,6 +34,10 @@ export default function AppendixOps2Page() {
           <strong><Link to="/appendix/operational-excellence/ops2/bp05">OPS02-BP05: 책임 식별 메커니즘 구현</Link></strong><br />
           <span>클라우드 운영에 필요한 기술 역량을 팀 내에 구축하거나 외부에서 확보합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/operational-excellence/ops2/bp06">OPS02-BP06: 팀 간 책임이 사전에 정의되거나 협의됨</Link></strong><br />
+          <span>팀 간 협업 및 지원 계약을 합의하고 문서화하여 명확한 커뮤니케이션 채널과 응답 기대치를 정의합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

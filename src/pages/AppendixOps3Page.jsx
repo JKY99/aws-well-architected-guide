@@ -34,6 +34,14 @@ export default function AppendixOps3Page() {
           <strong><Link to="/appendix/operational-excellence/ops3/bp05">OPS03-BP05: 다양성과 포용 촉진</Link></strong><br />
           <span>실패를 학습 기회로 보고, 안전한 환경에서 새로운 아이디어와 접근 방식을 실험할 수 있도록 합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/operational-excellence/ops3/bp06">OPS03-BP06: 팀 구성원의 기술 역량 유지 및 발전 장려</Link></strong><br />
+          <span>교육 투자, 인증 취득 지원, 지식 공유 프로그램을 통해 팀원들의 역량을 지속적으로 발전시킵니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/operational-excellence/ops3/bp07">OPS03-BP07: 팀에 적절한 인원 배치</Link></strong><br />
+          <span>워크로드를 지원하기 위해 충분한 기술을 갖춘 인원을 배치하고, 자동화를 통해 운영 효율을 높입니다.</span>
+        </li>
       </ul>
 
       <PageNav />

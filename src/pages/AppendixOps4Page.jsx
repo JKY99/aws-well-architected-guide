@@ -34,10 +34,6 @@ export default function AppendixOps4Page() {
           <strong><Link to="/appendix/operational-excellence/ops4/bp05">OPS04-BP05: 분산 추적 구현</Link></strong><br />
           <span>실제 사용자 경험을 시뮬레이션하는 합성 모니터링을 구현하여 문제를 사전에 감지합니다.</span>
         </li>
-        <li>
-          <strong><Link to="/appendix/operational-excellence/ops4/bp06">OPS04-BP06: 강건한 원격 분석 시스템 설계</Link></strong><br />
-          <span>개별 서비스와 구성 요소의 상태, 구성, 성능 데이터를 수집합니다.</span>
-        </li>
       </ul>
 
       <PageNav />
