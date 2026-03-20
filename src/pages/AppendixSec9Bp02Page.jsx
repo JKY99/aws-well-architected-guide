@@ -4,53 +4,53 @@ import "../components/DocContent.css";
 export default function AppendixSec9Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>SEC09-BP02 — 안전한 키 및 인증서 관리</h1>
+      <h1>SEC09-BP02 — 전송 중 암호화 강제</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <p>이 모범 사례를 따르지 않을 경우 전송 중 데이터가 도청이나 변조에 노출될 수 있습니다.</p>
       </div>
       <p>
-        TLS 인증서의 발급, 배포, 갱신, 폐기를 포함한 전체 생명 주기를 안전하게 자동화합니다.
-        인증서 만료는 서비스 중단을 초래하고, 개인 키 노출은 중간자 공격을 가능하게 합니다.
-        ACM과 Private CA를 활용하여 인증서 관리를 자동화하고 인증서 개인 키를 안전하게 보호합니다.
+        조직 정책, 규제 의무 및 표준에 따라 정의된 암호화 요구 사항을 강제합니다. VPC 외부로 민감한 데이터를 전송할 때는 암호화가 포함된 프로토콜만 사용합니다. 암호화는 신뢰할 수 없는 네트워크를 통해 데이터가 전송되는 경우에도 데이터 기밀성을 유지합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        모든 TLS 인증서는 ACM에서 관리되어 만료 전 자동으로 갱신됩니다. 인증서 개인 키는 코드나
-        파일 시스템에 저장되지 않고 ACM 또는 KMS에서 안전하게 관리됩니다. 인증서 만료 임박 시
-        자동 경보가 발송되고, 내부 PKI가 필요한 경우 ACM Private CA를 사용합니다.
-      </p>
+      <ul>
+        <li>인터넷과 리소스 간의 네트워크 트래픽을 암호화하여 데이터에 대한 비인가 접근 완화</li>
+        <li>보안 요구 사항에 따라 내부 AWS 환경 내 네트워크 트래픽 암호화</li>
+        <li>안전한 TLS 프로토콜 및 암호화 스위트를 사용한 전송 중 데이터 암호화</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>인증서 개인 키를 EC2 인스턴스 파일 시스템이나 S3 버킷에 평문으로 저장함</li>
-        <li>인증서 갱신을 수동으로 관리하여 만료로 인한 서비스 중단이 발생함</li>
-        <li>자체 서명 인증서나 내부 CA로 발급한 인증서를 공개 서비스에 사용함</li>
-        <li>와일드카드 인증서를 모든 도메인에 공유하여 단일 인증서 침해 시 전체 도메인 영향</li>
-        <li>만료된 인증서를 폐기하지 않고 방치하거나 유효성 확인 없이 신뢰함</li>
+        <li>더 이상 사용되지 않는 SSL, TLS 및 암호화 스위트 구성 요소 사용(예: SSL v3.0, 1024비트 RSA 키, RC4 암호화)</li>
+        <li>공개적으로 노출된 리소스에서 암호화되지 않은 HTTP 트래픽 허용</li>
+        <li>X.509 인증서 만료 전 모니터링 및 교체 미실시</li>
+        <li>TLS에 자체 서명 X.509 인증서 사용</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>인증서 자동 갱신으로 만료로 인한 서비스 중단 위험 제거</li>
-        <li>개인 키를 ACM에서 관리하여 키 노출 위험 최소화</li>
-        <li>내부 마이크로서비스 간 mTLS에 Private CA를 사용하여 서비스 신원 검증</li>
-        <li>인증서 중앙 관리로 대규모 환경에서도 인증서 현황 가시화 및 거버넌스 확보</li>
+        <li>중간자 공격 및 도청으로부터 전송 중 데이터 보호</li>
+        <li>GDPR, PCI-DSS 등 규제의 전송 중 데이터 암호화 요구 사항 충족</li>
+        <li>최신 TLS 버전과 강력한 암호화 스위트로 알려진 취약점 방어</li>
+        <li>관리형 서비스를 통한 자동화된 HTTP에서 HTTPS로의 리다이렉트</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Certificate Manager(ACM)를 사용하여 퍼블릭 도메인의 TLS 인증서를 무료로 발급하고, ACM이 만료 전 자동으로 갱신합니다. ACM 인증서는 ALB, CloudFront, API Gateway에 직접 배포됩니다.</li>
-        <li>ACM Private CA를 사용하여 내부 서비스, 마이크로서비스, VPN 등에 사용할 인증서를 발급하는 내부 PKI를 구축합니다.</li>
-        <li>EC2나 온프레미스 서버에서 사용하는 인증서는 ACM Private CA에서 발급하고, 개인 키 보호를 위해 AWS KMS를 활용합니다.</li>
-        <li>Amazon EventBridge와 CloudWatch Alarms를 사용하여 ACM 인증서 만료 30일, 7일 전에 보안 팀에 알림을 발송합니다.</li>
-        <li>AWS Secrets Manager를 사용하여 외부 CA에서 발급한 인증서와 개인 키를 안전하게 저장하고 자동 교체 Lambda를 구성합니다.</li>
-        <li>인증서 투명성 로그를 모니터링하여 도메인에 대한 무단 인증서 발급을 탐지합니다.</li>
+        <li>조직 정책에 따라 암호화 요구 사항을 정의하고 최신 표준과 모범 사례를 기반으로 안전한 프로토콜만 허용합니다. AWS는 2024년 2월부로 TLS 1.2 이전 버전 사용을 중단했으며, TLS 1.3 사용을 권장합니다.</li>
+        <li>Amazon CloudFront에서 HTTPS를 구성하고 보안 태세와 사용 사례에 맞는 보안 프로파일을 선택합니다. CloudFront에서 HTTP에서 HTTPS로의 자동 리다이렉트를 활성화합니다.</li>
+        <li>Application Load Balancer에 HTTPS 리스너를 생성하고, 클라이언트가 지원하는 가장 강력한 암호화 스위트를 포함하는 보안 정책을 선택합니다.</li>
+        <li>S3 버킷 정책에 aws:SecureTransport 조건을 추가하여 HTTPS를 통해서만 객체를 업로드할 수 있도록 제한합니다.</li>
+        <li>Amazon RDS 및 Amazon Redshift에서 SSL/TLS 연결을 요구하도록 구성합니다.</li>
+        <li>외부 연결에 IPsec VPN 사용을 고려하여 데이터 개인 정보 보호와 무결성을 모두 제공합니다. 공개 TLS 인증서에는 AWS Certificate Manager(ACM)를, 프라이빗 PKI 요구 사항에는 AWS Private CA를 사용합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Certificate Manager(ACM) — 퍼블릭 TLS 인증서 발급, 배포, 자동 갱신</li>
-        <li>AWS Certificate Manager Private CA — 내부 PKI 및 사설 인증서 관리</li>
-        <li>AWS Secrets Manager — 외부 인증서 및 개인 키 안전 보관</li>
-        <li>Amazon EventBridge — 인증서 만료 임박 이벤트 자동화</li>
-        <li>AWS KMS — 인증서 개인 키 보호</li>
+        <li>AWS Certificate Manager(ACM) — 공개 TLS 인증서 프로비저닝 및 관리</li>
+        <li>AWS Private Certificate Authority — 프라이빗 PKI 요구 사항 및 엔드-엔티티 X.509 인증서 발급</li>
+        <li>Amazon CloudFront — HTTPS 구성 및 HTTP에서 HTTPS로의 자동 리다이렉트</li>
+        <li>Application Load Balancer(ALB) — HTTPS 리스너 및 프로토콜 강제</li>
+        <li>AWS Virtual Private Network(VPN) — 외부 연결을 위한 IPsec VPN</li>
+        <li>AWS Direct Connect — 암호화 기능이 있는 전용 네트워크 연결</li>
+        <li>Amazon S3 — HTTPS 전용 접근을 강제하는 버킷 정책</li>
+        <li>보안 그룹 — VPC에서 안전하지 않은 HTTP 프로토콜 감사 및 차단</li>
       </ul>
       <PageNav />
     </article>

@@ -4,53 +4,52 @@ import "../components/DocContent.css";
 export default function AppendixSec9Bp01Page() {
   return (
     <article className="doc-content">
-      <h1>SEC09-BP01 — 전송 중 데이터 암호화 구현</h1>
+      <h1>SEC09-BP01 — 보안 키 및 인증서 관리 구현</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <p>이 모범 사례를 따르지 않을 경우 인증서 관리 미흡으로 인해 네트워크 통신의 기밀성과 무결성이 위협받을 수 있습니다.</p>
       </div>
       <p>
-        클라이언트와 서버 간, 서비스 간 모든 데이터 전송에 TLS/HTTPS 암호화를 적용합니다.
-        암호화되지 않은 HTTP, FTP, Telnet 등의 프로토콜 사용을 차단하고, 안전하지 않은 TLS
-        버전(TLS 1.0, 1.1)과 취약한 암호화 스위트 사용을 금지합니다.
+        TLS 인증서는 네트워크 통신을 보안하고 인터넷 및 프라이빗 네트워크 상의 웹사이트, 리소스, 워크로드의 ID를 확인하는 데 사용됩니다. 현대 워크로드는 TLS와 같은 PKI 프로토콜을 통한 암호화된 네트워크 통신을 광범위하게 사용합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        모든 외부 및 내부 트래픽이 TLS 1.2 이상으로 암호화됩니다. HTTP 요청은 자동으로 HTTPS로
-        리다이렉트되고, 클라이언트는 HSTS를 통해 항상 HTTPS를 사용합니다. 취약한 TLS 버전과
-        암호화 스위트 사용이 로드 밸런서와 API 게이트웨이 수준에서 차단됩니다.
-      </p>
+      <ul>
+        <li>PKI(공개 키 인프라)에서 인증서를 프로비저닝, 배포, 저장, 갱신하는 보안 인증서 관리 시스템</li>
+        <li>인증서 개인 키 자료의 노출 방지</li>
+        <li>주기적으로 인증서를 자동 갱신</li>
+        <li>보안 네트워크 통신을 제공하기 위해 다른 서비스와 통합</li>
+        <li>인간 ID가 키 자료에 접근할 수 없도록 보장</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>ALB 리스너를 HTTP(포트 80)만으로 구성하거나 HTTPS로 리다이렉트하지 않음</li>
-        <li>TLS 1.0, 1.1 등 구식 프로토콜이 호환성 이유로 허용된 상태</li>
-        <li>자체 서명 인증서를 사용하거나 인증서 유효성 검사를 비활성화함</li>
-        <li>내부 서비스 간 통신에 평문 HTTP를 사용하여 내부 네트워크를 신뢰함</li>
-        <li>S3에 대한 접근 시 HTTP 요청을 허용하는 버킷 정책 유지</li>
+        <li>인증서 배포 또는 갱신 프로세스 중 수동 단계 수행</li>
+        <li>프라이빗 CA 설계 시 인증 기관(CA) 계층 구조에 충분한 주의를 기울이지 않음</li>
+        <li>공개 리소스에 자체 서명 인증서 사용</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>네트워크 도청(중간자 공격, 패킷 스니핑)으로부터 전송 데이터 보호</li>
-        <li>TLS 클라이언트 인증서로 통신 양 끝단의 신원을 검증</li>
-        <li>GDPR, PCI-DSS 등 규제의 전송 중 데이터 암호화 요구 사항 충족</li>
-        <li>최신 TLS 버전과 강력한 암호화 스위트로 알려진 취약점 방어</li>
+        <li>자동화된 배포 및 갱신을 통한 인증서 관리 간소화</li>
+        <li>TLS 인증서를 사용한 전송 중 데이터 암호화 촉진</li>
+        <li>인증 기관이 수행한 인증서 작업의 보안성 및 감사 가능성 향상</li>
+        <li>CA 계층의 다른 레이어에서 관리 의무 조직화</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Certificate Manager(ACM)를 사용하여 TLS 인증서를 무료로 발급·갱신하고, ALB/CloudFront/API Gateway에 적용합니다. ACM의 자동 갱신으로 인증서 만료 위험을 제거합니다.</li>
-        <li>ALB 보안 정책을 ELBSecurityPolicy-TLS13-1-2-2021-06 이상으로 설정하여 TLS 1.2 미만 및 취약한 암호화 스위트를 차단합니다.</li>
-        <li>ALB HTTP 리스너(포트 80)에서 HTTPS(포트 443)로의 301 영구 리다이렉트를 구성하고, CloudFront에서 HTTP to HTTPS 리다이렉트를 활성화합니다.</li>
-        <li>S3 버킷 정책에 aws:SecureTransport 조건을 추가하여 HTTP를 통한 S3 접근을 거부합니다.</li>
-        <li>CloudFront 배포에 HSTS(HTTP Strict Transport Security) 헤더를 추가하여 클라이언트가 항상 HTTPS를 사용하도록 강제합니다.</li>
-        <li>AWS Config 규칙(alb-http-to-https-redirection-check, cloudfront-viewer-policy-https)으로 HTTPS 강제 적용 여부를 지속적으로 모니터링합니다.</li>
+        <li>웹 서버 및 로드 밸런서의 공개적으로 신뢰받는 인증서에는 AWS Certificate Manager(ACM)를 사용합니다. ACM은 Amazon Trust Services에서 공개 인증서를 발급하며, 현대 브라우저 및 운영 체제에서 기본적으로 신뢰됩니다.</li>
+        <li>자체 프라이빗 인증 기관 계층이 필요하거나 내보낼 수 있는 인증서가 필요한 경우 AWS Private Certificate Authority(AWS Private CA)를 사용합니다. IoT 임베디드 장치에는 AWS IoT Core를 활용합니다.</li>
+        <li>프라이빗 CA 계층을 구축할 때 각 CA 수준을 별도의 AWS 계정에 배포하여 공격 표면을 줄이고 이상 탐지를 단순화합니다. 루트 CA는 자체 별도 계정에 두고 중간 CA 인증서 발급에만 사용합니다.</li>
+        <li>API Gateway 또는 Application Load Balancer의 네이티브 mTLS 기능을 활용하여 상호 TLS 인증을 구현합니다.</li>
+        <li>인증서 작업 추적을 위해 CA 계정에서 CloudTrail 로그를 활성화하고, 로그 파일 무결성 검증을 구성합니다. 발급되거나 해지된 인증서를 나열하는 감사 보고서를 정기적으로 생성하고 검토합니다.</li>
+        <li>프라이빗 CA 배포를 위해 인증서 해지 목록(CRL)을 저장하는 S3 버킷을 구성합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Certificate Manager(ACM) — TLS 인증서 무료 발급 및 자동 갱신</li>
-        <li>AWS Application Load Balancer — TLS 종료 및 보안 정책 적용</li>
-        <li>Amazon CloudFront — HTTPS 강제 및 TLS 설정 관리</li>
-        <li>Amazon API Gateway — API 엔드포인트 TLS 암호화</li>
-        <li>AWS Config — HTTPS 강제 적용 규정 준수 평가</li>
+        <li>AWS Certificate Manager(ACM) — 공개 TLS 인증서 프로비저닝, 관리 및 배포</li>
+        <li>AWS Private Certificate Authority(AWS Private CA) — 프라이빗 CA 계층 구축 및 인증서 발급</li>
+        <li>AWS IoT Core — IoT 장치용 PKI 인증서 관리</li>
+        <li>Amazon API Gateway — mTLS 지원</li>
+        <li>Application Load Balancer — 클라이언트 인증서 지원 및 mTLS 기능</li>
+        <li>AWS CloudTrail — CA 계정의 API 호출 로깅 및 감사</li>
       </ul>
       <PageNav />
     </article>
