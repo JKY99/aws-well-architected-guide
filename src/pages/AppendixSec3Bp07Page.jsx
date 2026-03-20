@@ -6,52 +6,47 @@ export default function AppendixSec3Bp07Page() {
     <article className="doc-content">
       <h1>SEC03-BP07 — 퍼블릭 및 교차 계정 액세스 분석</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <div className="doc-note-title">위험 수준: 낮음</div>
+        <p>이 모범 사례를 따르지 않을 경우 의도치 않은 퍼블릭 또는 교차 계정 접근으로 인한 데이터 노출 위험이 있습니다.</p>
       </div>
       <p>
-        S3 버킷, IAM 역할, KMS 키, Lambda 함수 등 리소스가 의도치 않게 인터넷에 공개되거나
-        외부 AWS 계정에서 접근 가능한 상태를 지속적으로 탐지하고 수정합니다.
-        IAM Access Analyzer를 활용하여 신뢰 영역 외부에서 접근 가능한 리소스를 자동으로 식별합니다.
+        어떤 AWS 리소스가 공유되고 누구와 공유되는지 파악합니다. 공유된 리소스를 지속적으로 모니터링하고 감사하여 승인된 주체에게만 공유되는지 확인합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        의도치 않게 공개된 리소스가 실시간으로 탐지되고 자동으로 알림이 발송됩니다. 모든 퍼블릭 및
-        교차 계정 액세스는 비즈니스 요구사항에 따라 명시적으로 승인되고 문서화됩니다. 승인되지 않은
-        외부 액세스는 즉시 수정됩니다.
-      </p>
+      <ul>
+        <li>공유된 리소스와 공유 대상 파악</li>
+        <li>공유 리소스의 지속적인 모니터링 및 감사</li>
+        <li>승인된 주체에게만 리소스 공유 확인</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>개발 편의를 위해 S3 버킷이나 RDS 인스턴스를 퍼블릭으로 설정하고 프로덕션에 그대로 유지함</li>
-        <li>교차 계정 역할의 신뢰 정책에 특정 계정이 아닌 와일드카드("*")를 사용함</li>
-        <li>더 이상 사용하지 않는 파트너 계정에 대한 교차 계정 접근 권한을 제거하지 않음</li>
-        <li>리소스 기반 정책 변경 시 의도치 않은 퍼블릭 노출을 검토하지 않음</li>
-        <li>AWS Config 규칙이나 Security Hub를 통한 지속적인 모니터링 없이 수동 검토에만 의존함</li>
+        <li>공유된 리소스 목록 미유지</li>
+        <li>교차 계정 또는 퍼블릭 리소스 접근 승인 프로세스 부재</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>의도치 않은 데이터 노출로 인한 데이터 침해 위험 방지</li>
-        <li>공개된 S3 버킷이나 RDS 데이터베이스로 인한 보안 사고 예방</li>
-        <li>외부 신뢰 관계의 지속적인 가시성 확보</li>
-        <li>자동화된 탐지로 수동 검토보다 빠른 위험 식별 및 대응</li>
-        <li>규정 준수 요건(데이터 레지던시, GDPR 등) 충족 지원</li>
+        <li>필요한 리소스에만 퍼블릭 및 교차 계정 접근 축소</li>
+        <li>계정 외부에서의 모든 리소스 접근 경로 식별</li>
+        <li>잘못 구성된 리소스의 사전 탐지 및 수정</li>
+        <li>다중 계정 환경 전체의 가시성 확보</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS IAM Access Analyzer를 각 계정과 조직 수준에서 활성화하여 외부 접근 가능한 리소스(S3, IAM 역할, KMS, Lambda, SQS, SNS 등)를 자동으로 탐지합니다.</li>
-        <li>Access Analyzer 결과를 AWS Security Hub로 통합하여 중앙에서 관리하고, 높은 위험도의 결과에 대해 Amazon SNS 알림을 구성합니다.</li>
-        <li>AWS Config 규칙(s3-bucket-public-read-prohibited, s3-bucket-public-write-prohibited 등)을 활성화하여 S3 버킷의 퍼블릭 접근을 지속적으로 모니터링합니다.</li>
-        <li>S3 계정 수준 퍼블릭 액세스 차단(Block Public Access)을 모든 계정에 기본으로 활성화합니다.</li>
-        <li>교차 계정 역할의 신뢰 정책을 정기적으로 검토하여 더 이상 필요하지 않은 신뢰 관계를 제거합니다.</li>
-        <li>새로운 리소스 기반 정책 생성 시 Access Analyzer의 정책 검증 기능을 CI/CD 파이프라인에 통합합니다.</li>
+        <li>리소스 기반 정책(S3 버킷 정책 등)에서 승인된 주체만 접근하도록 확인합니다.</li>
+        <li>AWS Organizations와 함께 IAM Access Analyzer를 구성하여 포괄적인 가시성을 확보합니다.</li>
+        <li>Access Preview를 사용하여 리소스 권한 배포 전 결과를 미리 확인합니다.</li>
+        <li>AWS Config, Control Tower, Security Hub CSPM으로 탐지 제어를 구현합니다.</li>
+        <li>S3 퍼블릭 접근 구성에 AWS Config 자동 수정을 활성화합니다.</li>
+        <li>민감한 데이터 발견 및 보호에 Amazon Macie를 고려합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS IAM Access Analyzer — 외부 접근 가능 리소스 자동 탐지 및 정책 검증</li>
-        <li>AWS Config — 리소스 구성 규정 준수 지속적 모니터링</li>
-        <li>Amazon S3 Block Public Access — 계정 및 버킷 수준 퍼블릭 액세스 차단</li>
-        <li>AWS Security Hub — 보안 결과 중앙 집계 및 우선순위 관리</li>
-        <li>Amazon GuardDuty — 비정상적인 API 호출 및 무단 액세스 시도 탐지</li>
+        <li>IAM Access Analyzer — 공유 리소스 식별</li>
+        <li>AWS Config — 규정 준수 모니터링</li>
+        <li>AWS Control Tower — 제어 라이브러리</li>
+        <li>AWS Security Hub CSPM — 중앙화된 발견사항 관리</li>
+        <li>AWS Trusted Advisor — 보안 권고사항</li>
+        <li>Amazon Macie — 민감한 데이터 발견 및 보호</li>
       </ul>
       <PageNav />
     </article>

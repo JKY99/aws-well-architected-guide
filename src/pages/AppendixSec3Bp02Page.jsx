@@ -7,49 +7,51 @@ export default function AppendixSec3Bp02Page() {
       <h1>SEC03-BP02 — 최소 권한 액세스 부여</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <p>이 모범 사례를 따르지 않을 경우 과도한 권한으로 인한 자격 증명 침해 시 피해 범위가 커집니다.</p>
       </div>
       <p>
-        작업 수행에 필요한 최소한의 권한만 부여하는 최소 권한(Least Privilege) 원칙을 적용합니다.
-        과도한 권한은 자격 증명 탈취 시 피해 범위를 확대시키며, 내부자 위협 가능성도 높입니다.
+        사용자가 특정 직무를 수행하는 데 필요한 최소한의 권한만 부여합니다. 개발자와 프로덕션 환경 분리, 제한되고 통제된 프로덕션 접근, 작업 완료 후 즉각적인 접근 취소를 포함합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        모든 IAM 주체(사용자, 역할, 서비스)가 현재 수행 중인 작업에 필요한 권한만 보유합니다.
-        권한은 정기적으로 검토되고, 사용하지 않는 권한은 신속히 제거됩니다. Permission Boundary를
-        활용하여 권한 위임의 상한선을 명확히 설정합니다.
-      </p>
+      <ul>
+        <li>사용자는 특정 직무에 필요한 최소한의 권한만 보유</li>
+        <li>별도의 AWS 계정으로 개발자와 프로덕션 환경 분리</li>
+        <li>유효한 사용 사례에 대해서만 제한되고 통제된 프로덕션 접근 허용</li>
+        <li>작업 완료 후 프로덕션 접근 즉시 취소</li>
+        <li>필요 없어진 권한의 정기적 검토 및 신속한 취소</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>와일드카드(*)를 사용한 Action 또는 Resource 정의로 과도한 권한 부여</li>
-        <li>개발 편의를 위해 프로덕션 환경에 AdministratorAccess 역할 부여</li>
-        <li>권한 검토 없이 장기간 동일한 정책 유지</li>
-        <li>Permission Boundary 없이 하위 역할 생성 권한 위임</li>
-        <li>모든 S3 버킷에 동일한 광범위한 정책 적용</li>
+        <li>기본적으로 사용자에게 관리자 권한 부여</li>
+        <li>일상적인 활동에 루트 사용자 계정 사용</li>
+        <li>적절한 범위 지정 없이 과도하게 허용적인 정책 생성</li>
+        <li>권한 검토 주기가 너무 길어 권한 비대화 발생</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>자격 증명 탈취 시 피해 범위를 최소화하여 침해 영향 축소</li>
+        <li>자격 증명 침해 시 피해 범위 최소화</li>
         <li>내부자 위협 및 실수로 인한 데이터 손상 가능성 감소</li>
-        <li>규정 준수 감사 시 최소 권한 원칙 적용 근거 확보</li>
-        <li>불필요한 권한으로 인한 우발적 리소스 변경/삭제 방지</li>
+        <li>규정 준수 감사 요건 충족</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>IAM Access Analyzer의 정책 생성 기능을 활용하여 CloudTrail 로그 기반 최소 권한 정책을 자동 생성합니다.</li>
-        <li>Permission Boundary를 설정하여 역할이 위임할 수 있는 최대 권한 범위를 제한합니다.</li>
-        <li>서비스 제어 정책(SCP)을 활용하여 계정 또는 OU 수준에서 권한 상한을 설정합니다.</li>
-        <li>IAM 정책에서 Resource 필드를 특정 ARN으로 제한하고 와일드카드 사용을 최소화합니다.</li>
-        <li>Condition 절을 활용하여 특정 IP, MFA 인증, 태그 등 조건부 액세스를 구현합니다.</li>
-        <li>권한 경계(Permission Boundary)를 개발자가 생성하는 모든 역할에 자동 적용합니다.</li>
+        <li>IAM 그룹 및 역할에 할당된 최소 권한 정책을 구현합니다.</li>
+        <li>별도의 AWS 계정을 통해 개발/프로덕션 환경을 격리합니다.</li>
+        <li>CloudTrail 로그와 IAM Access Analyzer를 기반으로 정책을 수립합니다.</li>
+        <li>불필요한 권한을 감지하고 미사용 IAM 엔티티를 제거합니다.</li>
+        <li>권한 경계를 사용하여 최대 권한을 설정합니다.</li>
+        <li>ABAC(속성 기반 접근 제어)와 리소스 태그를 활용합니다.</li>
+        <li>SCP(서비스 제어 정책)를 활용하여 AWS Organizations 전체에 가드레일을 적용합니다.</li>
+        <li>역할 매트릭스를 작성하여 역할과 접근 수준을 정의합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>IAM Access Analyzer — CloudTrail 기반 최소 권한 정책 자동 생성</li>
-        <li>IAM Permission Boundaries — 위임 가능한 최대 권한 범위 설정</li>
-        <li>AWS Organizations SCPs — 조직/계정 수준 권한 제어</li>
-        <li>AWS CloudTrail — API 사용 현황 분석</li>
-        <li>AWS Config — IAM 정책 컴플라이언스 모니터링</li>
+        <li>AWS IAM — ID 및 접근 관리</li>
+        <li>IAM Access Analyzer — 정책 생성 및 미사용 접근 탐지</li>
+        <li>AWS CloudTrail — API 사용 현황 검토</li>
+        <li>AWS Organizations — 서비스 제어 정책</li>
+        <li>AWS Control Tower — 관리형 가드레일</li>
+        <li>AWS Config — 권한 감사</li>
       </ul>
       <PageNav />
     </article>
