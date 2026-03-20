@@ -4,48 +4,54 @@ import "../components/DocContent.css";
 export default function AppendixRel9Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>REL09-BP02 — 안전한 백업 위치 사용</h1>
+      <h1>REL09-BP02 — 백업 보안 및 암호화</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 원본 데이터와 백업이 동일한 장애 도메인에 있어 재해 발생 시 둘 다 손실될 수 있습니다.</p>
+        <p>이 모범 사례를 수립하지 않으면 높은 수준의 위험이 노출됩니다.</p>
       </div>
-      <p>백업 데이터는 원본 데이터와 지리적으로 분리된 위치에 저장해야 합니다. 교차 리전 및 교차 계정 백업 복사를 통해 단일 리전 장애, 계정 침해, 랜섬웨어 공격으로부터 백업을 보호합니다.</p>
+      <p>
+        인증 및 권한 부여를 사용하여 백업에 대한 접근을 제어하고 감지합니다.
+        암호화를 사용하여 백업 데이터의 무결성이 손상되는 것을 방지하고 감지합니다.
+      </p>
       <h2>원하는 결과</h2>
-      <p>모든 중요 데이터 백업이 최소 하나의 지리적으로 분리된 위치(다른 리전 또는 다른 계정)에 복사됩니다. 원본 계정이 침해되거나 리전 전체가 장애를 겪더라도 백업에서 데이터를 복구할 수 있습니다.</p>
+      <p>
+        인증 및 권한 부여를 사용하여 백업에 대한 접근을 제어하고 감지합니다.
+        암호화를 사용하여 데이터가 노출되더라도 백업 데이터의 무결성이 손상되지 않도록 방지합니다.
+      </p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>백업과 원본 데이터를 동일한 AWS 계정과 리전에 저장하여 계정 침해 시 모두 손실</li>
-        <li>S3 백업 버킷에 삭제 방지 정책 없이 운영하여 랜섬웨어 공격 시 백업도 암호화/삭제됨</li>
-        <li>교차 리전 복제 설정 없이 단일 리전 장애 시나리오 미대비</li>
-        <li>백업 저장소에 과도한 쓰기 권한 부여로 내부자 위협 노출</li>
-        <li>교차 계정 백업 없이 운영 계정 자격증명 탈취 시 백업까지 손실</li>
+        <li>백업 및 복원 자동화에 대해 데이터와 동일한 접근 권한 보유</li>
+        <li>백업을 암호화하지 않음</li>
+        <li>삭제 또는 변조에 대한 보호를 위한 불변성 구현 없음</li>
+        <li>프로덕션 및 백업 시스템에 동일한 보안 도메인 사용</li>
+        <li>정기적인 테스트를 통한 백업 무결성 검증 없음</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>지역 재해(자연재해, AZ 전체 장애) 발생 시에도 백업에서 복구 가능</li>
-        <li>랜섬웨어 공격 시 원본은 암호화되어도 격리된 백업 계정의 데이터는 안전하게 보존</li>
-        <li>계정 침해 시에도 별도 계정의 백업으로 데이터 복구 가능</li>
-        <li>규정 준수 요구사항(오프사이트 백업, 데이터 보존 정책) 충족</li>
-        <li>S3 Object Lock으로 지정된 기간 동안 백업 삭제 불가 상태 보장</li>
+        <li>변조 방지: 백업 보안으로 변조 방지, 암호화로 데이터 노출 시 무단 접근 방지</li>
+        <li>사이버 위협 보호: 랜섬웨어 및 백업 인프라를 표적으로 하는 위협에 대한 강화된 보호</li>
+        <li>빠른 복구: 검증된 복구 프로세스를 통한 사이버 인시던트 후 복구 시간 단축</li>
+        <li>비즈니스 연속성: 보안 인시던트 중 향상된 대응 능력</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Backup의 교차 리전 복사 기능을 활성화하여 모든 백업 볼트를 보조 리전에 자동 복사</li>
-        <li>전용 백업 계정을 AWS Organizations에 생성하고 AWS Backup 교차 계정 기능으로 백업 복사</li>
-        <li>Amazon S3 교차 리전 복제(CRR)를 활성화하여 S3 기반 백업을 다른 리전에 자동 복제</li>
-        <li>백업 버킷에 S3 Object Lock을 WORM(Write Once Read Many) 모드로 설정하여 랜섬웨어 대응</li>
-        <li>백업 계정에는 최소 권한 원칙 적용 — 백업 쓰기는 허용하지만 삭제는 Vault Lock으로 방지</li>
-        <li>AWS Backup Vault Lock을 적용하여 백업 보존 정책을 변경 불가능하게 잠금</li>
-        <li>교차 계정 백업의 KMS 키를 별도로 관리하여 운영 계정 침해 시에도 백업 복호화 가능</li>
+        <li>암호화 방법: Amazon S3 서버 측 암호화 또는 AWS KMS를 사용한 클라이언트 측 암호화 사용, Amazon RDS 암호화된 데이터베이스는 자동으로 백업 암호화, DynamoDB 백업은 항상 암호화됨</li>
+        <li>사이버 복원력 제어: AWS Backup Vault Lock 또는 Amazon S3 Object Lock을 사용한 불변성, AWS Backup 논리적 에어갭 볼트를 사용한 논리적 격리, AWS Backup 복원 테스트를 통한 무결성 검증, 중요 작업을 위한 AWS Backup 다자 승인</li>
+        <li>데이터 스토어에서 암호화 활성화: RDS, EBS, DynamoDB, EFS, S3</li>
+        <li>백업 접근을 위한 최소 권한 IAM 권한 구현</li>
+        <li>중요한 백업에 대한 불변성 구성</li>
+        <li>백업 환경에 대한 논리적 분리 생성</li>
+        <li>백업 검증/복원 테스트 구현</li>
+        <li>민감한 복구 작업을 위한 다자 승인 구성</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Backup 교차 계정/리전 — 격리된 위치로 백업 자동 복사</li>
-        <li>AWS Backup Vault Lock — 백업 삭제 방지 및 불변성 보장</li>
-        <li>Amazon S3 교차 리전 복제 — S3 객체 다른 리전 자동 복제</li>
-        <li>Amazon S3 Object Lock — WORM 스토리지로 랜섬웨어 대응</li>
-        <li>AWS Organizations — 백업 전용 계정 관리 및 정책 적용</li>
-        <li>AWS KMS — 교차 계정 백업 암호화 키 관리</li>
+        <li>AWS Identity and Access Management (IAM)</li>
+        <li>AWS Key Management Service (AWS KMS)</li>
+        <li>Amazon S3 (Object Lock 및 복제)</li>
+        <li>Amazon RDS, Amazon DynamoDB, Amazon EBS, Amazon EFS</li>
+        <li>AWS Elastic Disaster Recovery</li>
+        <li>AWS Backup (Vault Lock, 복원 테스트, 다자 승인)</li>
       </ul>
       <PageNav />
     </article>
