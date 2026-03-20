@@ -4,53 +4,54 @@ import "../components/DocContent.css";
 export default function AppendixSec8Bp03Page() {
   return (
     <article className="doc-content">
-      <h1>SEC08-BP03 — 저장 데이터 액세스 제어</h1>
+      <h1>SEC08-BP03 — 저장 데이터 보호 자동화</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 잘못된 구성이 탐지되지 않아 데이터가 비인가 접근에 노출될 수 있습니다.</p>
       </div>
       <p>
-        저장 데이터에 대한 접근을 최소 권한 원칙에 따라 엄격하게 제어합니다. S3 버킷, 데이터베이스,
-        파일 시스템 등 모든 데이터 저장소에 대해 IAM 정책, 리소스 기반 정책, VPC 엔드포인트를
-        조합하여 세분화된 접근 제어를 구현합니다.
+        자동화된 도구를 사용하여 저장 데이터 보호를 지속적으로 모니터링하고 잘못된 구성을 탐지 및 수정합니다. 인프라 코드(IaC)로 암호화 요구 사항을 적용하고, AWS 서비스를 활용하여 데이터 보호 상태를 지속적으로 관리합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        모든 데이터 저장소는 명시적 허용 없이 접근이 차단되고, 사용자와 서비스는 필요한 최소한의
-        데이터에만 접근합니다. 퍼블릭 인터넷을 통한 데이터 접근이 차단되고, 데이터 저장소 접근은
-        VPC 내부 또는 VPC 엔드포인트를 통해서만 이루어집니다.
-      </p>
+      <ul>
+        <li>IaC 템플릿을 통한 암호화 구성의 일관된 배포</li>
+        <li>잘못된 구성을 자동으로 탐지하고 수정하는 시스템</li>
+        <li>데이터 보호 상태에 대한 지속적인 모니터링 및 가시성</li>
+        <li>데이터 손실 또는 손상 시 복구 능력 보장</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>S3 버킷 정책에서 Principal을 "*"(전체 공개)로 설정하여 인터넷에 데이터 노출</li>
-        <li>IAM 역할에 S3 전체 버킷 접근 권한(s3:*)을 부여하여 불필요한 버킷까지 접근 가능</li>
-        <li>데이터베이스에 인터넷 경유 접근을 허용하여 무차별 대입 공격에 노출</li>
-        <li>VPC 엔드포인트 없이 인터넷 게이트웨이를 통해 S3에 접근하여 트래픽이 공개 네트워크를 경유</li>
-        <li>교차 계정 접근에 대한 명시적 제어 없이 와일드카드 허용 정책 사용</li>
+        <li>암호화 구성을 수동으로 관리하여 일관성 결여 및 오류 발생</li>
+        <li>잘못된 구성 탐지를 위한 자동화된 모니터링 부재</li>
+        <li>데이터 보호 상태 변경에 대한 알림 미구성</li>
+        <li>백업 및 복구 절차를 정기적으로 테스트하지 않음</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>최소 권한 적용으로 자격 증명 침해 시 데이터 접근 범위 제한</li>
-        <li>VPC 엔드포인트를 통해 AWS 내부 네트워크에서만 데이터 접근하여 도청 위험 감소</li>
-        <li>퍼블릭 액세스 차단으로 설정 오류로 인한 데이터 공개 노출 방지</li>
-        <li>세분화된 접근 제어로 데이터 거버넌스 및 규제 준수 지원</li>
+        <li>일관된 암호화 구성 배포로 인적 오류 감소</li>
+        <li>잘못된 구성의 신속한 탐지 및 수정</li>
+        <li>데이터 보호 상태에 대한 지속적인 가시성 확보</li>
+        <li>데이터 손실 사고 발생 시 신속한 복구 가능</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>모든 S3 버킷에 퍼블릭 액세스 차단(Block Public Access)을 활성화하고, S3 계정 수준에서도 동일하게 적용합니다.</li>
-        <li>S3 버킷 정책에 aws:SourceVpc 또는 aws:SourceVpce 조건을 사용하여 특정 VPC 또는 VPC 엔드포인트에서만 접근을 허용합니다.</li>
-        <li>VPC S3 게이트웨이 엔드포인트를 생성하고, 엔드포인트 정책으로 특정 버킷만 접근 가능하도록 제한합니다.</li>
-        <li>Amazon RDS는 프라이빗 서브넷에 배치하고, 보안 그룹으로 애플리케이션 서버에서만 데이터베이스 포트 접근을 허용합니다.</li>
-        <li>IAM 역할의 S3 접근 권한을 특정 버킷 ARN과 필요한 작업(s3:GetObject 등)으로만 제한합니다.</li>
-        <li>AWS Access Analyzer를 사용하여 외부에서 접근 가능한 S3 버킷, KMS 키, IAM 역할 등을 자동으로 탐지합니다.</li>
+        <li>AWS CloudFormation 또는 Terraform과 같은 IaC 도구를 사용하여 암호화 구성을 코드로 정의하고, CloudFormation Guard를 사용하여 암호화 요구 사항을 정책으로 적용합니다.</li>
+        <li>AWS Config 규칙을 사용하여 암호화 설정을 지속적으로 모니터링하고, 비준수 리소스에 대해 자동 수정 조치를 구성합니다(예: encrypted-volumes, rds-storage-encrypted, s3-bucket-server-side-encryption-enabled).</li>
+        <li>IAM Access Analyzer를 사용하여 저장소 리소스에 대한 과도한 접근 권한을 검토하고 수정합니다.</li>
+        <li>Amazon GuardDuty를 활성화하여 EBS 볼륨, S3 버킷, RDS 데이터베이스에 대한 비정상적인 접근 및 잠재적 데이터 침해를 탐지합니다.</li>
+        <li>Amazon Macie를 활성화하여 S3 버킷의 민감 데이터를 지속적으로 탐지하고 암호화 상태를 모니터링합니다.</li>
+        <li>AWS Backup을 사용하여 암호화된 백업을 자동화하고, 정기적으로 복구 절차를 테스트합니다. AWS Elastic Disaster Recovery를 활용하여 복구 목표(RTO/RPO)를 충족시킵니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon S3 퍼블릭 액세스 차단 — 퍼블릭 공개 방지</li>
-        <li>VPC 게이트웨이/인터페이스 엔드포인트 — 인터넷 경유 없는 AWS 서비스 접근</li>
-        <li>AWS IAM — 최소 권한 접근 정책 관리</li>
-        <li>AWS Access Analyzer — 외부 접근 가능 리소스 자동 탐지</li>
-        <li>Amazon VPC Security Groups — 데이터베이스 네트워크 접근 제어</li>
+        <li>AWS CloudFormation — IaC를 통한 암호화 구성 자동화</li>
+        <li>CloudFormation Guard — 암호화 정책 적용을 위한 정책-코드 프레임워크</li>
+        <li>AWS Config — 암호화 설정 지속적 모니터링 및 자동 수정</li>
+        <li>IAM Access Analyzer — 저장소 리소스 접근 권한 분석</li>
+        <li>Amazon GuardDuty — EBS, S3, RDS에 대한 위협 탐지</li>
+        <li>Amazon Macie — S3의 민감 데이터 자동 탐지 및 모니터링</li>
+        <li>AWS Backup — 암호화된 중앙 집중식 백업 자동화</li>
+        <li>AWS Elastic Disaster Recovery — 자동화된 재해 복구</li>
       </ul>
       <PageNav />
     </article>

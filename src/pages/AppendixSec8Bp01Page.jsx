@@ -4,53 +4,54 @@ import "../components/DocContent.css";
 export default function AppendixSec8Bp01Page() {
   return (
     <article className="doc-content">
-      <h1>SEC08-BP01 — 저장 데이터 암호화 구현</h1>
+      <h1>SEC08-BP01 — 보안 키 관리 구현</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <p>이 모범 사례를 따르지 않을 경우 암호화 키 노출 또는 남용으로 모든 암호화된 데이터가 위험에 처할 수 있습니다.</p>
       </div>
       <p>
-        S3, EBS, RDS, DynamoDB, EFS 등 모든 저장 매체의 데이터에 암호화를 적용합니다.
-        암호화는 스토리지 매체의 물리적 도난이나 무단 접근 시에도 데이터를 보호하는 마지막
-        방어선으로, 특히 규제 대상 데이터(개인정보, 금융 정보)에는 반드시 적용해야 합니다.
+        확장 가능하고 반복 가능하며 자동화된 키 관리 메커니즘을 구현합니다. 키 자료에 대한 최소 권한 접근을 강제하고, 키 가용성, 기밀성 및 무결성 간의 올바른 균형을 제공합니다. 키 접근을 모니터링하고 자동화된 프로세스를 사용하여 키 자료를 교체합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        AWS 계정 내 모든 데이터 저장소에 암호화가 기본으로 활성화됩니다. 민감 데이터에는
-        고객 관리형 KMS 키(CMK)가 사용되고, 키 접근은 IAM 정책으로 엄격하게 통제됩니다.
-        새로운 데이터 저장소 생성 시 암호화가 의무화되어 미암호화 리소스가 생성되지 않습니다.
-      </p>
+      <ul>
+        <li>확장 가능하고 반복 가능하며 자동화된 키 관리 메커니즘</li>
+        <li>키 자료에 대한 최소 권한 접근 강제</li>
+        <li>키 가용성, 기밀성 및 무결성 간의 올바른 균형 제공</li>
+        <li>키 접근 모니터링</li>
+        <li>자동화된 프로세스를 사용하여 키 자료 교체</li>
+        <li>인간 운영자가 키 자료에 접근하지 못하도록 방지</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>S3 버킷 또는 EBS 볼륨 생성 시 암호화를 기본으로 활성화하지 않음</li>
-        <li>AWS 관리형 키(aws/s3 등)를 사용하여 키 접근 제어나 감사가 어려운 상황</li>
-        <li>RDS 인스턴스 생성 후 암호화를 활성화하려 했으나 기존 인스턴스 재생성 필요성을 인지하지 못함</li>
-        <li>백업 스냅샷에 원본과 동일한 암호화를 적용하지 않아 암호화되지 않은 복사본 존재</li>
-        <li>데이터 이동(ETL, 복사) 시 목적지 저장소의 암호화를 확인하지 않음</li>
+        <li>암호화되지 않은 키 자료에 인간이 접근</li>
+        <li>맞춤형 암호화 알고리즘 생성</li>
+        <li>키 자료 접근에 대한 과도하게 광범위한 권한</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>스토리지 매체 도난 또는 물리적 접근 시 데이터 노출 방지</li>
-        <li>클라우드 서비스 운영자(AWS 직원)의 데이터 접근으로부터 보호(CMK 사용 시)</li>
-        <li>GDPR, HIPAA, PCI-DSS 등 규제의 저장 데이터 암호화 요구 사항 충족</li>
-        <li>AWS KMS와의 통합으로 암호화 키 접근 감사 로그 자동 생성</li>
+        <li>비인가 접근으로부터 콘텐츠 보호</li>
+        <li>데이터 암호화에 대한 규제 요구 사항 충족에 도움</li>
+        <li>규정 준수 규정에 맞는 기술적 메커니즘 제공</li>
+        <li>보안 메커니즘을 통한 키 자료 보호</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Organizations SCP를 사용하여 암호화되지 않은 S3 버킷, EBS 볼륨, RDS 인스턴스 생성을 조직 전체에서 차단합니다.</li>
-        <li>S3 버킷의 기본 암호화를 SSE-KMS로 설정하고, aws:SecureTransport 조건으로 HTTP 요청을 거부합니다.</li>
-        <li>EBS 볼륨은 계정 수준에서 기본 암호화를 활성화하여 새로 생성되는 모든 볼륨에 자동으로 암호화가 적용되도록 합니다.</li>
-        <li>RDS 인스턴스는 생성 시 암호화를 활성화하고, 자동 백업 및 스냅샷에도 동일한 KMS 키로 암호화합니다.</li>
-        <li>DynamoDB 테이블은 AWS 관리형 키 대신 고객 관리형 KMS 키(CMK)를 사용하여 키 접근 제어와 감사를 강화합니다.</li>
-        <li>AWS Config 규칙(encrypted-volumes, rds-storage-encrypted, s3-bucket-server-side-encryption-enabled)으로 미암호화 리소스를 지속적으로 감지합니다.</li>
+        <li>AWS 소유/관리 키(사용 편의성)와 고객 관리형 키(기본 키 스토어 또는 맞춤형 키 스토어 — CloudHSM, 외부 키 스토어) 중 적절한 키 관리 옵션을 결정합니다.</li>
+        <li>AWS KMS와의 서비스 통합 방법을 검토합니다(예: EC2 EBS 볼륨, 스냅샷 암호화 방법).</li>
+        <li>AWS KMS를 구현하여 키를 생성하고 관리하며 접근 제어 모범 사례를 검토합니다.</li>
+        <li>클라이언트 측 암호화 요구 사항에 AWS Encryption SDK와 AWS KMS 통합 사용을 고려합니다.</li>
+        <li>IAM Access Analyzer를 활성화하여 과도하게 광범위한 KMS 키 정책을 자동으로 검토하고 공개 접근을 방지하기 위한 맞춤형 정책 검사를 사용합니다.</li>
+        <li>Security Hub CSPM을 활성화하여 잘못 구성된 키 정책, 삭제 예정 키 또는 자동 교체 없는 키에 대한 알림을 받습니다.</li>
+        <li>AWS KMS API 호출에 대한 CloudTrail 로깅을 구성합니다. 로그 볼륨 관리를 위해 KMS 로깅을 별도의 트레일로 분리하는 것을 고려합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS KMS — 암호화 키 생성, 관리, 감사</li>
-        <li>Amazon S3 SSE-KMS — S3 서버 측 암호화</li>
-        <li>Amazon EBS 기본 암호화 — 계정 수준 EBS 자동 암호화</li>
-        <li>Amazon RDS 암호화 — 데이터베이스 저장 데이터 암호화</li>
-        <li>AWS Config — 미암호화 리소스 규정 준수 평가</li>
+        <li>AWS Key Management Service(AWS KMS) — 키 관리를 위한 기본 서비스</li>
+        <li>AWS Encryption SDK — 클라이언트 측 암호화 기본 요소</li>
+        <li>AWS CloudHSM — 맞춤형 키 스토어 옵션</li>
+        <li>IAM Access Analyzer — 정책 검토 및 검증</li>
+        <li>AWS Security Hub CSPM — 보안 태세 관리 모니터링</li>
+        <li>AWS CloudTrail — API 호출 로깅 및 모니터링</li>
       </ul>
       <PageNav />
     </article>
