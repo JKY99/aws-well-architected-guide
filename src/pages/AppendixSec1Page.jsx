@@ -38,6 +38,14 @@ export default function AppendixSec1Page() {
           <strong><Link to="/appendix/security/sec1/bp06">SEC01-BP06: 표준 보안 제어 배포 자동화</Link></strong><br />
           <span>규제 요건, 산업 표준, 내부 정책을 바탕으로 보안 요건을 정의하고 준수 여부를 검증합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/security/sec1/bp07">SEC01-BP07: 위협 모델을 사용하여 위협을 식별하고 완화 우선순위 지정</Link></strong><br />
+          <span>체계적인 위협 모델링을 통해 잠재적 위협을 식별하고 완화 조치의 우선순위를 결정합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/security/sec1/bp08">SEC01-BP08: 새로운 보안 서비스 및 기능을 정기적으로 평가하고 구현</Link></strong><br />
+          <span>AWS의 새로운 보안 서비스와 기능을 지속적으로 평가하여 보안 태세를 강화합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

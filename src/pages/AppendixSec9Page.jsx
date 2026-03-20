@@ -23,12 +23,8 @@ export default function AppendixSec9Page() {
           <span>모든 서비스 간 통신에 TLS 1.2 이상을 사용합니다. HTTP 트래픽을 HTTPS로 자동 리다이렉트합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec9/bp03">SEC09-BP03: 네트워크 통신 보안</Link></strong><br />
+          <strong><Link to="/appendix/security/sec9/bp03">SEC09-BP03: 네트워크 통신 인증</Link></strong><br />
           <span>서비스 메시(AWS App Mesh), mTLS(상호 TLS)를 사용하여 서비스 간 통신을 인증하고 암호화합니다.</span>
-        </li>
-        <li>
-          <strong><Link to="/appendix/security/sec9/bp04">SEC09-BP04: 전송 데이터 인증</Link></strong><br />
-          <span>VPC Flow Logs, ELB 액세스 로그를 통해 네트워크 트래픽 패턴을 모니터링하고 비정상적인 통신을 감지합니다.</span>
         </li>
       </ul>
 

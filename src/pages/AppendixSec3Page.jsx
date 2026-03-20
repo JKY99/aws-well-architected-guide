@@ -34,6 +34,22 @@ export default function AppendixSec3Page() {
           <strong><Link to="/appendix/security/sec3/bp05">SEC03-BP05: 조직 권한 가드레일 정의</Link></strong><br />
           <span>AWS Organizations SCPs를 사용하여 조직 전체에 적용되는 권한 경계와 제어를 정의합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/security/sec3/bp06">SEC03-BP06: 수명 주기에 따른 액세스 관리</Link></strong><br />
+          <span>직원의 입사, 역할 변경, 퇴사 등 수명 주기에 따라 액세스를 자동으로 관리합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/security/sec3/bp07">SEC03-BP07: 퍼블릭 및 교차 계정 액세스 분석</Link></strong><br />
+          <span>IAM Access Analyzer를 사용하여 외부에 노출된 리소스와 교차 계정 액세스를 지속적으로 식별합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/security/sec3/bp08">SEC03-BP08: 조직 내 리소스 안전하게 공유</Link></strong><br />
+          <span>AWS Resource Access Manager(RAM)를 사용하여 조직 내에서 리소스를 안전하게 공유합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/security/sec3/bp09">SEC03-BP09: 제3자와 리소스 안전하게 공유</Link></strong><br />
+          <span>외부 파트너 및 제3자에게 리소스를 공유할 때 최소 권한 원칙과 명시적 신뢰 관계를 적용합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

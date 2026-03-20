@@ -27,12 +27,8 @@ export default function AppendixSec8Page() {
           <span>AWS KMS를 사용하여 암호화 키를 중앙에서 관리하고 키 사용 감사 로그를 유지합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec8/bp04">SEC08-BP04: 데이터 무결성 보호</Link></strong><br />
-          <span>데이터 민감도에 따라 분류하고, 분류 수준에 맞는 보호 제어를 적용합니다.</span>
-        </li>
-        <li>
-          <strong><Link to="/appendix/security/sec8/bp05">SEC08-BP05: 데이터 감사 추적 유지</Link></strong><br />
-          <span>Amazon Macie를 사용하여 S3에 저장된 민감한 데이터(PII, 신용카드 번호 등)를 자동으로 발견하고 보호합니다.</span>
+          <strong><Link to="/appendix/security/sec8/bp04">SEC08-BP04: 액세스 제어 강화</Link></strong><br />
+          <span>데이터 민감도에 따라 분류하고, IAM 정책과 리소스 기반 정책으로 액세스를 엄격히 제어합니다.</span>
         </li>
       </ul>
 
