@@ -5,38 +5,39 @@ import "../components/DocContent.css";
 export default function AppendixCost3Page() {
   return (
     <article className="doc-content">
-      <h1>COST 3 — 비용 효율적인 리소스를 어떻게 선택합니까?</h1>
+      <h1>COST 3 — 비용 및 사용량을 어떻게 모니터링합니까?</h1>
 
       <p>
-        워크로드에 적합한 서비스, 리소스, 구성을 선택하여
-        과도한 비용 없이 성능 요구사항을 충족합니다.
+        워크로드에 대한 상세한 가시성을 통해 팀이 비용 및 사용량에 대한 조치를 취할 수 있도록
+        합니다. 비용 최적화는 비용 및 사용량의 세부적인 파악, 미래 지출과 사용량 예측 능력,
+        비용과 사용량을 조직 목표에 맞추는 충분한 메커니즘 구현으로부터 시작됩니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost3/bp01">COST03-BP01: 서비스 선택 비용 분석</Link></strong><br />
-          <span>EC2 vs. Lambda, RDS vs. DynamoDB 등 서비스 선택이 비용에 미치는 영향을 분석합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost3/bp01">COST03-BP01: 상세 정보 소스 구성</Link></strong><br />
+          <span>향상된 분석과 투명성을 위한 비용 관리 및 보고 도구를 설정합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost3/bp02">COST03-BP02: 올바른 리소스 유형, 크기, 수량 선택</Link></strong><br />
-          <span>AWS Compute Optimizer를 사용하여 실제 사용량에 기반한 최적의 인스턴스 크기를 선택합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost3/bp02">COST03-BP02: 비용 및 사용량에 조직 정보 추가</Link></strong><br />
+          <span>비용 데이터에 조직 정보를 추가하여 정확한 비용 귀속을 가능하게 합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost3/bp03">COST03-BP03: 데이터 전송 비용 최소화</Link></strong><br />
-          <span>리전 간, AZ 간, 인터넷 데이터 전송 비용을 이해하고 아키텍처 설계 시 고려합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost3/bp03">COST03-BP03: 비용 귀속 범주 식별</Link></strong><br />
+          <span>비용 귀속을 위한 범주를 정의하여 조직 구조와 연계합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost3/bp04">COST03-BP04: 관리형 서비스로 총소유비용(TCO) 줄이기</Link></strong><br />
-          <span>자체 관리 대신 AWS 관리형 서비스를 사용하여 운영 비용을 줄입니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost3/bp04">COST03-BP04: 조직 지표 수립</Link></strong><br />
+          <span>비용 및 사용량을 비즈니스 성과와 연계하는 조직 수준의 지표를 수립합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost3/bp05">COST03-BP05: 지역에 따른 비용 최적화</Link></strong><br />
-          <span>동일한 서비스도 리전에 따라 가격이 다르므로, 지연 시간 및 규정 요건 내에서 비용이 낮은 리전을 활용합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost3/bp05">COST03-BP05: 청구 및 비용 관리 도구 구성</Link></strong><br />
+          <span>조직 정책에 맞는 비용 관리 도구를 구성하여 클라우드 지출을 관리하고 최적화합니다.</span>
         </li>
         <li>
           <strong><Link to="/appendix/cost-optimization/cost3/bp06">COST03-BP06: 워크로드 지표 기반 비용 할당</Link></strong><br />
-          <span>공유 리소스의 비용을 워크로드별 실제 사용 지표에 기반하여 공정하고 정확하게 할당합니다.</span>
+          <span>워크로드 지표를 사용하여 공유 리소스의 비용을 적절히 할당합니다.</span>
         </li>
       </ul>
 

@@ -4,58 +4,42 @@ import "../components/DocContent.css";
 export default function AppendixCost7Bp01Page() {
   return (
     <article className="doc-content">
-      <h1>COST07-BP01 — 정기적인 워크로드 검토 프로세스 개발</h1>
+      <h1>COST07-BP01 — 가격 모델 분석 수행</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
         <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
       </div>
-      <p>
-        분기별 또는 연간 Well-Architected Review를 통해 비용 최적화 기회를 체계적으로 발굴합니다.
-        정기적인 검토 프로세스를 통해 비용 낭비 요소를 지속적으로 파악하고 개선하는 문화를 구축합니다.
-      </p>
-
+      <p>워크로드에 대한 가격 모델 분석을 수행합니다. 온디맨드, 예약 인스턴스(RI), Savings Plans, 스팟 인스턴스 등 다양한 가격 모델의 비용-이점을 분석합니다.</p>
       <h2>원하는 결과</h2>
-      <p>
-        워크로드의 비용 효율성을 지속적으로 개선하는 구조적인 프로세스가 확립됩니다.
-        새로운 AWS 서비스와 기능을 적시에 평가하고 적용하여 비용을 최적화합니다.
-      </p>
-
+      <p>워크로드 사용 패턴에 최적화된 가격 모델이 선택됩니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>비용 검토를 일회성 활동으로만 수행</li>
-        <li>검토 결과를 문서화하지 않아 동일한 문제가 반복 발생</li>
-        <li>비용 최적화 책임자를 지정하지 않아 책임이 불명확</li>
-        <li>검토 주기가 너무 길어 비용 낭비가 장기간 지속</li>
+        <li>모든 리소스에 온디맨드 가격을 사용합니다.</li>
+        <li>예약 인스턴스나 Savings Plans를 활용하지 않습니다.</li>
+        <li>가격 모델 분석을 수행하지 않고 기본 가격을 수용합니다.</li>
+        <li>사용 패턴을 고려하지 않고 가격 모델을 선택합니다.</li>
       </ul>
-
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>지속적인 비용 최적화 기회 발굴 및 실현</li>
-        <li>비용 낭비 패턴의 조기 감지 및 수정</li>
-        <li>새로운 AWS 서비스 도입을 통한 비용 절감 기회 포착</li>
-        <li>비용 효율성에 대한 조직 문화 구축</li>
+        <li>적절한 가격 모델 선택으로 비용이 크게 절감됩니다.</li>
+        <li>예측 가능한 워크로드에 대해 최대 72% 비용 절감이 가능합니다.</li>
+        <li>재무 계획이 더 예측 가능해집니다.</li>
+        <li>클라우드 투자 수익이 극대화됩니다.</li>
       </ul>
-
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Well-Architected Tool을 사용하여 정기적인 비용 최적화 검토 수행</li>
-        <li>분기별 비용 검토 미팅을 일정에 포함하고 관련 이해관계자 참여</li>
-        <li>각 워크로드에 비용 최적화 담당자(Cloud Financial Management Champion)를 지정</li>
-        <li>Trusted Advisor 권장 사항을 정기적으로 검토하고 우선순위에 따라 실행</li>
-        <li>AWS Cost Anomaly Detection으로 예상치 못한 비용 증가를 자동 감지</li>
-        <li>검토 결과와 실행 항목을 추적하는 백로그 유지</li>
-        <li>비용 최적화 성과를 비즈니스 KPI에 포함하여 동기 부여</li>
+        <li>사용 패턴 분석: CloudWatch 및 Cost Explorer를 통해 일관된 사용 패턴을 파악합니다.</li>
+        <li>Savings Plans 분석: 컴퓨팅 또는 EC2 Savings Plans를 통해 예측 가능한 사용에 대한 할인을 받습니다.</li>
+        <li>RI 분석: 특정 인스턴스 유형에 대한 Reserved Instances로 비용을 절감합니다.</li>
+        <li>스팟 활용: 내결함성 워크로드에 스팟 인스턴스를 활용하여 최대 90% 비용을 절감합니다.</li>
       </ul>
-
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Well-Architected Tool</li>
-        <li>AWS Trusted Advisor</li>
-        <li>AWS Cost Anomaly Detection</li>
+        <li>AWS Savings Plans</li>
+        <li>Amazon EC2 Reserved Instances</li>
+        <li>Amazon EC2 Spot Instances</li>
         <li>AWS Cost Explorer</li>
-        <li>AWS Compute Optimizer</li>
       </ul>
-
       <PageNav />
     </article>
   );

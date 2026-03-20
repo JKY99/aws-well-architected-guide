@@ -5,38 +5,39 @@ import "../components/DocContent.css";
 export default function AppendixCost2Page() {
   return (
     <article className="doc-content">
-      <h1>COST 2 — 워크로드 비용을 어떻게 관리합니까?</h1>
+      <h1>COST 2 — 거버넌스를 어떻게 구현합니까?</h1>
 
       <p>
-        워크로드의 비용을 구조화하여 추적하고 관리함으로써
-        지출을 비즈니스 가치와 연계합니다.
+        클라우드에서 비용을 관리하려면 다음 거버넌스 영역을 통해 사용량을 관리해야 합니다.
+        조직 요구사항에 기반한 정책을 수립하고, 목표와 타겟을 구현하며, 적절한 계정 구조와
+        그룹 및 역할을 구현합니다. 비용 제어를 시행하고 프로젝트 수명 주기를 추적합니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost2/bp01">COST02-BP01: 비용 귀속 태깅 구현</Link></strong><br />
-          <span>모든 리소스에 비용 할당 태그를 적용하여 팀, 프로젝트, 환경별로 비용을 추적합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost2/bp01">COST02-BP01: 조직 요구사항에 기반한 정책 개발</Link></strong><br />
+          <span>리소스 관리 방법을 정의하는 정책을 개발하고 주기적으로 검토합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost2/bp02">COST02-BP02: AWS 계정 구조를 통한 비용 구분</Link></strong><br />
-          <span>워크로드별로 별도의 AWS 계정을 사용하여 비용을 명확하게 분리합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost2/bp02">COST02-BP02: 목표 및 타겟 구현</Link></strong><br />
+          <span>측정 가능한 비용 최적화 목표와 타겟을 설정합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost2/bp03">COST02-BP03: 비용 및 사용량 보고서 구성</Link></strong><br />
-          <span>AWS Cost and Usage Report를 설정하여 상세한 비용 데이터를 S3에 저장하고 분석합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost2/bp03">COST02-BP03: 계정 구조 구현</Link></strong><br />
+          <span>워크로드와 조직 구조에 맞는 AWS 계정 구조를 구현합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost2/bp04">COST02-BP04: 공유 서비스 비용 할당 방법 결정</Link></strong><br />
-          <span>공유 인프라(네트워킹, 공용 서비스)의 비용을 공정하게 각 팀에 할당하는 방법을 정의합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost2/bp04">COST02-BP04: 그룹 및 역할 구현</Link></strong><br />
+          <span>비용 데이터에 대한 적절한 접근을 제공하는 그룹과 역할을 구현합니다.</span>
         </li>
         <li>
           <strong><Link to="/appendix/cost-optimization/cost2/bp05">COST02-BP05: 비용 제어 구현</Link></strong><br />
-          <span>정책 및 자동화를 통해 예산 초과를 방지하는 비용 제어 메커니즘을 구현합니다.</span>
+          <span>비용이 예산을 초과하지 않도록 가드레일과 제어 메커니즘을 구현합니다.</span>
         </li>
         <li>
           <strong><Link to="/appendix/cost-optimization/cost2/bp06">COST02-BP06: 프로젝트 수명 주기 추적</Link></strong><br />
-          <span>프로젝트 시작부터 종료까지 리소스와 비용을 추적하여 불필요한 지출을 방지합니다.</span>
+          <span>프로젝트, 직원, 기술 리소스를 시간에 따라 관리하여 불필요한 리소스를 식별합니다.</span>
         </li>
       </ul>
 

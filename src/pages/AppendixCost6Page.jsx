@@ -5,30 +5,30 @@ import "../components/DocContent.css";
 export default function AppendixCost6Page() {
   return (
     <article className="doc-content">
-      <h1>COST 6 — 수요와 공급을 어떻게 관리합니까?</h1>
+      <h1>COST 6 — 올바른 리소스 유형, 크기, 수량을 어떻게 선택합니까?</h1>
 
       <p>
-        수요에 맞게 리소스를 동적으로 공급하여 과도한 프로비저닝을 없애고
-        비용 효율성을 극대화합니다.
+        워크로드의 비용 모델을 개발하고 데이터에 기반하여 리소스 유형, 크기, 수량을 선택합니다.
+        메트릭과 자동화를 활용하여 리소스를 동적으로 조정하고 공유 리소스 모델을 고려합니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost6/bp01">COST06-BP01: 워크로드 수요 분석 수행</Link></strong><br />
-          <span>수요 패턴(시간대별, 요일별, 계절별)을 분석하여 리소스 계획에 반영합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost6/bp01">COST06-BP01: 비용 모델링 수행</Link></strong><br />
+          <span>워크로드의 비용 모델을 개발하여 다양한 리소스 구성에 따른 비용을 이해합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost6/bp02">COST06-BP02: 수요 관리를 위한 버퍼 또는 스로틀 구현</Link></strong><br />
-          <span>Amazon SQS, API Gateway 스로틀링을 사용하여 수요를 평준화하고 급격한 스파이크를 완화합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost6/bp02">COST06-BP02: 데이터 기반 리소스 유형, 크기, 수량 선택</Link></strong><br />
+          <span>측정된 데이터와 분석에 기반하여 리소스 유형, 크기, 수량을 선택합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/cost-optimization/cost6/bp03">COST06-BP03: 동적 리소스 공급</Link></strong><br />
-          <span>Auto Scaling을 사용하여 실제 수요에 맞게 리소스를 자동으로 확장/축소합니다.</span>
+          <strong><Link to="/appendix/cost-optimization/cost6/bp03">COST06-BP03: 메트릭 기반 리소스 유형, 크기, 수량 자동 선택</Link></strong><br />
+          <span>메트릭과 자동화를 사용하여 필요에 따라 리소스를 동적으로 조정합니다.</span>
         </li>
         <li>
           <strong><Link to="/appendix/cost-optimization/cost6/bp04">COST06-BP04: 공유 리소스 사용 고려</Link></strong><br />
-          <span>여러 워크로드 또는 팀이 리소스를 공유하여 총 비용을 절감하고 활용도를 높입니다.</span>
+          <span>공유 리소스 모델을 고려하여 비용을 분산합니다.</span>
         </li>
       </ul>
 

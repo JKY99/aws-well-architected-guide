@@ -4,59 +4,42 @@ import "../components/DocContent.css";
 export default function AppendixCost6Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>COST06-BP02 — 수요 관리를 위한 버퍼 또는 스로틀 구현</h1>
+      <h1>COST06-BP02 — 데이터 기반 리소스 유형, 크기, 수량 선택</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 중간</div>
         <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
-      <p>
-        Amazon SQS, API Gateway 스로틀링을 사용하여 수요를 평준화하고 급격한 스파이크를 완화합니다.
-        버퍼와 스로틀은 피크 수요에 맞춰 과도하게 프로비저닝하는 대신 수요 변동을 흡수하여
-        더 일관된 리소스 활용률을 유지할 수 있도록 합니다.
-      </p>
-
+      <p>측정된 데이터와 분석에 기반하여 리소스 유형, 크기, 수량을 선택합니다. 추측이 아닌 실제 데이터로 의사결정을 내립니다.</p>
       <h2>원하는 결과</h2>
-      <p>
-        수요 스파이크를 효과적으로 흡수하고 처리 용량을 일정하게 유지하여 과도한 리소스 프로비저닝
-        없이도 서비스 품질을 보장합니다. 비용을 예측 가능하게 유지하면서 수요 변동을 관리합니다.
-      </p>
-
+      <p>리소스 선택이 실제 사용 데이터에 기반하여 이루어집니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>피크 수요에 맞춰 항상 최대 용량으로 프로비저닝</li>
-        <li>수요 완충 없이 직접 백엔드 시스템에 요청을 전달</li>
-        <li>스로틀링 한도를 너무 낮게 설정하여 정상적인 요청도 차단</li>
-        <li>버퍼 크기를 너무 작게 설정하여 급격한 스파이크 처리 불가</li>
+        <li>추측이나 경험에만 의존하여 리소스를 선택합니다.</li>
+        <li>사용량 데이터 없이 최대 용량으로 프로비저닝합니다.</li>
+        <li>리소스 선택을 정기적으로 재검토하지 않습니다.</li>
+        <li>AWS Compute Optimizer의 권고사항을 무시합니다.</li>
       </ul>
-
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>피크 수요를 위한 과도한 프로비저닝 비용 절감</li>
-        <li>백엔드 시스템의 안정적인 부하 처리</li>
-        <li>서비스 중단 없이 트래픽 급증 처리 가능</li>
-        <li>비용 예측 가능성 향상</li>
+        <li>실제 필요에 맞는 리소스가 선택되어 비용이 절감됩니다.</li>
+        <li>과다 및 과소 프로비저닝 모두 방지됩니다.</li>
+        <li>워크로드 성능과 비용 효율성이 동시에 최적화됩니다.</li>
+        <li>리소스 선택의 정확성이 지속적으로 향상됩니다.</li>
       </ul>
-
       <h2>구현 지침</h2>
       <ul>
-        <li>Amazon SQS를 사용하여 요청을 대기열에 넣고 소비자가 처리 가능한 속도로 처리</li>
-        <li>API Gateway에서 사용량 계획과 스로틀링 한도를 설정하여 과도한 요청 제한</li>
-        <li>SNS와 SQS를 조합하여 팬아웃 패턴으로 수요를 여러 소비자에게 분산</li>
-        <li>Lambda 동시성 한도를 설정하여 다운스트림 서비스 보호</li>
-        <li>Kinesis Data Streams로 실시간 데이터 스트림을 버퍼링하고 처리</li>
-        <li>CloudWatch로 대기열 깊이와 처리 지연을 모니터링하여 용량 조정</li>
+        <li>사용량 모니터링: CloudWatch 메트릭으로 CPU, 메모리, 네트워크 사용률을 지속적으로 모니터링합니다.</li>
+        <li>AWS Compute Optimizer 활용: EC2, Lambda, EBS 등에 대한 최적화 권고사항을 검토합니다.</li>
+        <li>비용 효율성 분석: 비용 대비 성능 지표를 분석하여 최적의 리소스를 선택합니다.</li>
+        <li>정기적 재평가: 워크로드 특성 변화에 따라 리소스 선택을 정기적으로 재평가합니다.</li>
       </ul>
-
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon SQS</li>
-        <li>Amazon API Gateway</li>
-        <li>Amazon Kinesis Data Streams</li>
-        <li>AWS Lambda</li>
-        <li>Amazon SNS</li>
+        <li>AWS Compute Optimizer</li>
         <li>Amazon CloudWatch</li>
+        <li>AWS Cost Explorer</li>
+        <li>Amazon EC2 Instance Types</li>
       </ul>
-
       <PageNav />
     </article>
   );

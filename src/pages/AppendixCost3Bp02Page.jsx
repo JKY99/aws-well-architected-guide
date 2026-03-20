@@ -4,38 +4,42 @@ import "../components/DocContent.css";
 export default function AppendixCost3Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>COST03-BP02 — 올바른 리소스 유형, 크기, 수량 선택</h1>
+      <h1>COST03-BP02 — 비용 및 사용량에 조직 정보 추가</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
-      <p>워크로드의 실제 요구사항에 맞는 리소스 유형, 크기, 수량을 선택하여 과도한 프로비저닝으로 인한 낭비를 방지합니다.</p>
+      <p>비용 데이터에 조직 정보를 추가하여 비용이 어느 팀, 프로젝트, 부서에서 발생했는지 파악할 수 있도록 합니다.</p>
       <h2>원하는 결과</h2>
-      <p>실제 사용량에 최적화된 리소스로 불필요한 비용 없이 성능 요구사항을 충족합니다.</p>
+      <p>비용 및 사용량 데이터가 조직 구조와 연계되어 정확한 비용 귀속이 가능합니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>안전 마진을 위해 과대 프로비저닝합니다.</li>
-        <li>실제 사용량을 모니터링하지 않습니다.</li>
-        <li>초기 크기 선택 후 재검토하지 않습니다.</li>
+        <li>리소스에 태그가 없거나 일관성이 없습니다.</li>
+        <li>비용 데이터가 조직 구조와 연계되지 않습니다.</li>
+        <li>어느 팀이나 프로젝트에서 비용이 발생했는지 파악이 어렵습니다.</li>
+        <li>태그 누락 리소스의 비용이 미할당 상태로 남습니다.</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>비용을 절감합니다.</li>
-        <li>올바른 성능을 유지합니다.</li>
-        <li>리소스를 효율적으로 활용합니다.</li>
+        <li>비용이 팀, 프로젝트, 환경별로 정확하게 귀속됩니다.</li>
+        <li>쇼백(showback)이나 차지백(chargeback) 메커니즘을 구현할 수 있습니다.</li>
+        <li>비용 최적화 기회를 조직 수준에서 식별합니다.</li>
+        <li>예산 관리가 조직 단위로 가능합니다.</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Compute Optimizer 권고를 검토합니다.</li>
-        <li>CloudWatch 메트릭으로 사용률을 분석합니다.</li>
-        <li>정기적인 크기 조정 검토를 수행합니다.</li>
+        <li>태깅 전략 수립: 일관된 태그 키와 값의 명명 규칙을 정의합니다.</li>
+        <li>태그 정책 시행: AWS Organizations 태그 정책을 통해 일관된 태깅을 강제합니다.</li>
+        <li>AWS Cost Categories: 태그, 계정, 서비스를 기반으로 비용 카테고리를 생성합니다.</li>
+        <li>태그 준수 모니터링: AWS Config를 통해 태그 누락 리소스를 정기적으로 감사합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Compute Optimizer</li>
-        <li>Amazon CloudWatch</li>
-        <li>Amazon EC2</li>
-        <li>AWS Cost Explorer</li>
+        <li>AWS Cost Categories</li>
+        <li>AWS Resource Groups</li>
+        <li>Cost Allocation Tags</li>
+        <li>AWS Config</li>
+        <li>AWS Organizations</li>
       </ul>
       <PageNav />
     </article>
