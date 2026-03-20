@@ -6,8 +6,8 @@ export default function AppendixPerf4Bp05Page() {
     <article className="doc-content">
       <h1>PERF04-BP05 — 성능 향상을 위한 네트워크 프로토콜 선택</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>워크로드의 특성에 맞는 네트워크 프로토콜을 선택하여 성능을 향상시킵니다. HTTP/2, gRPC, UDP 등 다양한 프로토콜의 특성을 이해하고 최적의 프로토콜을 적용합니다.</p>
       <h2>원하는 결과</h2>

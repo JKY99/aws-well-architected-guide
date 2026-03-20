@@ -6,8 +6,8 @@ export default function AppendixPerf1Bp02Page() {
     <article className="doc-content">
       <h1>PERF01-BP02 — 클라우드 공급자 또는 파트너의 지침 활용</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>클라우드 공급자(AWS) 또는 인증된 파트너의 지침을 활용하여 아키텍처 패턴과 모범 사례를 학습하고 적용합니다. AWS 솔루션 아키텍트, AWS Solutions, AWS Quick Starts를 활용합니다.</p>
       <h2>원하는 결과</h2>

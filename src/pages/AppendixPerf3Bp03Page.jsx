@@ -6,8 +6,8 @@ export default function AppendixPerf3Bp03Page() {
     <article className="doc-content">
       <h1>PERF03-BP03 — 데이터 스토어 성능 메트릭 수집 및 기록</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 높음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
       </div>
       <p>데이터 스토어의 성능 메트릭을 지속적으로 수집하고 기록합니다. 쿼리 응답 시간, 처리량, 연결 수, 캐시 적중률 등 핵심 지표를 추적하여 성능 문제를 조기에 감지합니다.</p>
       <h2>원하는 결과</h2>

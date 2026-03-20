@@ -6,8 +6,8 @@ export default function AppendixPerf2Bp05Page() {
     <article className="doc-content">
       <h1>PERF02-BP05 — 컴퓨팅 리소스 동적 확장</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 높음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
       </div>
       <p>수요 변화에 따라 컴퓨팅 리소스를 동적으로 확장하고 축소합니다. 오토스케일링을 활용하여 트래픽 변동에 자동으로 대응합니다.</p>
       <h2>원하는 결과</h2>

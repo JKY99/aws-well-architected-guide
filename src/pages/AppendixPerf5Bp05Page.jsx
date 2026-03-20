@@ -6,8 +6,8 @@ export default function AppendixPerf5Bp05Page() {
     <article className="doc-content">
       <h1>PERF05-BP05 — 자동화를 통한 성능 관련 문제 사전 해결</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 낮음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 낮습니다.</p>
       </div>
       <p>자동화를 활용하여 성능 관련 문제를 사전에 감지하고 해결합니다. 오토스케일링, 자동화된 최적화, 자동 복구 메커니즘을 구현합니다.</p>
       <h2>원하는 결과</h2>

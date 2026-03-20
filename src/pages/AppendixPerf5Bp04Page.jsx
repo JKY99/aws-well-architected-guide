@@ -6,8 +6,8 @@ export default function AppendixPerf5Bp04Page() {
     <article className="doc-content">
       <h1>PERF05-BP04 — 워크로드 부하 테스트</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 낮음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 낮습니다.</p>
       </div>
       <p>워크로드에 대한 부하 테스트를 수행하여 성능 한계, 병목 지점, 확장성 한계를 파악합니다. 프로덕션 배포 전 실제 트래픽 패턴을 시뮬레이션합니다.</p>
       <h2>원하는 결과</h2>

@@ -6,8 +6,8 @@ export default function AppendixPerf1Bp05Page() {
     <article className="doc-content">
       <h1>PERF01-BP05 — 정책 및 참조 아키텍처 활용</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 낮음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 낮습니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>조직의 아키텍처 정책과 검증된 참조 아키텍처를 활용합니다. 표준화된 아키텍처 패턴을 통해 일관성을 유지하고 반복적인 의사결정 부담을 줄입니다.</p>
       <h2>원하는 결과</h2>

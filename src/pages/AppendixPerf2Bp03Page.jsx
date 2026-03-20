@@ -6,8 +6,8 @@ export default function AppendixPerf2Bp03Page() {
     <article className="doc-content">
       <h1>PERF02-BP03 — 컴퓨팅 관련 메트릭 수집</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 높음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
       </div>
       <p>컴퓨팅 리소스의 성능 메트릭을 지속적으로 수집하고 분석합니다. CPU 사용률, 메모리 사용률, 네트워크 처리량 등 핵심 지표를 추적하여 성능 문제를 조기에 감지합니다.</p>
       <h2>원하는 결과</h2>

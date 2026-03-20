@@ -6,8 +6,8 @@ export default function AppendixPerf1Bp07Page() {
     <article className="doc-content">
       <h1>PERF01-BP07 — 아키텍처 선택에 데이터 기반 접근 방식 사용</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>실제 사용 데이터, 성능 메트릭, 비용 데이터를 분석하여 아키텍처를 선택하고 개선합니다. 가정이 아닌 측정값을 기반으로 의사결정합니다.</p>
       <h2>원하는 결과</h2>

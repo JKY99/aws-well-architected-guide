@@ -6,8 +6,8 @@ export default function AppendixPerf3Bp05Page() {
     <article className="doc-content">
       <h1>PERF03-BP05 — 캐싱을 활용하는 데이터 액세스 패턴 구현</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>자주 액세스하는 데이터를 캐시에 저장하여 데이터 스토어의 부하를 줄이고 응답 시간을 단축합니다. 적절한 캐싱 전략을 수립하여 데이터 일관성과 성능 간의 균형을 유지합니다.</p>
       <h2>원하는 결과</h2>

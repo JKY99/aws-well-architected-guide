@@ -6,8 +6,8 @@ export default function AppendixPerf5Bp03Page() {
     <article className="doc-content">
       <h1>PERF05-BP03 — 워크로드 성능 개선 프로세스 정의</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>워크로드 성능을 지속적으로 개선하기 위한 체계적인 프로세스를 정의합니다. 성능 측정, 분석, 개선, 검증의 사이클을 반복합니다.</p>
       <h2>원하는 결과</h2>

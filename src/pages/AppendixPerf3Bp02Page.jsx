@@ -6,8 +6,8 @@ export default function AppendixPerf3Bp02Page() {
     <article className="doc-content">
       <h1>PERF03-BP02 — 데이터 스토어의 사용 가능한 구성 옵션 평가</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>데이터 스토어의 다양한 구성 옵션(인스턴스 크기, 스토리지 유형, 파라미터 그룹 등)을 평가하고 워크로드 성능 요구사항에 맞게 최적화합니다.</p>
       <h2>원하는 결과</h2>

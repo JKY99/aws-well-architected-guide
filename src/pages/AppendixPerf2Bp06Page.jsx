@@ -6,8 +6,8 @@ export default function AppendixPerf2Bp06Page() {
     <article className="doc-content">
       <h1>PERF02-BP06 — 최적화된 하드웨어 기반 컴퓨팅 가속기 사용</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 낮음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 낮습니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>GPU, FPGA, 커스텀 칩 등 하드웨어 기반 컴퓨팅 가속기를 활용하여 특정 워크로드의 성능을 향상시킵니다. 머신러닝, 고성능 컴퓨팅, 비디오 처리 등 계산 집약적 작업에 특히 효과적입니다.</p>
       <h2>원하는 결과</h2>

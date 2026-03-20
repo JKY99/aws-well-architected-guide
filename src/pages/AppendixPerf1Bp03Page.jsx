@@ -6,8 +6,8 @@ export default function AppendixPerf1Bp03Page() {
     <article className="doc-content">
       <h1>PERF01-BP03 — 아키텍처 결정 시 비용 고려</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>아키텍처 결정 시 성능뿐만 아니라 비용을 중요한 요소로 반영합니다. 성능과 비용 간의 적절한 균형을 찾아 비용 효율적인 고성능 아키텍처를 설계합니다.</p>
       <h2>원하는 결과</h2>

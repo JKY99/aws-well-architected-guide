@@ -6,8 +6,8 @@ export default function AppendixPerf2Bp02Page() {
     <article className="doc-content">
       <h1>PERF02-BP02 — 사용 가능한 컴퓨팅 구성 및 기능 이해</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>선택한 컴퓨팅 서비스에서 사용 가능한 구성 옵션과 기능을 이해합니다. 인스턴스 유형별 특성, 네트워크 성능, 스토리지 옵션, 특수 하드웨어 기능 등을 파악합니다.</p>
       <h2>원하는 결과</h2>

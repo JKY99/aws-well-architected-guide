@@ -6,8 +6,8 @@ export default function AppendixPerf4Bp06Page() {
     <article className="doc-content">
       <h1>PERF04-BP06 — 네트워크 요구사항에 따른 워크로드 위치 선택</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>사용자와의 물리적 거리, 데이터 주권, 규정 준수 요구사항을 고려하여 워크로드를 최적의 위치에 배치합니다. 리전, 가용 영역, 엣지 위치를 전략적으로 활용합니다.</p>
       <h2>원하는 결과</h2>

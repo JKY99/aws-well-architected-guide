@@ -6,8 +6,8 @@ export default function AppendixPerf4Bp03Page() {
     <article className="doc-content">
       <h1>PERF04-BP03 — 워크로드에 적합한 전용 연결 또는 VPN 선택</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 높음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
       </div>
       <p>온프레미스 환경과 AWS 간의 연결이 필요한 경우 워크로드의 대역폭, 지연 시간, 보안, 가용성 요구사항에 맞는 연결 방식을 선택합니다.</p>
       <h2>원하는 결과</h2>

@@ -6,8 +6,8 @@ export default function AppendixPerf2Bp04Page() {
     <article className="doc-content">
       <h1>PERF02-BP04 — 컴퓨팅 리소스 구성 및 적정 크기 조정</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
       </div>
       <p>실제 사용 패턴과 메트릭을 기반으로 컴퓨팅 리소스를 올바르게 구성하고 적정 크기로 조정합니다. 과도하거나 부족한 프로비저닝을 피하여 성능과 비용을 최적화합니다.</p>
       <h2>원하는 결과</h2>

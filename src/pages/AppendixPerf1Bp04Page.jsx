@@ -6,8 +6,8 @@ export default function AppendixPerf1Bp04Page() {
     <article className="doc-content">
       <h1>PERF01-BP04 — 트레이드오프가 고객과 아키텍처 효율성에 미치는 영향 평가</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 보통</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
+        <div className="doc-note-title">위험 수준: 높음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
       </div>
       <p>아키텍처 결정 시 발생하는 트레이드오프가 고객 경험과 아키텍처 효율성에 미치는 영향을 평가합니다. 일관성 대 가용성, 지연 시간 대 처리량 등의 트레이드오프를 명확히 분석합니다.</p>
       <h2>원하는 결과</h2>
