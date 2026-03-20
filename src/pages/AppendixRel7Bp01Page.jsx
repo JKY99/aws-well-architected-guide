@@ -4,48 +4,54 @@ import "../components/DocContent.css";
 export default function AppendixRel7Bp01Page() {
   return (
     <article className="doc-content">
-      <h1>REL07-BP01 — 수요 기반 자동 조정 사용</h1>
+      <h1>REL07-BP01 — 리소스를 확보하거나 확장할 때 자동화 사용</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 수요 급증 시 리소스 부족으로 서비스가 중단되거나, 저수요 시 불필요한 비용이 발생합니다.</p>
+        <p>이 모범 사례를 수립하지 않으면 높은 수준의 위험이 노출됩니다.</p>
       </div>
-      <p>수요 기반 자동 조정은 실제 워크로드 수요에 따라 컴퓨팅 리소스를 자동으로 확장하거나 축소합니다. Auto Scaling, 대상 추적 정책, 예약 스케일링을 조합하여 최적의 비용-성능 균형을 달성합니다.</p>
+      <p>
+        인프라를 코드(IaC)로 관리하고, 버전 관리 시스템에 인프라 코드를 정의 및 유지합니다.
+        자동화된 메커니즘에 AWS 리소스 프로비저닝을 위임하고, CI/CD 파이프라인을 사용하여
+        코드 변경이 자동으로 리소스 업데이트를 시작하도록 합니다.
+      </p>
       <h2>원하는 결과</h2>
-      <p>워크로드가 예측 가능하거나 예측 불가능한 수요 변화에 자동으로 적응합니다. 피크 트래픽 시 성능 저하 없이 처리하고, 저수요 시에는 리소스를 자동으로 축소하여 비용을 최적화합니다.</p>
+      <ul>
+        <li>인프라를 코드(IaC)로 관리</li>
+        <li>버전 관리 시스템(VCS)에 인프라 코드를 정의 및 유지</li>
+        <li>자동화된 메커니즘에 AWS 리소스 프로비저닝 위임</li>
+        <li>관리형 서비스(ALB, NLB, Auto Scaling 그룹) 활용</li>
+        <li>CI/CD 파이프라인을 사용하여 코드 변경이 자동으로 리소스 업데이트를 시작</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>피크 수요를 기준으로 고정 용량을 프로비저닝하여 대부분의 시간 동안 리소스 낭비</li>
-        <li>수동 스케일링으로 대응하여 트래픽 급증 시 반응이 너무 늦음</li>
-        <li>스케일 아웃만 구현하고 스케일 인 정책 미설정으로 비용 절감 기회 놓침</li>
-        <li>단일 스케일링 지표(CPU)만 사용하여 다양한 병목 지점 감지 실패</li>
-        <li>스케일링 정책 없이 고정 크기 Auto Scaling 그룹 운영</li>
+        <li>CLI 또는 AWS 관리 콘솔을 사용하여 수동으로 리소스 배포("클릭 운영")</li>
+        <li>애플리케이션 구성 요소/리소스를 긴밀하게 결합하여 비유연한 아키텍처 생성</li>
+        <li>변경하는 비즈니스 요구사항, 트래픽 패턴 또는 새로운 리소스 유형에 적응하지 않는 비유연한 스케일링 정책 구현</li>
+        <li>예상 수요를 충족하기 위해 용량을 수동으로 추정</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>예측 불가능한 트래픽 급증에도 자동으로 대응하여 가용성 유지</li>
-        <li>저수요 기간 자동 스케일 인으로 최대 70% 이상 비용 절감 가능</li>
-        <li>운영팀의 수동 개입 없이 24/7 최적 용량 유지</li>
-        <li>스케일링 이벤트 로그를 통한 수요 패턴 분석 및 용량 계획 개선</li>
-        <li>스팟 인스턴스와 결합하여 추가적인 비용 최적화 달성</li>
+        <li>IaC: 인프라가 프로그래밍 방식으로 정의되어 애플리케이션 변경과 동일한 SDLC를 통해 관리되고, 일관성과 반복성을 높이며 수동적이고 오류가 발생하기 쉬운 작업의 위험 감소</li>
+        <li>자동화된 배포 파이프라인: 수동 개입 없이 안정적이고 효율적으로 인프라 업데이트 배포</li>
+        <li>동적 Auto Scaling: 주요 메트릭을 모니터링하고 사전 정의된 스케일링 정책을 적용하여 수요에 따라 자동으로 리소스를 프로비저닝/디프로비저닝, 성능 및 비용 효율성 향상</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>Amazon EC2 Auto Scaling 대상 추적 정책으로 CPU, 요청 수, 사용자 정의 지표 기반 스케일링 설정</li>
-        <li>예측 가능한 부하 패턴(예: 업무 시간)에는 예약 스케일링(Scheduled Scaling) 추가 구성</li>
-        <li>스텝 스케일링 정책을 통해 수요 수준에 따라 단계적으로 확장하는 정밀한 스케일링 구현</li>
-        <li>Application Load Balancer와 ECS 서비스 자동 스케일링을 연계하여 컨테이너 환경 대응</li>
-        <li>스케일 아웃 쿨다운을 짧게(30-60초), 스케일 인 쿨다운을 길게(300초+) 설정하여 안정적인 스케일링</li>
-        <li>워밍업 기간을 설정하여 새 인스턴스가 로드밸런서에 추가되기 전 충분히 초기화되도록 보장</li>
-        <li>AWS Compute Optimizer를 활용하여 최적 인스턴스 유형 및 스케일링 설정 권고 확인</li>
+        <li>버전 관리 시스템 선택: Git을 사용하여 IaC 템플릿 및 구성 저장</li>
+        <li>IaC 도구 선택: AWS CloudFormation으로 인프라 구성 요소(VPC, EC2 Auto Scaling 그룹, RDS 데이터베이스) 정의</li>
+        <li>CI/CD 파이프라인 통합: AWS CodePipeline 또는 서드파티 솔루션 사용, IaC 템플릿 린트 및 검증, 스테이징 환경 배포, 자동화 테스트 실행, 프로덕션 배포 단계 포함</li>
+        <li>Auto Scaling 구성: EC2 인스턴스, ECS 태스크, 데이터베이스 복제본에 대한 스케일 아웃 및 스케일 인 정책 구현, 예측 가능한 패턴에는 예약 스케일링 고려</li>
+        <li>배포 모니터링: 실패 및 회귀를 감지하고 롤백 메커니즘 구현</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon EC2 Auto Scaling — 인스턴스 기반 자동 스케일링</li>
-        <li>AWS Application Auto Scaling — ECS, DynamoDB 등 다양한 서비스 스케일링</li>
-        <li>Amazon ECS Service Auto Scaling — 컨테이너 기반 자동 스케일링</li>
-        <li>AWS Compute Optimizer — 스케일링 설정 최적화 권고</li>
-        <li>Amazon CloudWatch — 스케일링 트리거 지표 소스</li>
-        <li>AWS Auto Scaling (통합 콘솔) — 다중 리소스 스케일링 통합 관리</li>
+        <li>AWS CloudFormation (인프라스트럭처 코드)</li>
+        <li>AWS CodePipeline (CI/CD 자동화)</li>
+        <li>Amazon EC2 Auto Scaling</li>
+        <li>AWS Auto Scaling</li>
+        <li>Application Load Balancer (ALB), Network Load Balancer (NLB)</li>
+        <li>DynamoDB Auto Scaling</li>
+        <li>AWS CDK (클라우드 개발 키트)</li>
       </ul>
       <PageNav />
     </article>
