@@ -4,53 +4,54 @@ import "../components/DocContent.css";
 export default function AppendixSec4Bp04Page() {
   return (
     <article className="doc-content">
-      <h1>SEC04-BP04 — 비규정 준수 리소스 자동 수정</h1>
+      <h1>SEC04-BP04 — 규정 비준수 리소스에 대한 수정 시작</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 보안 정책 위반이 장기간 지속되어 비즈니스 영향이 커질 수 있습니다.</p>
       </div>
       <p>
-        보안 위반이나 컴플라이언스 위반이 탐지되었을 때 수동 개입 없이 자동으로 수정 조치를
-        실행합니다. 수동 대응은 시간이 걸리고, 그 사이에 피해가 확대될 수 있습니다. 자동화를
-        통해 탐지에서 수정까지의 시간을 최소화합니다.
+        규정 비준수 리소스에 대한 수정 단계와 함께 리소스 구성 표준을 정의합니다. 수동 또는 자동 시작을 위해 프로그래밍 방식으로 수정을 정의하고, 탐지 시스템이 비준수 리소스를 식별하여 중앙화된 도구에 경보를 게시하도록 합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        정의된 보안 정책 위반이 탐지되는 즉시 자동화된 수정 작업이 실행됩니다. 자동 수정이
-        불가능한 경우 즉시 담당자에게 알림이 전달되고 수동 대응 절차가 시작됩니다. 모든 자동
-        수정 활동은 감사 로그에 기록됩니다.
-      </p>
+      <ul>
+        <li>수정 단계와 함께 리소스 구성 표준 정의</li>
+        <li>수동 또는 자동 시작을 위해 수정을 프로그래밍 방식으로 정의</li>
+        <li>탐지 시스템이 비준수 리소스를 식별하고 중앙화된 도구에 경보 게시</li>
+        <li>보안 담당자가 프로그래밍 방식 수정을 지원하는 중앙화된 도구 모니터링</li>
+        <li>자동 수정에 적절한 감독 및 제어 메커니즘 적용</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>컴플라이언스 위반을 탐지만 하고 수정하지 않아 위반 상태가 장기 지속</li>
-        <li>자동화 없이 모든 보안 수정을 수동으로 처리하여 대응 지연</li>
-        <li>자동 수정 작업을 테스트 없이 프로덕션에 적용하여 의도치 않은 서비스 중단</li>
-        <li>자동 수정 활동을 로깅하지 않아 변경 이력 파악 불가</li>
-        <li>수정 후 검증 없이 완료 처리하여 수정 효과 미확인</li>
+        <li>철저한 테스트 및 검증 없이 자동화를 구현하여 의도치 않은 결과 초래(비즈니스 중단, 시스템 불안정)</li>
+        <li>자동화로 대응 시간을 개선하지만 적절한 모니터링 및 사람 개입 메커니즘 부재</li>
+        <li>더 광범위한 인시던트 대응 및 복구 프로그램의 일부가 아닌 수정에만 전적으로 의존</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>보안 위반 노출 시간(Time to Remediation) 획기적 단축</li>
-        <li>인적 오류 없이 일관된 수정 조치 적용</li>
-        <li>보안팀이 자동화로 처리되는 반복 작업에서 벗어나 고차원 위협에 집중 가능</li>
-        <li>24/7 무중단 자동 대응으로 업무 시간 외 보안 위반 처리 가능</li>
+        <li>속도: 자동 수정이 수동 프로세스보다 빠르게 잘못된 구성에 대응하여 비즈니스 영향 최소화</li>
+        <li>일관성: 프로그래밍 방식으로 정의된 수정이 일관되게 적용되어 인적 오류 위험 감소</li>
+        <li>확장성: 자동화가 대규모 환경에 필수적인 더 많은 양의 경보를 동시에 처리</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Config 규칙에 자동 수정(Remediation) 액션을 연결하여 위반 탐지 즉시 Systems Manager Automation을 실행합니다.</li>
-        <li>Amazon GuardDuty 결과를 EventBridge로 수신하고, Lambda 함수를 트리거하여 악성 IP 차단, 인스턴스 격리 등의 자동 수정을 구현합니다.</li>
-        <li>AWS Systems Manager Automation Runbook을 표준화하여 일반적인 수정 시나리오(퍼블릭 S3 버킷 비공개 전환, 보안 그룹 규칙 제거 등)를 자동화합니다.</li>
-        <li>자동 수정 전에 알림을 발송하고, 중요 리소스에 대한 수정은 승인 게이트를 추가합니다.</li>
-        <li>자동 수정 액션을 먼저 비프로덕션 환경에서 충분히 테스트한 후 프로덕션에 적용합니다.</li>
-        <li>AWS Security Hub의 자동화된 대응(Automated Response) 플레이북을 활용하여 일반적인 보안 결과에 대한 표준 대응을 자동화합니다.</li>
+        <li>AWS Security Hub CSPM에 여러 AWS 서비스의 보안 경보를 통합하여 중앙화된 가시성, 우선순위 지정 및 수정을 지원합니다.</li>
+        <li>AWS Systems Manager와 AWS Lambda를 사용하여 프로그래밍 방식 수정을 실행합니다(예: 허용되지 않는 VPC 보안 그룹 규칙 제거).</li>
+        <li>Systems Manager를 사용하여 Amazon EventBridge에 결과를 게시하는 사용자 지정 작업을 정의하고, 수동 또는 자동 시작을 위한 작업을 구성합니다.</li>
+        <li>Amazon SNS를 사용하여 보안 및 인시던트 대응 팀에 알림을 보냅니다.</li>
+        <li>로그 출력을 Amazon CloudWatch Logs로 전송하고 Security Hub CSPM의 결과 노트로 결과를 캡처하여 효과를 평가하고 개선 영역을 식별합니다.</li>
+        <li>자동 수정을 프로덕션에 적용하기 전에 비프로덕션 환경에서 충분히 테스트합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Config — 리소스 컴플라이언스 평가 및 자동 수정 트리거</li>
-        <li>AWS Systems Manager Automation — 수정 Runbook 실행 자동화</li>
-        <li>Amazon EventBridge — 보안 이벤트 기반 자동화 오케스트레이션</li>
-        <li>AWS Lambda — 커스텀 수정 로직 실행</li>
-        <li>AWS Security Hub — 자동화된 대응 플레이북 관리</li>
+        <li>AWS Security Hub CSPM — 중앙화된 경보 라우팅 및 수정</li>
+        <li>AWS Config — 리소스 구성 규정 준수 모니터링</li>
+        <li>AWS Systems Manager Automation — 수정 워크플로 오케스트레이션</li>
+        <li>AWS Lambda — 맞춤형 수정 로직 실행</li>
+        <li>Amazon EventBridge — 결과에서 수정 트리거</li>
+        <li>Amazon CloudWatch Logs — 수정 작업 로깅</li>
+        <li>Amazon SNS — 경보 알림</li>
+        <li>Amazon GuardDuty — 위협 탐지</li>
+        <li>Amazon Inspector — 취약성 스캐닝</li>
       </ul>
       <PageNav />
     </article>

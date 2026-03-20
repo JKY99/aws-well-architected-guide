@@ -5,30 +5,30 @@ import "../components/DocContent.css";
 export default function AppendixSec4Page() {
   return (
     <article className="doc-content">
-      <h1>SEC 4 — 사람과 머신에 대한 권한을 어떻게 관리합니까?</h1>
+      <h1>SEC 4 — 보안 이벤트를 어떻게 탐지하고 조사합니까?</h1>
 
       <p>
-        최소 권한 원칙에 따라 사용자와 서비스에 필요한 최소한의 권한만 부여합니다.
-        권한을 정기적으로 검토하고 불필요한 권한을 제거합니다.
+        로그와 지표에서 이벤트를 캡처하고 분석하여 가시성을 확보합니다.
+        보안 이벤트와 잠재적 위협에 조치를 취하여 워크로드를 보호합니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
           <strong><Link to="/appendix/security/sec4/bp01">SEC04-BP01: 서비스 및 애플리케이션 로깅 구성</Link></strong><br />
-          <span>각 역할과 서비스에 필요한 최소한의 권한만 부여합니다. 와일드카드 권한 사용을 피합니다.</span>
+          <span>서비스 및 애플리케이션 수준에서 보안 관련 이벤트를 캡처하도록 로깅을 설정합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec4/bp02">SEC04-BP02: 표준 위치에 로그 및 보안 결과 수집</Link></strong><br />
-          <span>SCP, 권한 경계(Permission Boundaries)를 사용하여 최대 권한 한도를 설정합니다.</span>
+          <strong><Link to="/appendix/security/sec4/bp02">SEC04-BP02: 표준 위치에 로그, 결과 및 지표 캡처</Link></strong><br />
+          <span>모든 로그, 보안 결과, 지표를 표준화된 중앙 저장소에 집계하여 분석 및 상관 관계 파악을 용이하게 합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec4/bp03">SEC04-BP03: 보안 경고 상관 분석 및 강화</Link></strong><br />
-          <span>액세스 검토를 정기적으로 수행하고 사용하지 않는 권한을 제거합니다.</span>
+          <strong><Link to="/appendix/security/sec4/bp03">SEC04-BP03: 보안 경보 상관 분석 및 강화</Link></strong><br />
+          <span>여러 소스의 보안 경보를 집계 및 분석하여 패턴을 식별하고 컨텍스트 정보로 경보를 강화합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec4/bp04">SEC04-BP04: 비규정 준수 리소스 자동 수정</Link></strong><br />
-          <span>IAM Access Analyzer를 사용하여 외부에 노출된 리소스와 불필요한 액세스를 식별합니다.</span>
+          <strong><Link to="/appendix/security/sec4/bp04">SEC04-BP04: 규정 비준수 리소스에 대한 수정 시작</Link></strong><br />
+          <span>보안 정책을 준수하지 않는 리소스를 수정하는 자동화 또는 수동 프로세스를 구현합니다.</span>
         </li>
       </ul>
 
