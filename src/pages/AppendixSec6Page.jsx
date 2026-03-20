@@ -1,42 +1,39 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixSec6Page() {
   return (
     <article className="doc-content">
-      <h1>SEC 6 — 네트워크 리소스를 어떻게 보호합니까?</h1>
+      <h1>SEC 6. 컴퓨팅 리소스를 어떻게 보호합니까?</h1>
 
       <p>
-        다층 방어(Defense-in-Depth) 전략을 적용하여 네트워크 인프라를 보호합니다.
-        트래픽 흐름을 제어하고 악의적인 네트워크 활동을 차단합니다.
+        워크로드의 컴퓨팅 리소스는 외부 및 내부 위협으로부터 보호하기 위해 여러 계층의 방어가 필요합니다. 컴퓨팅 리소스에는 EC2 인스턴스, 컨테이너, AWS Lambda 함수, 데이터베이스 서비스, IoT 디바이스 등이 포함됩니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
           <strong><Link to="/appendix/security/sec6/bp01">SEC06-BP01: 취약점 관리 수행</Link></strong><br />
-          <span>퍼블릭, 프라이빗 서브넷으로 네트워크를 계층화하여 민감한 리소스를 인터넷에서 격리합니다.</span>
+          <span>소프트웨어 취약점, 잠재적 결함 및 의도치 않은 네트워크 노출에 대해 워크로드를 지속적으로 스캔하는 솔루션을 구현합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec6/bp02">SEC06-BP02: 워크로드에 대한 접근 축소</Link></strong><br />
-          <span>보안 그룹, 네트워크 ACL을 사용하여 인바운드/아웃바운드 트래픽을 명시적으로 제어합니다.</span>
+          <strong><Link to="/appendix/security/sec6/bp02">SEC06-BP02: 강화된 이미지에서 컴퓨팅 프로비저닝</Link></strong><br />
+          <span>신뢰할 수 있는 소스의 강화된 기본 이미지에서 컴퓨팅 리소스를 프로비저닝하고, 서명 검증을 통해 외부 종속성을 가져옵니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec6/bp03">SEC06-BP03: 코드 무결성 검증 구현</Link></strong><br />
-          <span>AWS Firewall Manager를 사용하여 여러 계정에 걸쳐 네트워크 방화벽 정책을 중앙에서 관리합니다.</span>
+          <strong><Link to="/appendix/security/sec6/bp03">SEC06-BP03: 수동 관리 및 대화형 접근 축소</Link></strong><br />
+          <span>자동화된 런북을 통해 컴퓨팅 리소스에 대한 작업을 캡처하고, 긴급 상황에서만 직접 접근을 허용합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec6/bp04">SEC06-BP04: 컴퓨팅 환경 자동화 보안</Link></strong><br />
-          <span>VPC, AWS PrivateLink, VPC 엔드포인트를 사용하여 인터넷을 거치지 않는 안전한 통신 경로를 구성합니다.</span>
+          <strong><Link to="/appendix/security/sec6/bp04">SEC06-BP04: 소프트웨어 무결성 검증</Link></strong><br />
+          <span>모든 아티팩트를 신뢰할 수 있는 소스에서 획득하고 암호화 서명으로 검증합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec6/bp05">SEC06-BP05: 관리형 서비스 활용</Link></strong><br />
-          <span>AWS Shield(DDoS 보호), AWS WAF(웹 방화벽), Amazon CloudFront를 활용하여 엣지에서의 위협을 차단합니다.</span>
+          <strong><Link to="/appendix/security/sec6/bp05">SEC06-BP05: 컴퓨팅 보호 자동화</Link></strong><br />
+          <span>자동화된 시스템이 모든 컴퓨팅 리소스의 스캔 및 패치를 수행하고, 비준수 리소스 탐지 시 자동 수정을 시작합니다.</span>
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }

@@ -1,38 +1,36 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixRel7Page() {
   return (
     <article className="doc-content">
-      <h1>REL 7 — 변경 사항을 어떻게 구현합니까?</h1>
+      <h1>REL 7. 수요 변화에 어떻게 적응합니까?</h1>
 
       <p>
-        운영 중인 시스템에 대한 변경을 안전하게 관리하여
-        변경으로 인한 장애 위험을 최소화합니다.
+        수요 변화에 따라 리소스를 자동으로 확장하거나 축소하여
+        성능을 유지하면서 비용을 최적화합니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong><Link to="/appendix/reliability/rel7/bp01">REL07-BP01: 배포 위험을 줄이기 위해 변경 통합</Link></strong><br />
-          <span>카나리 배포, 블루/그린 배포를 사용하여 일부 트래픽만 새 버전에 노출시키고 문제 시 신속하게 롤백합니다.</span>
+          <strong><Link to="/appendix/reliability/rel7/bp01">REL07-BP01: 리소스를 확보하거나 확장할 때 자동화 사용</Link></strong><br />
+          <span>인프라를 코드로 관리하고, CI/CD 파이프라인을 사용하여 리소스 프로비저닝을 자동화합니다. Auto Scaling을 통해 수요에 따라 리소스를 자동으로 확장 또는 축소합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/reliability/rel7/bp02">REL07-BP02: 배포 파이프라인 사용</Link></strong><br />
-          <span>자동화된 CI/CD 파이프라인을 통해 변경을 일관성 있게 테스트하고 배포합니다.</span>
+          <strong><Link to="/appendix/reliability/rel7/bp02">REL07-BP02: 워크로드 장애 감지 시 리소스 확보</Link></strong><br />
+          <span>가용성이 영향을 받을 때 워크로드 가용성을 복원하기 위해 스케일링 활동(자동 또는 수동)을 시작합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/reliability/rel7/bp03">REL07-BP03: 테스트 배포</Link></strong><br />
-          <span>프로덕션과 동일한 환경에서 변경을 먼저 테스트하고 검증합니다.</span>
+          <strong><Link to="/appendix/reliability/rel7/bp03">REL07-BP03: 워크로드에 더 많은 리소스가 필요함을 감지 시 리소스 확보</Link></strong><br />
+          <span>컴퓨팅 및 기타 리소스의 자동 확장을 구성하여 수요를 충족합니다. 추가 리소스가 온라인으로 전환되는 동안 트래픽 급증을 허용할 충분한 여유를 확보합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/reliability/rel7/bp04">REL07-BP04: 자동 롤백 메커니즘 구현</Link></strong><br />
-          <span>배포 후 메트릭이 임계값을 초과하면 자동으로 이전 버전으로 롤백하는 메커니즘을 구현합니다.</span>
+          <strong><Link to="/appendix/reliability/rel7/bp04">REL07-BP04: 워크로드 부하 테스트</Link></strong><br />
+          <span>부하 테스트 방법론을 채택하여 스케일링 활동이 워크로드 요구사항을 충족하는지 측정합니다. 아키텍처의 어떤 구성 요소가 부하 하에서 실패하는지 파악합니다.</span>
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }
