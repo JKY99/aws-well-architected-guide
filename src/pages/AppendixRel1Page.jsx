@@ -34,6 +34,10 @@ export default function AppendixRel1Page() {
           <strong><Link to="/appendix/reliability/rel1/bp05">REL01-BP05: 고정 제약 사항 수용</Link></strong><br />
           <span>변경할 수 없는 한도에 대해서는 아키텍처를 조정하여 해당 한도 내에서 운영합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/reliability/rel1/bp06">REL01-BP06: 현재 할당량과 최대 사용량 사이에 충분한 간격 확보</Link></strong><br />
+          <span>장애 조치 시 트래픽이 급증해도 할당량 한도에 도달하지 않도록 현재 사용량과 할당량 사이에 충분한 여유를 유지합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

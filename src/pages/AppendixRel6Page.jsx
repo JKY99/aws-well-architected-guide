@@ -27,8 +27,20 @@ export default function AppendixRel6Page() {
           <span>AWS Auto Scaling의 예측 조정을 사용하여 과거 데이터를 기반으로 수요를 예측하고 사전에 리소스를 프로비저닝합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/reliability/rel6/bp04">REL06-BP04: 수요 관리</Link></strong><br />
-          <span>요청 스로틀링, 큐잉을 통해 수요를 평준화하여 갑작스러운 트래픽 급증에 대한 복원력을 높입니다.</span>
+          <strong><Link to="/appendix/reliability/rel6/bp04">REL06-BP04: 자동 응답 자동화</Link></strong><br />
+          <span>CloudWatch Alarm과 AWS Lambda, Systems Manager Automation을 연계하여 임계값 초과 시 자동으로 복구 조치가 실행되도록 합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/reliability/rel6/bp05">REL06-BP05: 로그 분석</Link></strong><br />
+          <span>Amazon CloudWatch Logs Insights, AWS OpenSearch Service를 사용하여 로그를 분석하고 장애 패턴을 식별합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/reliability/rel6/bp06">REL06-BP06: 모니터링 범위 및 지표 정기 검토</Link></strong><br />
+          <span>워크로드가 변경될 때마다 모니터링 대상과 임계값을 재검토하여 모니터링 커버리지가 유효한지 확인합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/reliability/rel6/bp07">REL06-BP07: 시스템 전반의 요청 추적 모니터링</Link></strong><br />
+          <span>AWS X-Ray를 사용하여 분산 시스템에서 요청의 전체 경로를 추적하고 성능 병목과 오류 지점을 파악합니다.</span>
         </li>
       </ul>
 

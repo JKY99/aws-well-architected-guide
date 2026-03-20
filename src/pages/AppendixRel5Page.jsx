@@ -27,8 +27,20 @@ export default function AppendixRel5Page() {
           <span>로그와 메트릭 데이터의 보존 기간을 설정하여 비용을 관리하면서 필요한 데이터를 유지합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/reliability/rel5/bp04">REL05-BP04: 자동 복구를 위한 모니터링 사용</Link></strong><br />
-          <span>CloudWatch Alarm, EC2 Auto Recovery, Auto Scaling을 설정하여 장애 시 자동 복구가 이루어지도록 합니다.</span>
+          <strong><Link to="/appendix/reliability/rel5/bp04">REL05-BP04: 큐를 제한하고 빠르게 실패 처리</Link></strong><br />
+          <span>큐 크기와 대기 시간을 제한하여 과부하 시 요청이 무한정 쌓이지 않도록 하고, 빠른 실패 응답으로 클라이언트가 조기에 재시도하거나 다른 경로를 선택할 수 있게 합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/reliability/rel5/bp05">REL05-BP05: 클라이언트 타임아웃 설정</Link></strong><br />
+          <span>모든 서비스 호출에 적절한 타임아웃을 설정하여 느린 의존성 서비스로 인해 스레드나 커넥션 풀이 고갈되지 않도록 합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/reliability/rel5/bp06">REL05-BP06: 시스템을 가능한 한 무상태로 구성</Link></strong><br />
+          <span>세션 상태를 서버 메모리가 아닌 외부 데이터 스토어에 저장하여 인스턴스 장애 시 세션 손실 없이 다른 인스턴스에서 요청을 처리할 수 있도록 합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/reliability/rel5/bp07">REL05-BP07: 긴급 레버 구현</Link></strong><br />
+          <span>장애 상황에서 즉시 활성화할 수 있는 긴급 레버(기능 플래그, 트래픽 차단 등)를 미리 구현하여 빠른 장애 대응이 가능하도록 합니다.</span>
         </li>
       </ul>
 

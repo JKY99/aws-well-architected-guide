@@ -30,10 +30,6 @@ export default function AppendixRel4Page() {
           <strong><Link to="/appendix/reliability/rel4/bp04">REL04-BP04: 멱등성 구현</Link></strong><br />
           <span>같은 요청이 여러 번 처리되어도 결과가 동일하도록 멱등성을 보장합니다.</span>
         </li>
-        <li>
-          <strong><Link to="/appendix/reliability/rel4/bp05">REL04-BP05: 서비스 간 트랜잭션 관리</Link></strong><br />
-          <span>분산 트랜잭션의 복잡성을 이해하고 SAGA 패턴 등을 활용하여 데이터 일관성을 유지합니다.</span>
-        </li>
       </ul>
 
       <PageNav />

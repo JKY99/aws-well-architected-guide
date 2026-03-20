@@ -26,10 +26,6 @@ export default function AppendixRel3Page() {
           <strong><Link to="/appendix/reliability/rel3/bp03">REL03-BP03: 서비스 간 결합도 줄이기</Link></strong><br />
           <span>동기식 직접 호출 대신 메시지 큐, 이벤트 버스를 사용하여 서비스 간 결합도를 낮춥니다.</span>
         </li>
-        <li>
-          <strong><Link to="/appendix/reliability/rel3/bp04">REL03-BP04: 내결함성 시스템 구축</Link></strong><br />
-          <span>서킷 브레이커, 재시도 로직, 타임아웃을 구현하여 일시적인 오류에 대한 복원력을 확보합니다.</span>
-        </li>
       </ul>
 
       <PageNav />
