@@ -8,23 +8,24 @@ export default function AppendixRel3Page() {
       <h1>REL 3 — 워크로드 서비스 아키텍처를 어떻게 설계합니까?</h1>
 
       <p>
-        워크로드를 여러 소형 컴포넌트로 분해하여 개별 컴포넌트의 장애가
-        전체 워크로드에 미치는 영향을 최소화합니다.
+        서비스 지향 아키텍처(SOA) 또는 마이크로서비스 아키텍처를 활용하여 고도로 확장 가능하고
+        신뢰할 수 있는 워크로드를 구축합니다. SOA는 소프트웨어 컴포넌트를 서비스 인터페이스를 통해
+        재사용 가능하게 만들고, 마이크로서비스 아키텍처는 컴포넌트를 더 작고 단순하게 추가로 세분화합니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong><Link to="/appendix/reliability/rel3/bp01">REL03-BP01: 서비스 지향 아키텍처(SOA) 선택</Link></strong><br />
-          <span>워크로드를 느슨하게 결합된 서비스로 분해하여 각 서비스가 독립적으로 확장하고 장애를 처리할 수 있도록 합니다.</span>
+          <strong><Link to="/appendix/reliability/rel3/bp01">REL03-BP01: 워크로드 세분화 방법 선택</Link></strong><br />
+          <span>워크로드가 지원 가능하고, 확장 가능하며, 가능한 한 느슨하게 결합되도록 합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/reliability/rel3/bp02">REL03-BP02: 마이크로서비스 아키텍처 선택</Link></strong><br />
-          <span>단일 비즈니스 기능을 담당하는 소형 서비스로 분해하여 독립적인 배포와 확장을 가능하게 합니다.</span>
+          <strong><Link to="/appendix/reliability/rel3/bp02">REL03-BP02: 특정 비즈니스 도메인 및 기능에 집중하는 서비스 구축</Link></strong><br />
+          <span>엔지니어와 비즈니스 이해관계자가 공동으로 바운디드 컨텍스트를 정의하고 특정 비즈니스 기능을 수행하는 서비스로 시스템을 설계합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/reliability/rel3/bp03">REL03-BP03: 서비스 간 결합도 줄이기</Link></strong><br />
-          <span>동기식 직접 호출 대신 메시지 큐, 이벤트 버스를 사용하여 서비스 간 결합도를 낮춥니다.</span>
+          <strong><Link to="/appendix/reliability/rel3/bp03">REL03-BP03: API별 서비스 계약 제공</Link></strong><br />
+          <span>API 소비자와 생산자 모두 공통 API 계약을 따를 때 배포된 변경 사항이 전체 시스템의 안정성을 방해하지 않도록 합니다.</span>
         </li>
       </ul>
 
