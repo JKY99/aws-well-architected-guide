@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixOps7Page() {
   return (
     <article className="doc-content">
-      <h1>OPS 7 — 워크로드를 지원할 준비가 되어 있는지 어떻게 알 수 있습니까?</h1>
+      <h1>OPS 7. 워크로드를 지원할 준비가 되어 있는지 어떻게 알 수 있습니까?</h1>
 
       <p>
         워크로드, 프로세스, 절차, 인력의 운영 준비 상태를 평가하여 워크로드와 관련된 운영 위험을 파악합니다.
@@ -41,7 +40,6 @@ export default function AppendixOps7Page() {
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }

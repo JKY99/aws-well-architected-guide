@@ -4,53 +4,51 @@ import "../components/DocContent.css";
 export default function AppendixSec5Bp03Page() {
   return (
     <article className="doc-content">
-      <h1>SEC05-BP03 — 네트워크 보호 자동화</h1>
+      <h1>SEC05-BP03 — 검사 기반 보호 구현</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
+        <p>이 모범 사례를 따르지 않을 경우 정교한 네트워크 공격을 탐지 및 차단하지 못할 수 있습니다.</p>
       </div>
       <p>
-        새로운 위협이 탐지되면 수동 개입 없이 네트워크 보호 규칙이 자동으로 업데이트되도록
-        자동화합니다. 위협 환경은 빠르게 변화하며, 수동 대응으로는 신규 공격을 적시에 차단하기
-        어렵습니다.
+        네트워크 계층 간을 통과하는 트래픽을 검사하고 허가합니다. 허가/거부 결정은 명시적 규칙, 위협 인텔리전스 및 기준 행동 편차를 기반으로 하며, 민감한 데이터에 가까워질수록 보호가 더 엄격해집니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        GuardDuty, WAF 로그, 위협 인텔리전스 피드 등에서 탐지된 위협 정보를 기반으로 WAF 규칙,
-        보안 그룹, Network Firewall 규칙이 자동으로 업데이트됩니다. DDoS 공격 발생 시 Shield
-        Advanced가 자동으로 완화 조치를 취합니다.
-      </p>
+      <ul>
+        <li>네트워크 계층 간을 통과하는 트래픽이 검사되고 허가됨</li>
+        <li>허가/거부 결정이 명시적 규칙, 위협 인텔리전스 및 기준 행동 편차를 기반으로 함</li>
+        <li>민감한 데이터에 가까워질수록 보호가 더 엄격해짐</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>모든 방화벽 규칙 업데이트를 수동으로 처리하여 위협 대응 지연</li>
-        <li>위협 인텔리전스 피드를 구독하지 않아 알려진 악성 IP/도메인에 대한 자동 차단 미적용</li>
-        <li>Shield Standard만 사용하여 정교한 DDoS 공격에 대한 자동 완화 부재</li>
-        <li>자동화된 규칙 업데이트에 대한 검토 프로세스 없이 임시 차단이 영구화</li>
-        <li>네트워크 보호 규칙이 분산 관리되어 일관성 없는 정책 적용</li>
+        <li>지능형 시스템 없이 포트 및 프로토콜 기반 방화벽 규칙에만 전적으로 의존</li>
+        <li>변경될 수 있는 특정 현재 위협 패턴을 기반으로 방화벽 규칙 작성</li>
+        <li>프라이빗 서브넷에서 퍼블릭 서브넷으로 또는 퍼블릭 서브넷에서 인터넷으로 전환하는 트래픽만 검사</li>
+        <li>행동 이상 비교를 위한 네트워크 트래픽 기준선 미설정</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>신규 위협 탐지에서 차단까지의 시간을 분에서 초 단위로 단축</li>
-        <li>위협 인텔리전스 기반 사전 차단으로 알려진 공격 자동 방어</li>
-        <li>DDoS 공격 시 자동 완화로 서비스 가용성 보호</li>
-        <li>보안팀이 반복적인 규칙 업데이트 대신 전략적 보안 개선에 집중 가능</li>
+        <li>트래픽 데이터 내의 세분화된 조건으로 지능형 규칙 작성</li>
+        <li>최신 위협 인텔리전스를 기반으로 AWS 및 파트너의 관리형 규칙 세트 활용</li>
+        <li>규칙 유지 관리 및 침해 지표 조사 오버헤드 감소</li>
+        <li>오탐 가능성 최소화</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Firewall Manager를 사용하여 조직 전체의 WAF, 보안 그룹, Network Firewall 정책을 중앙에서 자동 배포하고 관리합니다.</li>
-        <li>GuardDuty에서 탐지된 악성 IP를 EventBridge를 통해 Lambda로 전달하고, WAF IP 세트를 자동으로 업데이트하는 자동화를 구현합니다.</li>
-        <li>AWS Shield Advanced를 활성화하고 DDoS Response Team(DRT)과의 사전 접근 권한을 설정하여 공격 시 자동 지원을 받습니다.</li>
-        <li>AWS Managed Rules for WAF를 사용하고, AWS가 업데이트하는 규칙 그룹을 활용하여 최신 위협에 자동 대응합니다.</li>
-        <li>자동으로 추가된 차단 규칙에 만료 시간(TTL)을 설정하여 임시 차단이 영구화되는 것을 방지합니다.</li>
-        <li>Amazon Route 53 Resolver DNS Firewall을 활용하여 알려진 악성 도메인으로의 DNS 쿼리를 자동 차단합니다.</li>
+        <li>검사 VPC(광범위한 검사) 또는 VPC별 세분화된 접근 방식 중 검사 범위를 결정합니다.</li>
+        <li>인라인 검사 솔루션으로 AWS Network Firewall을 사용하거나 Gateway Load Balancer(GWLB)를 통해 서드파티 어플라이언스를 배포합니다.</li>
+        <li>아웃오브밴드 검사 솔루션으로 인터페이스에서 VPC Traffic Mirroring을 활성화하고 Amazon EventBridge를 사용하여 새 리소스에 대한 미러링 활성화를 자동화합니다.</li>
+        <li>인바운드 웹 트래픽에 AWS WAF 웹 ACL을 구성하고, 사용자 지정 규칙 또는 AWS 관리형 규칙 그룹을 사용하여 ALB, API Gateway, CloudFront와 연결합니다.</li>
+        <li>AWS Firewall Manager를 사용하여 AWS Organizations 전체에서 중앙화된 관리를 구현합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Firewall Manager — 조직 전체 방화벽 정책 자동 배포 및 관리</li>
-        <li>AWS Shield Advanced — DDoS 자동 완화 및 DRT 지원</li>
-        <li>Amazon GuardDuty — 위협 탐지 결과를 자동화 트리거로 활용</li>
-        <li>AWS WAF — 자동 업데이트되는 Managed Rules 적용</li>
-        <li>Amazon Route 53 Resolver DNS Firewall — 악성 도메인 DNS 쿼리 자동 차단</li>
+        <li>AWS Network Firewall — 상태 저장/상태 비저장 네트워크 트래픽 검사</li>
+        <li>AWS WAF — HTTP(S) 트래픽을 위한 웹 애플리케이션 방화벽</li>
+        <li>Gateway Load Balancer(GWLB) — 서드파티 어플라이언스 인라인 배포</li>
+        <li>VPC Traffic Mirroring — 아웃오브밴드 검사 기능</li>
+        <li>AWS Firewall Manager — AWS Organizations 전체 중앙화된 관리</li>
+        <li>AWS Shield Advanced — DDoS 보호</li>
+        <li>Amazon EventBridge — 트래픽 미러링 자동화</li>
       </ul>
       <PageNav />
     </article>

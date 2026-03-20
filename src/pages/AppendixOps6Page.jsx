@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixOps6Page() {
   return (
     <article className="doc-content">
-      <h1>OPS 6 — 배포 위험을 어떻게 완화합니까?</h1>
+      <h1>OPS 6. 배포 위험을 어떻게 완화합니까?</h1>
 
       <p>
         품질에 대한 빠른 피드백을 제공하고 원하는 결과를 얻지 못한 변경으로부터 신속하게 복구할 수 있는
@@ -33,7 +32,6 @@ export default function AppendixOps6Page() {
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }

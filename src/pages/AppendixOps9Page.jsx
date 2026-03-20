@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixOps9Page() {
   return (
     <article className="doc-content">
-      <h1>OPS 9 — 운영의 상태를 어떻게 파악합니까?</h1>
+      <h1>OPS 9. 운영의 상태를 어떻게 파악합니까?</h1>
 
       <p>
         운영 메트릭을 정의, 캡처, 분석하여 운영 이벤트에 대한 가시성을 확보하고
@@ -29,7 +28,6 @@ export default function AppendixOps9Page() {
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }

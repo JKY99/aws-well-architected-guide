@@ -4,53 +4,51 @@ import "../components/DocContent.css";
 export default function AppendixSec5Bp04Page() {
   return (
     <article className="doc-content">
-      <h1>SEC05-BP04 — 네트워크 트래픽 검사 및 보호 구현</h1>
+      <h1>SEC05-BP04 — 네트워크 보호 자동화</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 네트워크 보호 구성의 일관성이 부족하고 변경 추적이 어려워집니다.</p>
       </div>
       <p>
-        허용/차단 규칙만으로는 정교한 공격을 방어하기 어렵습니다. 인바운드 및 아웃바운드 트래픽에
-        대한 심층 패킷 검사(Deep Packet Inspection)와 침입 탐지/방지(IDS/IPS)를 구현하여 정교한
-        공격과 악성코드 통신을 탐지하고 차단합니다.
+        템플릿으로 네트워크 보호를 정의하고 버전 관리 시스템에 커밋합니다. 새로운 변경이 이루어질 때 자동화된 파이프라인이 시작되어 테스트 및 배포를 오케스트레이션합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        모든 인바운드 및 아웃바운드 트래픽이 심층 검사를 거치며, 악성 패턴이 포함된 트래픽은
-        실시간으로 차단됩니다. 감염된 인스턴스의 C&C(Command and Control) 서버 통신이 차단되고,
-        트래픽 검사 결과가 보안 이벤트 파이프라인으로 전달됩니다.
-      </p>
+      <ul>
+        <li>네트워크 보호를 템플릿으로 정의하고 버전 관리 시스템에 커밋</li>
+        <li>새로운 변경 시 자동화된 파이프라인이 테스트 및 배포를 오케스트레이션</li>
+        <li>배포 전 변경 사항을 검증하는 정책 검사 및 정적 테스트 적용</li>
+        <li>스테이징 환경에 배포하여 제어가 예상대로 작동하는지 검증</li>
+        <li>제어가 승인되면 프로덕션 환경에 자동 배포</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>방화벽 규칙(IP/포트 기반)만으로 트래픽을 제어하고 심층 검사 미적용</li>
-        <li>인바운드 트래픽만 검사하고 아웃바운드 트래픽(데이터 유출 경로) 검사 미적용</li>
-        <li>트래픽 검사 장비를 인라인(inline)이 아닌 탭(tap) 모드로만 운영하여 차단 불가</li>
-        <li>암호화된 트래픽(TLS)에 대한 검사 없이 허용</li>
-        <li>트래픽 검사 결과를 모니터링하지 않아 탐지된 위협 인지 불가</li>
+        <li>개별 워크로드 팀이 중앙에 표준 측면을 게시하지 않고 각자 완전한 네트워크 스택과 보호를 정의</li>
+        <li>중앙 네트워크 팀이 워크로드별 측면을 워크로드 팀에 위임하지 않고 네트워크의 모든 측면을 정의</li>
+        <li>중앙화와 위임의 균형을 맞추지만 IaC 템플릿 및 CI/CD 파이프라인에 일관된 테스트 및 배포 표준 미적용</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>포트/IP 기반 규칙을 우회하는 정교한 공격 탐지 및 차단</li>
-        <li>감염된 인스턴스의 C&C 통신 차단으로 내부 피해 확산 방지</li>
-        <li>암호화된 채널을 통한 데이터 유출 및 악성 페이로드 탐지</li>
-        <li>네트워크 계층에서의 가시성 확보로 위협 헌팅(Threat Hunting) 가능</li>
+        <li>버전 관리를 사용하여 시간에 따른 변경 사항 추적 및 비교</li>
+        <li>자동화된 테스트 및 배포로 표준화 및 예측 가능성 확보</li>
+        <li>성공적인 배포 가능성 향상</li>
+        <li>반복적인 수동 구성 감소</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Network Firewall을 VPC의 인터넷 경계에 배포하고, Suricata 기반 IPS 규칙을 적용하여 심층 패킷 검사를 구현합니다.</li>
-        <li>Gateway Load Balancer를 사용하여 서드파티 IDS/IPS 어플라이언스를 투명하게 인라인으로 배포합니다.</li>
-        <li>AWS Network Firewall의 도메인 필터링 기능을 사용하여 알려진 악성 도메인으로의 트래픽을 차단합니다.</li>
-        <li>아웃바운드 트래픽에 대한 검사 정책을 적용하여 내부에서 외부로의 비정상적인 통신을 탐지합니다.</li>
-        <li>Network Firewall 로그를 CloudWatch Logs 및 S3로 전송하고, Security Hub와 연동하여 탐지 이벤트를 중앙 관리합니다.</li>
-        <li>TLS 검사가 필요한 환경에서는 Network Firewall의 TLS 검사 기능 또는 서드파티 솔루션을 활용합니다.</li>
+        <li>네트워크 및 보호의 어떤 측면이 중앙에서 정의되고 워크로드 팀이 유지 관리하는지 소유권을 확립합니다.</li>
+        <li>변경 사항을 테스트하고 배포할 환경(예: 네트워크 테스트 계정 및 네트워크 프로덕션 계정)을 생성합니다.</li>
+        <li>버전 관리에서 템플릿을 저장하고 유지 관리하는 방법(중앙 vs 워크로드별 저장소)을 결정합니다.</li>
+        <li>잘못된 구성 및 회사 표준 준수 여부를 테스트하는 CI/CD 파이프라인을 생성합니다.</li>
+        <li>AWS CloudFormation Guard를 사용하여 자동화된 정책 검사 및 템플릿 검증을 수행합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Network Firewall — 관리형 네트워크 방화벽 및 IDS/IPS</li>
-        <li>AWS Gateway Load Balancer — 서드파티 보안 어플라이언스 인라인 배포</li>
-        <li>Amazon GuardDuty — 네트워크 트래픽 기반 위협 탐지</li>
-        <li>AWS WAF — 웹 계층 트래픽 심층 검사 및 차단</li>
-        <li>VPC Flow Logs — 네트워크 트래픽 메타데이터 수집 및 분석</li>
+        <li>AWS CloudFormation — 인프라 코드 도구</li>
+        <li>AWS CloudFormation Guard — 자동화된 정책 검사 및 템플릿 검증</li>
+        <li>AWS WAF 관리형 규칙 — 웹 엔드포인트 자동화 보호</li>
+        <li>AWS Shield Advanced — 자동 애플리케이션 계층 DDoS 완화</li>
+        <li>AWS Network Firewall 관리형 규칙 그룹 — 위협 서명 및 평판 목록 업데이트</li>
+        <li>AWS Resource Access Manager(RAM) — 계정 간 네트워크 리소스 공유</li>
       </ul>
       <PageNav />
     </article>

@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixOps10Page() {
   return (
     <article className="doc-content">
-      <h1>OPS 10 — 워크로드 및 운영 이벤트를 어떻게 관리합니까?</h1>
+      <h1>OPS 10. 워크로드 및 운영 이벤트를 어떻게 관리합니까?</h1>
 
       <p>
         워크로드에 대한 장애를 최소화하기 위해 이벤트에 대응하는 절차를 준비하고 검증합니다.
@@ -45,7 +44,6 @@ export default function AppendixOps10Page() {
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }

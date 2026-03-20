@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixOps8Page() {
   return (
     <article className="doc-content">
-      <h1>OPS 8 — 조직에서 워크로드 관찰 가능성을 어떻게 활용합니까?</h1>
+      <h1>OPS 8. 조직에서 워크로드 관찰 가능성을 어떻게 활용합니까?</h1>
 
       <p>
         관련 메트릭, 로그, 트레이스를 활용한 관찰 가능성(Observability)을 통해 최적의 워크로드 상태를 보장합니다.
@@ -37,7 +36,6 @@ export default function AppendixOps8Page() {
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }

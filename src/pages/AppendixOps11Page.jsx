@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixOps11Page() {
   return (
     <article className="doc-content">
-      <h1>OPS 11 — 운영을 어떻게 발전시킵니까?</h1>
+      <h1>OPS 11. 운영을 어떻게 발전시킵니까?</h1>
 
       <p>
         운영의 효과성과 효율성을 발전시키기 위해 거의 지속적인 점진적 개선을 위한 시간과 리소스를 투입합니다.
@@ -52,7 +51,6 @@ export default function AppendixOps11Page() {
         </li>
       </ul>
 
-      <PageNav />
     </article>
   );
 }
