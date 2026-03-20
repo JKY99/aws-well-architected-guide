@@ -14,11 +14,11 @@ export default function AppendixOps4Page() {
 
       <h2>모범 사례</h2>
       <ul>
-        <li><Link to="/appendix/ops4/bp01">OPS04-BP01 — 핵심 성과 지표 파악</Link></li>
-        <li><Link to="/appendix/ops4/bp02">OPS04-BP02 — 애플리케이션 원격 분석 구현</Link></li>
-        <li><Link to="/appendix/ops4/bp03">OPS04-BP03 — 사용자 경험 원격 분석 구현</Link></li>
-        <li><Link to="/appendix/ops4/bp04">OPS04-BP04 — 의존성 원격 분석 구현</Link></li>
-        <li><Link to="/appendix/ops4/bp05">OPS04-BP05 — 분산 추적 구현</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops4/bp01">OPS04-BP01 — 핵심 성과 지표 파악</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops4/bp02">OPS04-BP02 — 애플리케이션 원격 분석 구현</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops4/bp03">OPS04-BP03 — 사용자 경험 원격 분석 구현</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops4/bp04">OPS04-BP04 — 의존성 원격 분석 구현</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops4/bp05">OPS04-BP05 — 분산 추적 구현</Link></li>
       </ul>
     </article>
   );

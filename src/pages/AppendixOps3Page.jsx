@@ -14,13 +14,13 @@ export default function AppendixOps3Page() {
 
       <h2>모범 사례</h2>
       <ul>
-        <li><Link to="/appendix/ops3/bp01">OPS03-BP01 — 경영진 후원 제공</Link></li>
-        <li><Link to="/appendix/ops3/bp02">OPS03-BP02 — 결과가 위험에 처했을 때 행동을 취할 수 있도록 팀 구성원 권한 부여</Link></li>
-        <li><Link to="/appendix/ops3/bp03">OPS03-BP03 — 에스컬레이션 장려</Link></li>
-        <li><Link to="/appendix/ops3/bp04">OPS03-BP04 — 커뮤니케이션은 시기적절하고 명확하며 실행 가능함</Link></li>
-        <li><Link to="/appendix/ops3/bp05">OPS03-BP05 — 실험 장려</Link></li>
-        <li><Link to="/appendix/ops3/bp06">OPS03-BP06 — 팀 구성원이 기술 역량을 유지하고 발전시키도록 장려</Link></li>
-        <li><Link to="/appendix/ops3/bp07">OPS03-BP07 — 팀에 적절한 인원 배치</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops3/bp01">OPS03-BP01 — 경영진 후원 제공</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops3/bp02">OPS03-BP02 — 결과가 위험에 처했을 때 행동을 취할 수 있도록 팀 구성원 권한 부여</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops3/bp03">OPS03-BP03 — 에스컬레이션 장려</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops3/bp04">OPS03-BP04 — 커뮤니케이션은 시기적절하고 명확하며 실행 가능함</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops3/bp05">OPS03-BP05 — 실험 장려</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops3/bp06">OPS03-BP06 — 팀 구성원이 기술 역량을 유지하고 발전시키도록 장려</Link></li>
+        <li><Link to="/appendix/operational-excellence/ops3/bp07">OPS03-BP07 — 팀에 적절한 인원 배치</Link></li>
       </ul>
     </article>
   );

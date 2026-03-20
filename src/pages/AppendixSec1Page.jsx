@@ -36,7 +36,7 @@ export default function AppendixSec1Page() {
           <span>IaC 템플릿으로 표준 보안 제어를 정의하고, CI/CD 파이프라인을 통해 자동으로 테스트하고 배포합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/security/sec1/bp07">SEC01-BP07: 위협 모델을 사용하여 위협을 식별하고 완화 우선순위 지정</Link></strong><br />
+          <strong><Link to="/appendix/security/sec1/bp07">SEC01-BP07: 위협 모델을 사용하여 위협 식별 및 완화 우선순위 지정</Link></strong><br />
           <span>체계적인 위협 모델링을 수행하여 잠재적 위협을 식별하고, 완화 전략의 우선순위를 정해 보안 자원을 효과적으로 배분합니다.</span>
         </li>
         <li>
