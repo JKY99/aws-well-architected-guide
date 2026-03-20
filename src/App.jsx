@@ -176,7 +176,6 @@ import AppendixOps4Bp02Page from "./pages/AppendixOps4Bp02Page";
 import AppendixOps4Bp03Page from "./pages/AppendixOps4Bp03Page";
 import AppendixOps4Bp04Page from "./pages/AppendixOps4Bp04Page";
 import AppendixOps4Bp05Page from "./pages/AppendixOps4Bp05Page";
-import AppendixOps4Bp06Page from "./pages/AppendixOps4Bp06Page";
 
 // Appendix BP Pages - OPS5
 import AppendixOps5Bp01Page from "./pages/AppendixOps5Bp01Page";
@@ -276,7 +275,6 @@ import AppendixSec5Bp01Page from "./pages/AppendixSec5Bp01Page";
 import AppendixSec5Bp02Page from "./pages/AppendixSec5Bp02Page";
 import AppendixSec5Bp03Page from "./pages/AppendixSec5Bp03Page";
 import AppendixSec5Bp04Page from "./pages/AppendixSec5Bp04Page";
-import AppendixSec5Bp05Page from "./pages/AppendixSec5Bp05Page";
 
 // Appendix BP Pages - SEC6
 import AppendixSec6Bp01Page from "./pages/AppendixSec6Bp01Page";
@@ -296,13 +294,11 @@ import AppendixSec8Bp01Page from "./pages/AppendixSec8Bp01Page";
 import AppendixSec8Bp02Page from "./pages/AppendixSec8Bp02Page";
 import AppendixSec8Bp03Page from "./pages/AppendixSec8Bp03Page";
 import AppendixSec8Bp04Page from "./pages/AppendixSec8Bp04Page";
-import AppendixSec8Bp05Page from "./pages/AppendixSec8Bp05Page";
 
 // Appendix BP Pages - SEC9
 import AppendixSec9Bp01Page from "./pages/AppendixSec9Bp01Page";
 import AppendixSec9Bp02Page from "./pages/AppendixSec9Bp02Page";
 import AppendixSec9Bp03Page from "./pages/AppendixSec9Bp03Page";
-import AppendixSec9Bp04Page from "./pages/AppendixSec9Bp04Page";
 
 // Appendix BP Pages - SEC10
 import AppendixSec10Bp01Page from "./pages/AppendixSec10Bp01Page";
@@ -343,14 +339,12 @@ import AppendixRel2Bp05Page from "./pages/AppendixRel2Bp05Page";
 import AppendixRel3Bp01Page from "./pages/AppendixRel3Bp01Page";
 import AppendixRel3Bp02Page from "./pages/AppendixRel3Bp02Page";
 import AppendixRel3Bp03Page from "./pages/AppendixRel3Bp03Page";
-import AppendixRel3Bp04Page from "./pages/AppendixRel3Bp04Page";
 
 // Appendix BP Pages - REL4
 import AppendixRel4Bp01Page from "./pages/AppendixRel4Bp01Page";
 import AppendixRel4Bp02Page from "./pages/AppendixRel4Bp02Page";
 import AppendixRel4Bp03Page from "./pages/AppendixRel4Bp03Page";
 import AppendixRel4Bp04Page from "./pages/AppendixRel4Bp04Page";
-import AppendixRel4Bp05Page from "./pages/AppendixRel4Bp05Page";
 
 // Appendix BP Pages - REL5
 import AppendixRel5Bp01Page from "./pages/AppendixRel5Bp01Page";
@@ -388,7 +382,6 @@ import AppendixRel9Bp01Page from "./pages/AppendixRel9Bp01Page";
 import AppendixRel9Bp02Page from "./pages/AppendixRel9Bp02Page";
 import AppendixRel9Bp03Page from "./pages/AppendixRel9Bp03Page";
 import AppendixRel9Bp04Page from "./pages/AppendixRel9Bp04Page";
-import AppendixRel9Bp05Page from "./pages/AppendixRel9Bp05Page";
 
 // Appendix BP Pages - REL10
 import AppendixRel10Bp01Page from "./pages/AppendixRel10Bp01Page";
@@ -565,7 +558,6 @@ import AppendixSus5Bp01Page from "./pages/AppendixSus5Bp01Page";
 import AppendixSus5Bp02Page from "./pages/AppendixSus5Bp02Page";
 import AppendixSus5Bp03Page from "./pages/AppendixSus5Bp03Page";
 import AppendixSus5Bp04Page from "./pages/AppendixSus5Bp04Page";
-import AppendixSus5Bp05Page from "./pages/AppendixSus5Bp05Page";
 
 // Appendix BP Pages - SUS6
 import AppendixSus6Bp01Page from "./pages/AppendixSus6Bp01Page";
@@ -705,7 +697,6 @@ export default function App() {
           <Route path="/appendix/operational-excellence/ops4/bp03" element={<AppendixOps4Bp03Page />} />
           <Route path="/appendix/operational-excellence/ops4/bp04" element={<AppendixOps4Bp04Page />} />
           <Route path="/appendix/operational-excellence/ops4/bp05" element={<AppendixOps4Bp05Page />} />
-          <Route path="/appendix/operational-excellence/ops4/bp06" element={<AppendixOps4Bp06Page />} />
           <Route path="/appendix/operational-excellence/ops5/bp01" element={<AppendixOps5Bp01Page />} />
           <Route path="/appendix/operational-excellence/ops5/bp02" element={<AppendixOps5Bp02Page />} />
           <Route path="/appendix/operational-excellence/ops5/bp03" element={<AppendixOps5Bp03Page />} />
@@ -795,7 +786,6 @@ export default function App() {
           <Route path="/appendix/security/sec5/bp02" element={<AppendixSec5Bp02Page />} />
           <Route path="/appendix/security/sec5/bp03" element={<AppendixSec5Bp03Page />} />
           <Route path="/appendix/security/sec5/bp04" element={<AppendixSec5Bp04Page />} />
-          <Route path="/appendix/security/sec5/bp05" element={<AppendixSec5Bp05Page />} />
           <Route path="/appendix/security/sec6/bp01" element={<AppendixSec6Bp01Page />} />
           <Route path="/appendix/security/sec6/bp02" element={<AppendixSec6Bp02Page />} />
           <Route path="/appendix/security/sec6/bp03" element={<AppendixSec6Bp03Page />} />
@@ -809,11 +799,9 @@ export default function App() {
           <Route path="/appendix/security/sec8/bp02" element={<AppendixSec8Bp02Page />} />
           <Route path="/appendix/security/sec8/bp03" element={<AppendixSec8Bp03Page />} />
           <Route path="/appendix/security/sec8/bp04" element={<AppendixSec8Bp04Page />} />
-          <Route path="/appendix/security/sec8/bp05" element={<AppendixSec8Bp05Page />} />
           <Route path="/appendix/security/sec9/bp01" element={<AppendixSec9Bp01Page />} />
           <Route path="/appendix/security/sec9/bp02" element={<AppendixSec9Bp02Page />} />
           <Route path="/appendix/security/sec9/bp03" element={<AppendixSec9Bp03Page />} />
-          <Route path="/appendix/security/sec9/bp04" element={<AppendixSec9Bp04Page />} />
           <Route path="/appendix/security/sec10/bp01" element={<AppendixSec10Bp01Page />} />
           <Route path="/appendix/security/sec10/bp02" element={<AppendixSec10Bp02Page />} />
           <Route path="/appendix/security/sec10/bp03" element={<AppendixSec10Bp03Page />} />
@@ -860,12 +848,10 @@ export default function App() {
           <Route path="/appendix/reliability/rel3/bp01" element={<AppendixRel3Bp01Page />} />
           <Route path="/appendix/reliability/rel3/bp02" element={<AppendixRel3Bp02Page />} />
           <Route path="/appendix/reliability/rel3/bp03" element={<AppendixRel3Bp03Page />} />
-          <Route path="/appendix/reliability/rel3/bp04" element={<AppendixRel3Bp04Page />} />
           <Route path="/appendix/reliability/rel4/bp01" element={<AppendixRel4Bp01Page />} />
           <Route path="/appendix/reliability/rel4/bp02" element={<AppendixRel4Bp02Page />} />
           <Route path="/appendix/reliability/rel4/bp03" element={<AppendixRel4Bp03Page />} />
           <Route path="/appendix/reliability/rel4/bp04" element={<AppendixRel4Bp04Page />} />
-          <Route path="/appendix/reliability/rel4/bp05" element={<AppendixRel4Bp05Page />} />
           <Route path="/appendix/reliability/rel5/bp01" element={<AppendixRel5Bp01Page />} />
           <Route path="/appendix/reliability/rel5/bp02" element={<AppendixRel5Bp02Page />} />
           <Route path="/appendix/reliability/rel5/bp03" element={<AppendixRel5Bp03Page />} />
@@ -893,7 +879,6 @@ export default function App() {
           <Route path="/appendix/reliability/rel9/bp02" element={<AppendixRel9Bp02Page />} />
           <Route path="/appendix/reliability/rel9/bp03" element={<AppendixRel9Bp03Page />} />
           <Route path="/appendix/reliability/rel9/bp04" element={<AppendixRel9Bp04Page />} />
-          <Route path="/appendix/reliability/rel9/bp05" element={<AppendixRel9Bp05Page />} />
           <Route path="/appendix/reliability/rel10/bp01" element={<AppendixRel10Bp01Page />} />
           <Route path="/appendix/reliability/rel10/bp02" element={<AppendixRel10Bp02Page />} />
           <Route path="/appendix/reliability/rel10/bp03" element={<AppendixRel10Bp03Page />} />
@@ -1051,7 +1036,6 @@ export default function App() {
           <Route path="/appendix/sustainability/sus5/bp02" element={<AppendixSus5Bp02Page />} />
           <Route path="/appendix/sustainability/sus5/bp03" element={<AppendixSus5Bp03Page />} />
           <Route path="/appendix/sustainability/sus5/bp04" element={<AppendixSus5Bp04Page />} />
-          <Route path="/appendix/sustainability/sus5/bp05" element={<AppendixSus5Bp05Page />} />
           <Route path="/appendix/sustainability/sus6/bp01" element={<AppendixSus6Bp01Page />} />
           <Route path="/appendix/sustainability/sus6/bp02" element={<AppendixSus6Bp02Page />} />
           <Route path="/appendix/sustainability/sus6/bp03" element={<AppendixSus6Bp03Page />} />

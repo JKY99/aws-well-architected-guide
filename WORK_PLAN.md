@@ -377,9 +377,120 @@ Each pillar appendix page contains individual Well-Architected question pages.
 
 ---
 
-## Phase C — Individual Best Practice Detail Pages (future)
+## Phase C — Individual Best Practice Detail Pages
 
-Each question has 3–8 best practices, each with its own page. ~300+ pages total. Scope and URLs to be determined when Phase B is complete.
+각 질문의 개별 모범 사례(BP)마다 상세 페이지 생성. **총 208개 페이지.**
+기둥별 커밋. BP 페이지는 사이드바 내비게이션에는 추가하지 않고, 각 질문 페이지에서 링크로 연결.
+
+### Phase C 파일 명명 규칙
+- `src/pages/AppendixOps{q}Bp{n}Page.jsx` (q=질문번호, n=BP번호 2자리)
+- 라우트: `/appendix/operational-excellence/ops{q}/bp{n}`
+- 모든 기둥 동일 패턴
+
+### Phase C BP 수량 목록
+
+| 질문 | BP 수 | 라우트 예시 |
+|------|-------|-----------|
+| OPS1 | 6 | /appendix/operational-excellence/ops1/bp01 ~ bp06 |
+| OPS2 | 5 | /appendix/operational-excellence/ops2/bp01 ~ bp05 |
+| OPS3 | 5 | /appendix/operational-excellence/ops3/bp01 ~ bp05 |
+| OPS4 | 6 | /appendix/operational-excellence/ops4/bp01 ~ bp06 |
+| OPS5 | 7 | /appendix/operational-excellence/ops5/bp01 ~ bp07 |
+| SEC1 | 6 | /appendix/security/sec1/bp01 ~ bp06 |
+| SEC2 | 4 | /appendix/security/sec2/bp01 ~ bp04 |
+| SEC3 | 4 | /appendix/security/sec3/bp01 ~ bp04 |
+| SEC4 | 6 | /appendix/security/sec4/bp01 ~ bp06 |
+| SEC5 | 5 | /appendix/security/sec5/bp01 ~ bp05 |
+| SEC6 | 5 | /appendix/security/sec6/bp01 ~ bp05 |
+| SEC7 | 5 | /appendix/security/sec7/bp01 ~ bp05 |
+| SEC8 | 5 | /appendix/security/sec8/bp01 ~ bp05 |
+| SEC9 | 4 | /appendix/security/sec9/bp01 ~ bp04 |
+| REL1 | 5 | /appendix/reliability/rel1/bp01 ~ bp05 |
+| REL2 | 5 | /appendix/reliability/rel2/bp01 ~ bp05 |
+| REL3 | 4 | /appendix/reliability/rel3/bp01 ~ bp04 |
+| REL4 | 5 | /appendix/reliability/rel4/bp01 ~ bp05 |
+| REL5 | 4 | /appendix/reliability/rel5/bp01 ~ bp04 |
+| REL6 | 4 | /appendix/reliability/rel6/bp01 ~ bp04 |
+| REL7 | 4 | /appendix/reliability/rel7/bp01 ~ bp04 |
+| REL8 | 5 | /appendix/reliability/rel8/bp01 ~ bp05 |
+| REL9 | 4 | /appendix/reliability/rel9/bp01 ~ bp04 |
+| PERF1 | 5 | /appendix/performance-efficiency/perf1/bp01 ~ bp05 |
+| PERF2 | 5 | /appendix/performance-efficiency/perf2/bp01 ~ bp05 |
+| PERF3 | 4 | /appendix/performance-efficiency/perf3/bp01 ~ bp04 |
+| PERF4 | 4 | /appendix/performance-efficiency/perf4/bp01 ~ bp04 |
+| PERF5 | 5 | /appendix/performance-efficiency/perf5/bp01 ~ bp05 |
+| PERF6 | 4 | /appendix/performance-efficiency/perf6/bp01 ~ bp04 |
+| PERF7 | 5 | /appendix/performance-efficiency/perf7/bp01 ~ bp05 |
+| PERF8 | 5 | /appendix/performance-efficiency/perf8/bp01 ~ bp05 |
+| COST1 | 6 | /appendix/cost-optimization/cost1/bp01 ~ bp06 |
+| COST2 | 4 | /appendix/cost-optimization/cost2/bp01 ~ bp04 |
+| COST3 | 5 | /appendix/cost-optimization/cost3/bp01 ~ bp05 |
+| COST4 | 4 | /appendix/cost-optimization/cost4/bp01 ~ bp04 |
+| COST5 | 5 | /appendix/cost-optimization/cost5/bp01 ~ bp05 |
+| COST6 | 3 | /appendix/cost-optimization/cost6/bp01 ~ bp03 |
+| COST7 | 4 | /appendix/cost-optimization/cost7/bp01 ~ bp04 |
+| SUS1 | 1 | /appendix/sustainability/sus1/bp01 |
+| SUS2 | 5 | /appendix/sustainability/sus2/bp01 ~ bp05 |
+| SUS3 | 6 | /appendix/sustainability/sus3/bp01 ~ bp06 |
+| SUS4 | 5 | /appendix/sustainability/sus4/bp01 ~ bp05 |
+| SUS5 | 5 | /appendix/sustainability/sus5/bp01 ~ bp05 |
+| SUS6 | 5 | /appendix/sustainability/sus6/bp01 ~ bp05 |
+
+**Phase C Total: 208 pages**
+
+### Phase C 체크리스트 (재개 시 확인 — 파일 존재 여부로 판단)
+
+#### OPS (29 BPs)
+- [ ] OPS1 BPs (6): AppendixOps1Bp01~06Page.jsx
+- [ ] OPS2 BPs (5): AppendixOps2Bp01~05Page.jsx
+- [ ] OPS3 BPs (5): AppendixOps3Bp01~05Page.jsx
+- [ ] OPS4 BPs (6): AppendixOps4Bp01~06Page.jsx
+- [ ] OPS5 BPs (7): AppendixOps5Bp01~07Page.jsx
+- [ ] AppendixOps*Page 질문 페이지에 BP 링크 추가
+- [ ] App.jsx OPS BP 라우트 추가
+- [ ] git commit + push (OPS)
+
+#### SEC (44 BPs)
+- [ ] SEC1 BPs (6): AppendixSec1Bp01~06Page.jsx
+- [ ] SEC2 BPs (4): AppendixSec2Bp01~04Page.jsx
+- [ ] SEC3 BPs (4): AppendixSec3Bp01~04Page.jsx
+- [ ] SEC4 BPs (6): AppendixSec4Bp01~06Page.jsx
+- [ ] SEC5 BPs (5): AppendixSec5Bp01~05Page.jsx
+- [ ] SEC6 BPs (5): AppendixSec6Bp01~05Page.jsx
+- [ ] SEC7 BPs (5): AppendixSec7Bp01~05Page.jsx
+- [ ] SEC8 BPs (5): AppendixSec8Bp01~05Page.jsx
+- [ ] SEC9 BPs (4): AppendixSec9Bp01~04Page.jsx
+- [ ] AppendixSec*Page 질문 페이지에 BP 링크 추가
+- [ ] App.jsx SEC BP 라우트 추가
+- [ ] git commit + push (SEC)
+
+#### REL (40 BPs)
+- [ ] REL1~9 BPs: AppendixRel{q}Bp{n}Page.jsx
+- [ ] AppendixRel*Page 질문 페이지에 BP 링크 추가
+- [ ] App.jsx REL BP 라우트 추가
+- [ ] git commit + push (REL)
+
+#### PERF (37 BPs)
+- [ ] PERF1~8 BPs: AppendixPerf{q}Bp{n}Page.jsx
+- [ ] AppendixPerf*Page 질문 페이지에 BP 링크 추가
+- [ ] App.jsx PERF BP 라우트 추가
+- [ ] git commit + push (PERF)
+
+#### COST (31 BPs)
+- [ ] COST1~7 BPs: AppendixCost{q}Bp{n}Page.jsx
+- [ ] AppendixCost*Page 질문 페이지에 BP 링크 추가
+- [ ] App.jsx COST BP 라우트 추가
+- [ ] git commit + push (COST)
+
+#### SUS (27 BPs)
+- [ ] SUS1~6 BPs: AppendixSus{q}Bp{n}Page.jsx
+- [ ] AppendixSus*Page 질문 페이지에 BP 링크 추가
+- [ ] App.jsx SUS BP 라우트 추가
+- [ ] git commit + push (SUS)
+
+#### 최종 정리
+- [ ] pageOrder.js에 208개 BP 경로 추가
+- [ ] git commit + push (final)
 
 ---
 

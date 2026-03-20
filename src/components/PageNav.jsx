@@ -14,7 +14,7 @@ export default function PageNav() {
     <div className="doc-pagination">
       {prev ? (
         <Link to={prev.path} className="doc-pagination-btn prev">
-          <span className="doc-pagination-label">← Previous</span>
+          <span className="doc-pagination-label">← 이전</span>
           <span className="doc-pagination-title">{prev.title}</span>
         </Link>
       ) : (
@@ -22,7 +22,7 @@ export default function PageNav() {
       )}
       {next ? (
         <Link to={next.path} className="doc-pagination-btn next">
-          <span className="doc-pagination-label">Next →</span>
+          <span className="doc-pagination-label">다음 →</span>
           <span className="doc-pagination-title">{next.title}</span>
         </Link>
       ) : (
