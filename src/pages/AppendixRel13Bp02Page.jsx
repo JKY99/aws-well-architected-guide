@@ -4,49 +4,55 @@ import "../components/DocContent.css";
 export default function AppendixRel13Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>REL13-BP02 — 복구 목표를 충족하는 복구 전략 사용</h1>
+      <h1>REL13-BP02 — 복구 목표를 충족하는 정의된 복구 전략 사용</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 재해 발생 시 RTO/RPO 목표를 달성하지 못하여 비즈니스에 큰 손실이 발생할 수 있습니다.</p>
+        <p>이 모범 사례를 수립하지 않으면 높은 수준의 위험이 노출됩니다.</p>
       </div>
       <p>
-        정의된 RTO와 RPO 목표에 맞는 DR 전략을 선택하고 구현합니다.
-        AWS에서는 백업/복원, 파일럿 라이트, 웜 스탠바이, 멀티 사이트 액티브-액티브의
-        네 가지 주요 DR 전략을 지원합니다.
+        각 워크로드에 대해 DR 목표를 달성할 수 있는 정의되고 구현된 DR 전략이 있습니다.
+        워크로드 간 DR 전략은 설명된 전략들과 같은 재사용 가능한 패턴을 활용합니다.
       </p>
       <h2>원하는 결과</h2>
       <p>
-        선택된 DR 전략이 RTO/RPO 목표를 달성할 수 있으며, DR 환경이 구현되어
-        정기적인 테스트를 통해 목표 달성이 검증됩니다.
+        각 워크로드에 대해 DR 목표를 달성할 수 있는 정의되고 구현된 DR 전략이 있습니다.
+        워크로드 간 DR 전략은 재사용 가능한 패턴을 활용합니다.
       </p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>RTO/RPO 목표보다 훨씬 낮은 수준의 DR 전략을 선택하여 비용을 낭비하는 경우</li>
-        <li>RTO/RPO 목표를 달성할 수 없는 DR 전략을 선택하는 경우</li>
-        <li>DR 전략을 문서화했지만 실제로 구현하지 않는 경우</li>
-        <li>DR 환경을 구축했지만 테스트하지 않아 실제 재해 시 작동하지 않는 경우</li>
+        <li>유사한 DR 목표를 가진 워크로드에 일관성 없는 복구 절차 구현</li>
+        <li>재해 발생 시 임시방편으로 DR 전략을 구현</li>
+        <li>재해 복구 계획 없음</li>
+        <li>복구 중 컨트롤 플레인 작업에 의존</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>RTO/RPO 목표에 최적화된 비용 효율적인 DR 전략</li>
-        <li>재해 발생 시 예측 가능하고 검증된 복구</li>
-        <li>비즈니스 연속성 보장</li>
+        <li>정의된 복구 전략을 사용하면 공통 도구와 테스트 절차 사용 가능</li>
+        <li>팀 간 지식 공유 개선 및 자체 워크로드에 대한 DR 구현 개선</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li><strong>백업/복원 (RTO: 수 시간, RPO: 수 시간~1일):</strong> AWS Backup으로 정기 백업을 수행하고 S3에 저장합니다. 비용이 가장 낮지만 RTO가 가장 깁니다.</li>
-        <li><strong>파일럿 라이트 (RTO: 수십 분):</strong> 핵심 데이터(데이터베이스 복제)만 DR 리전에 유지하고, 재해 시 나머지 인프라를 빠르게 프로비저닝합니다.</li>
-        <li><strong>웜 스탠바이 (RTO: 수 분):</strong> 축소된 규모의 완전한 스택을 DR 리전에서 상시 운영하다가 재해 시 프로덕션 규모로 확장합니다.</li>
-        <li><strong>멀티 사이트 액티브-액티브 (RTO: 수 초):</strong> 두 리전에서 동시에 트래픽을 처리합니다. 비용이 가장 높지만 RTO가 가장 짧습니다.</li>
-        <li>Amazon Aurora Global Database, DynamoDB Global Tables를 사용하여 리전 간 데이터 복제를 구성합니다.</li>
+        <li><strong>백업 및 복원 (RPO: 수 시간, RTO: 24시간 이하):</strong> 데이터와 애플리케이션을 복구 리전에 백업, IaC로 인프라 배포, 복구 중 코드 배포 및 백업 데이터 복원. 비용에 민감한 워크로드에 적합</li>
+        <li><strong>파일럿 라이트 (RPO: 수 분, RTO: 수십 분):</strong> 복구 리전에 핵심 워크로드 인프라 프로비저닝, 데이터 복제 및 백업. 리소스는 항상 켜져 있으나 애플리케이션 서버/서버리스 컴퓨팅은 필요 시 생성. 중간 RTO/RPO 필요에 적합</li>
+        <li><strong>웜 스탠바이 (RPO: 수 초, RTO: 수 분):</strong> 복구 리전에 축소된 규모의 완전 기능 버전 유지, 데이터 복제 및 라이브 유지, 복구 필요 시 빠른 확장. 중요 워크로드에 적합</li>
+        <li><strong>멀티 리전 액티브/액티브 (RPO: 거의 제로, RTO: 잠재적으로 제로):</strong> 여러 리전에서 트래픽을 적극적으로 처리, 리전 간 데이터 동기화 필요. 글로벌 애플리케이션이나 최대 가용성 요구사항에 적합</li>
+        <li><strong>AWS Elastic Disaster Recovery:</strong> 파일럿 라이트/웜 스탠바이의 대안, RPO 수 초, RTO 수 분, 지속적인 데이터 보호 제공</li>
+        <li>모든 전략에서 AWS Region 내 백업 + 복구 리전으로 복사 필요</li>
+        <li>파일럿 라이트/웜 스탠바이/액티브-액티브의 경우 복구 리전에 라이브 데이터 복제</li>
+        <li>장애 조치 트래픽 재라우팅 옵션: Amazon Route 53(멀티 IP 엔드포인트), Amazon Application Recovery Controller(수동 장애 조치용 데이터 플레인 API)</li>
+        <li>장애 복구 계획 설계: Aurora Global Database 관리형 계획 장애 조치, DynamoDB Global Tables 자동 재개</li>
+        <li>컨트롤 플레인 작업 최소화(REL11-BP04 참조); 데이터 플레인 작업 우선 활용</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Backup — 백업/복원 전략 구현</li>
-        <li>Amazon Aurora Global Database — 리전 간 데이터베이스 복제</li>
-        <li>Amazon DynamoDB Global Tables — 멀티 리전 데이터 복제</li>
-        <li>Amazon Route 53 — DR 리전으로 트래픽 전환</li>
-        <li>AWS Elastic Disaster Recovery — 빠른 DR 복구 자동화</li>
+        <li>AWS Backup (중앙화된 백업 구성 및 모니터링)</li>
+        <li>AWS CloudFormation / CloudFormation StackSets (인프라 코드화 및 멀티 리전 배포)</li>
+        <li>AWS Elastic Disaster Recovery (관리형 DR 서비스)</li>
+        <li>Amazon Application Recovery Controller (수동으로 시작된 장애 조치 API)</li>
+        <li>Amazon Route 53 (DNS 기반 트래픽 관리)</li>
+        <li>Amazon RDS, Aurora Global Database (관계형 데이터베이스 복제)</li>
+        <li>Amazon DynamoDB Global Tables (멀티 리전 액티브-액티브)</li>
+        <li>Amazon S3 교차 리전 복제 (객체 백업 및 복제)</li>
       </ul>
       <PageNav />
     </article>
