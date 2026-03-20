@@ -4,50 +4,53 @@ import "../components/DocContent.css";
 export default function AppendixRel11Bp01Page() {
   return (
     <article className="doc-content">
-      <h1>REL11-BP01 — 모든 워크로드 구성 요소를 모니터링하여 장애 감지</h1>
+      <h1>REL11-BP01 — 장애 감지를 위한 모든 워크로드 구성 요소 모니터링</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 장애를 늦게 감지하여 가용성에 큰 영향을 미칩니다.</p>
+        <p>이 모범 사례를 수립하지 않으면 높은 수준의 위험이 노출됩니다.</p>
       </div>
       <p>
-        구성 요소의 장애를 신속하게 감지하여 자동 복구를 트리거하거나 운영팀이 조치를
-        취할 수 있도록 합니다. 외부 상태 확인, 내부 상태 확인, 비즈니스 메트릭 등
-        다양한 수준에서 모니터링을 구성합니다.
+        워크로드의 필수 구성 요소를 독립적으로 모니터링하여 장애 발생 시 즉시 감지하고 알립니다.
       </p>
       <h2>원하는 결과</h2>
       <p>
-        모든 구성 요소(컴퓨팅, 데이터베이스, 네트워크, 의존성)가 모니터링되며,
-        장애 발생 시 수 분 내에 감지하여 자동 복구 또는 운영팀 알림이 트리거됩니다.
+        워크로드의 필수 구성 요소를 독립적으로 모니터링하여 장애가 발생하는 즉시 감지하고 알림을 전송합니다.
       </p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>서버 자체만 모니터링하고 애플리케이션 수준의 상태 확인을 수행하지 않는 경우</li>
-        <li>외부 사용자 관점에서의 가용성을 모니터링하지 않아 사용자가 먼저 장애를 인지하는 경우</li>
-        <li>의존성 서비스(외부 API, 데이터베이스)의 상태를 모니터링하지 않는 경우</li>
-        <li>상태 확인 엔드포인트가 항상 200을 반환하여 실제 장애를 숨기는 경우</li>
+        <li>알람이 구성되지 않아 알림 없이 서비스 중단 발생</li>
+        <li>알람은 존재하지만 임계값이 적절한 대응 시간을 제공하지 않음</li>
+        <li>RTO(복구 시간 목표)를 충족할 만큼 메트릭을 자주 수집하지 않음</li>
+        <li>워크로드의 고객 대면 인터페이스만 적극적으로 모니터링</li>
+        <li>기술 메트릭만 수집하고 비즈니스 기능 메트릭 없음</li>
+        <li>워크로드의 사용자 경험을 측정하는 메트릭 없음</li>
+        <li>너무 많은 모니터 생성</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>장애 조기 감지로 MTTR(평균 복구 시간) 단축</li>
-        <li>자동 복구 메커니즘 트리거를 위한 기반 마련</li>
-        <li>사용자 영향 최소화</li>
-        <li>장애 패턴 분석을 통한 사전 예방</li>
+        <li>모든 계층에 적절한 모니터링을 통해 감지 시간(MTTD)을 줄여 복구 시간 단축</li>
+        <li>자동화된 복구 및 복원 메커니즘 트리거를 위한 기반 마련</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>로드 밸런서 상태 확인을 구성하여 비정상 인스턴스를 트래픽 대상에서 제외합니다.</li>
-        <li>애플리케이션에 /health 엔드포인트를 구현하여 내부 의존성 상태를 확인하고 응답합니다.</li>
-        <li>Amazon Route 53 상태 확인을 구성하여 외부에서 엔드포인트 가용성을 모니터링합니다.</li>
-        <li>Amazon CloudWatch 합성 모니터(Synthetics Canary)를 사용하여 실제 사용자 경험을 시뮬레이션합니다.</li>
-        <li>Amazon CloudWatch 경보를 구성하여 임계값 초과 시 SNS 알림을 전송합니다.</li>
-        <li>AWS Health Dashboard 이벤트를 구독하여 AWS 서비스 상태 변화를 모니터링합니다.</li>
+        <li>RTO 요구사항에 따라 모니터링 간격 결정</li>
+        <li>EC2 세부 모니터링(1분 간격) 활성화, RDS 향상된 모니터링 구성</li>
+        <li>Lambda, API Gateway, Amazon EKS, Amazon ECS, 로드 밸런서, S3, FSx, EFS, EBS 등 구성 요소 및 관리형 서비스에 대한 세부 모니터링 구성</li>
+        <li>비즈니스 KPI, 간접 문제 지표, 고객 경험 메트릭을 측정하는 사용자 정의 메트릭 생성</li>
+        <li>CloudWatch Synthetics를 사용하여 다양한 원격 위치에서 워크로드 엔드포인트에 대한 합성 트랜잭션 테스트(카나리아 테스트) 지속 실행</li>
+        <li>워크로드 구성 요소 장애에 대한 알람 구성 및 CloudWatch 대시보드 생성</li>
+        <li>CloudWatch 또는 X-Ray를 사용하여 분산 추적 구현</li>
+        <li>별도 리전 및 계정에 모니터링 시스템 구축하여 교차 리전/교차 계정 가시성 확보</li>
+        <li>AWS Health 이벤트 알림 활성화 및 Amazon EventBridge를 통해 모니터링 도구와 통합</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon CloudWatch — 메트릭, 경보, 합성 모니터</li>
-        <li>Amazon Route 53 — 엔드포인트 상태 확인</li>
-        <li>Elastic Load Balancing — 대상 상태 확인</li>
-        <li>AWS Health Dashboard — AWS 서비스 상태 모니터링</li>
+        <li>Amazon CloudWatch (기본 모니터링 서비스)</li>
+        <li>Amazon CloudWatch Synthetics (카나리아 테스트 및 사용자 경험 모니터링)</li>
+        <li>AWS X-Ray (분산 추적)</li>
+        <li>AWS Health (서비스 저하 알림)</li>
+        <li>Amazon EventBridge (이벤트 라우팅 및 통합)</li>
+        <li>AWS User Notifications (알림 전달)</li>
       </ul>
       <PageNav />
     </article>
