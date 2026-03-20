@@ -32,7 +32,7 @@ export default function AppendixRel13Bp04Page() {
         <li>DR 테스트의 신뢰성 향상</li>
         <li>운영 부담 감소(자동화된 동기화)</li>
       </ul>
-      <h2>구현 지침</html2>
+      <h2>구현 지침</h2>
       <ul>
         <li>AWS CloudFormation StackSets를 사용하여 프로덕션과 DR 리전에 동일한 인프라를 배포합니다.</li>
         <li>CI/CD 파이프라인에 DR 리전 배포를 포함하여 프로덕션 배포와 동시에 DR 환경도 업데이트합니다.</li>

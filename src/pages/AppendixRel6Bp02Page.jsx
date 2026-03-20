@@ -4,41 +4,48 @@ import "../components/DocContent.css";
 export default function AppendixRel6Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>REL06-BP02 — 일정 기반 자동 조정</h1>
+      <h1>REL06-BP02 — 알림 설계</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
+        <div className="doc-note-title">위험 수준: 높음</div>
+        <p>이 모범 사례를 따르지 않을 경우 알람 피로(alert fatigue)로 인해 운영팀이 실제 중요한 장애를 놓치거나, 반대로 장애 발생 시 아무도 알림을 받지 못하는 상황이 발생합니다.</p>
       </div>
-      <p>예측 가능한 트래픽 패턴에 대해 스케줄 기반 스케일링을 설정하여 트래픽 급증 전에 미리 리소스를 준비합니다.</p>
+      <p>효과적인 알림 설계는 의미 있는 알람만 전달하고 노이즈를 제거하는 것입니다. 올바른 임계값 설정, 에스컬레이션 경로 정의, 온콜 로테이션과 연계하여 신속하고 적절한 대응을 보장합니다.</p>
       <h2>원하는 결과</h2>
-      <p>예측 가능한 트래픽 증가에 선제적으로 대응하는 리소스 프로비저닝을 구현합니다. 반응적 스케일링보다 먼저 리소스를 준비함으로써 초기 트래픽 급증 시 성능 저하 없이 서비스를 제공합니다.</p>
+      <p>모든 알람이 실행 가능한 정보를 담고 있으며, 수신자가 즉시 조치를 취할 수 있습니다. 심각도에 따라 알림 채널과 에스컬레이션 경로가 구분되며, 알람 피로 없이 실제 장애를 높은 신뢰도로 감지합니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>반응적 스케일링만 사용하여 예측 가능한 급증에도 초기 성능 저하 발생</li>
-        <li>정기적 이벤트(영업시간 시작, 마케팅 캠페인 등)에 대한 사전 스케일링 미설정</li>
-        <li>스케일 업 지연으로 인해 예측 가능한 피크 시간대에 성능 저하 반복</li>
-        <li>타임존 미고려로 스케줄이 잘못된 시간에 실행</li>
+        <li>너무 낮은 임계값으로 설정하여 수시로 발생하는 false positive 알람</li>
+        <li>알람이 발생했지만 담당자가 누구인지 불명확한 소유권 미정의</li>
+        <li>모든 알람이 동일한 채널로 전달되어 심각도 구분 불가</li>
+        <li>알람 발생 시 컨텍스트 정보 없이 지표 이름과 임계값만 포함</li>
+        <li>에스컬레이션 정책 미설정으로 on-call 담당자가 응답하지 않을 때 조치 지연</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>예측 가능한 성능 — 피크 시간대 시작 전부터 충분한 용량 확보</li>
-        <li>콜드 스타트 방지 — 스케일 아웃 시 인스턴스 초기화 지연 없음</li>
-        <li>운영 안정성 향상 — 예측 가능한 트래픽 패턴에 대한 신뢰성 있는 대응</li>
-        <li>비용 최적화 — 낮은 트래픽 시간대에 자동으로 스케일 인</li>
+        <li>알람 피로 감소로 운영팀이 실제 중요 이벤트에 집중</li>
+        <li>명확한 에스컬레이션 경로로 장애 대응 지연 최소화</li>
+        <li>심각도 기반 알림으로 적절한 긴급도와 대응 방식 결정 가능</li>
+        <li>알람 컨텍스트 제공으로 초기 분류(triage) 시간 단축</li>
+        <li>온콜 로테이션 관리로 팀원 번아웃 방지</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>영업시간 기반 스케줄링으로 업무 시작 전 용량 증가 및 업무 종료 후 감소 설정</li>
-        <li>마케팅 이벤트, 프로모션 등 예정된 트래픽 급증 전에 수동 스케일 업 예약</li>
-        <li>타임존을 명확히 지정하여 스케줄이 올바른 로컬 시간에 실행되도록 구성</li>
-        <li>Lambda Provisioned Concurrency를 예약하여 콜드 스타트 없는 서버리스 실행 보장</li>
-        <li>스케줄 기반 스케일링과 동적 스케일링을 함께 사용하여 예측 외 급증도 대응</li>
+        <li>알람 심각도를 P1(서비스 중단)부터 P4(정보성)까지 등급화하고 각 등급별 대응 시간(SLA) 정의</li>
+        <li>CloudWatch Alarm을 생성할 때 평가 기간과 데이터 포인트 수를 조정하여 일시적 스파이크로 인한 false positive 방지</li>
+        <li>Amazon SNS를 통해 PagerDuty, OpsGenie 등 온콜 관리 도구와 연동</li>
+        <li>알람 설명에 런북(runbook) 링크, 관련 대시보드 링크, 의심 원인 등 컨텍스트 정보 포함</li>
+        <li>비즈니스 시간 외 알람에 대한 에스컬레이션 정책을 온콜 도구에 구성</li>
+        <li>AWS Chatbot을 통해 Slack이나 Teams 채널로 알람을 전달하고 팀 내 가시성 확보</li>
+        <li>CloudWatch Anomaly Detection을 활용하여 동적 임계값 기반 알람 설정</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon EC2 Auto Scaling (Scheduled Actions) — 시간 기반 스케일링 액션</li>
-        <li>AWS Lambda Provisioned Concurrency — 예약된 동시성으로 콜드 스타트 방지</li>
-        <li>Amazon DynamoDB — 예약된 용량 모드 조정</li>
+        <li>Amazon CloudWatch Alarms — 지표 기반 알람 및 복합 알람</li>
+        <li>Amazon SNS — 알림 팬아웃 및 외부 도구 연동</li>
+        <li>AWS Chatbot — Slack/Teams 알림 통합</li>
+        <li>Amazon CloudWatch Anomaly Detection — ML 기반 이상 감지</li>
+        <li>AWS Systems Manager OpsCenter — 운영 이슈 집계 및 추적</li>
+        <li>Amazon DevOps Guru — AI 기반 이상 감지 및 인사이트</li>
       </ul>
       <PageNav />
     </article>
