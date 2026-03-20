@@ -4,52 +4,54 @@ import "../components/DocContent.css";
 export default function AppendixSec6Bp03Page() {
   return (
     <article className="doc-content">
-      <h1>SEC06-BP03 — 코드 무결성 검증 구현</h1>
+      <h1>SEC06-BP03 — 수동 관리 및 대화형 접근 축소</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <div className="doc-note-title">위험 수준: 중간</div>
+        <p>이 모범 사례를 따르지 않을 경우 비인가 변경 및 잘못된 구성의 운영 위험이 증가합니다.</p>
       </div>
       <p>
-        배포되는 코드, 컨테이너 이미지, 소프트웨어 패키지의 무결성을 암호화 서명으로 검증합니다.
-        공급망 공격(supply chain attack)과 코드 변조를 방지하기 위해, 서명된 아티팩트만
-        프로덕션 환경에 배포되도록 파이프라인에 무결성 검증을 통합합니다.
+        프로그래밍 방식의 스크립트와 자동화 문서(런북)가 컴퓨팅 리소스에 대한 승인된 작업을 캡처합니다. 자동화를 사용할 수 없어 사람의 판단이 필요한 경우에만 컴퓨팅 리소스에 대한 직접 접근을 허용합니다.
       </p>
       <h2>원하는 결과</h2>
-      <p>
-        CI/CD 파이프라인에서 빌드된 모든 아티팩트에 암호화 서명이 적용되고, 배포 시 서명 검증이
-        자동으로 수행됩니다. 서명되지 않거나 검증에 실패한 아티팩트는 배포가 차단됩니다.
-      </p>
+      <ul>
+        <li>프로그래밍 방식의 스크립트와 자동화 문서(런북)가 컴퓨팅 리소스에 대한 승인된 작업을 캡처</li>
+        <li>변경 탐지 시스템을 통해 자동으로 또는 사람의 판단이 필요할 때 수동으로 런북 시작</li>
+        <li>자동화를 사용할 수 없는 긴급 상황에서만 컴퓨팅 리소스에 대한 직접 접근 허용</li>
+        <li>모든 수동 활동이 로깅되고 자동화 기능을 개선하기 위한 검토 프로세스에 포함</li>
+      </ul>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>컨테이너 이미지나 배포 패키지에 서명을 적용하지 않고 배포함</li>
-        <li>이미지 태그(latest 등)만으로 신뢰하고 SHA256 다이제스트를 검증하지 않음</li>
-        <li>외부 소스에서 다운로드한 바이너리나 스크립트의 체크섬을 확인하지 않음</li>
-        <li>코드 서명 키를 접근 통제 없이 공유하거나 CI/CD 환경에 하드코딩함</li>
-        <li>소프트웨어 공급망(오픈소스 종속성)의 무결성을 검증하지 않음</li>
+        <li>SSH 또는 RDP 프로토콜로 Amazon EC2 인스턴스에 대화형 접근</li>
+        <li>개별 사용자 로그인(/etc/passwd 또는 Windows 로컬 사용자) 유지</li>
+        <li>여러 사용자 간에 비밀번호 또는 개인 키 공유</li>
+        <li>소프트웨어 수동 설치 및 구성 파일 생성/업데이트</li>
+        <li>소프트웨어 수동 업데이트 또는 패치</li>
+        <li>문제 해결을 위해 인스턴스에 로그인</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>소프트웨어 공급망 공격으로 인한 악성 코드 배포 방지</li>
-        <li>승인되지 않은 코드 변경이 프로덕션에 도달하는 것을 차단</li>
-        <li>배포된 소프트웨어의 출처와 무결성에 대한 감사 추적 확보</li>
-        <li>규정 준수 요구 사항(SLSA, NIST SSDF 등) 충족에 기여</li>
+        <li>의도치 않은 변경 및 잘못된 구성의 운영 위험 감소</li>
+        <li>SSH/RDP 접근 제거로 비인가 작업에 대한 공격 표면 감소</li>
+        <li>승인된 활동의 세분화된 정의 및 감사 가능</li>
+        <li>자격 증명 공유 관리 오버헤드 제거</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Signer를 사용하여 Lambda 함수 및 컨테이너 이미지에 코드 서명을 적용하고, 서명 프로파일로 신뢰할 수 있는 서명자를 관리합니다.</li>
-        <li>Amazon ECR의 이미지 서명 기능을 활성화하고, EKS/ECS 배포 시 서명 정책을 적용하여 서명되지 않은 이미지는 실행되지 않도록 합니다.</li>
-        <li>AWS CodePipeline에 서명 검증 단계를 추가하여 빌드 아티팩트가 변조 없이 파이프라인을 통과했는지 확인합니다.</li>
-        <li>AWS CodeArtifact를 사용하여 승인된 패키지 저장소를 구성하고, 외부 오픈소스 패키지의 버전을 고정하여 공급망 위험을 줄입니다.</li>
-        <li>Amazon Inspector의 SBOM(소프트웨어 자재 명세서) 내보내기 기능을 활용하여 종속성을 추적하고 취약한 패키지를 식별합니다.</li>
-        <li>서명 키는 AWS KMS에서 관리하고, IAM 정책으로 서명 작업을 CI/CD 역할에만 제한합니다.</li>
+        <li>EC2 인스턴스에 AWS Systems Manager Agent(SSM Agent)를 설치하고 기본 AMI에 포함되어 있는지 확인합니다.</li>
+        <li>IAM 역할에 AmazonSSMManagedInstanceCore 관리형 정책이 포함되어 있는지 확인합니다.</li>
+        <li>사용자 데이터 또는 EC2 Image Builder를 통해 SSH, RDP 및 원격 접근 서비스를 비활성화합니다.</li>
+        <li>보안 그룹 규칙이 22/tcp(SSH) 및 3389/tcp(RDP) 포트를 거부하는지 확인하고 AWS Config 탐지를 구현합니다.</li>
+        <li>IAM 정책 제어와 함께 Systems Manager에서 자동화, 런북, 실행 명령을 정의합니다.</li>
+        <li>필요한 경우 AWS Systems Manager Session Manager를 사용하여 대화형 접근을 허용하고 CloudWatch Logs 또는 S3 감사 로깅을 구성합니다.</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Signer — Lambda 및 컨테이너 이미지 코드 서명</li>
-        <li>Amazon ECR — 컨테이너 이미지 서명 및 서명 정책 적용</li>
-        <li>AWS CodePipeline — CI/CD 파이프라인 내 서명 검증 통합</li>
-        <li>AWS CodeArtifact — 승인된 소프트웨어 패키지 저장소 관리</li>
-        <li>AWS KMS — 서명 키 생성 및 관리</li>
+        <li>AWS Systems Manager — 기본 솔루션</li>
+        <li>AWS Systems Manager Session Manager — SSH/RDP 없는 안전한 대화형 접근</li>
+        <li>AWS CloudTrail — API 활동 감사</li>
+        <li>Amazon CloudWatch Logs — 세션 활동 로깅</li>
+        <li>AWS Config — 보안 그룹 규칙 규정 준수 모니터링</li>
+        <li>EC2 Image Builder — 보안 강화된 기본 이미지 생성</li>
       </ul>
       <PageNav />
     </article>

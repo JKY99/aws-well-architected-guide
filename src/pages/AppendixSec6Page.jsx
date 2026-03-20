@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import PageNav from "../components/PageNav";
 import "../components/DocContent.css";
 
 export default function AppendixSec6Page() {
   return (
     <article className="doc-content">
-      <h1>SEC 6. 컴퓨팅 리소스를 어떻게 보호합니까?</h1>
+      <h1>SEC 6 — 컴퓨팅 리소스를 어떻게 보호합니까?</h1>
 
       <p>
         워크로드의 컴퓨팅 리소스는 외부 및 내부 위협으로부터 보호하기 위해 여러 계층의 방어가 필요합니다. 컴퓨팅 리소스에는 EC2 인스턴스, 컨테이너, AWS Lambda 함수, 데이터베이스 서비스, IoT 디바이스 등이 포함됩니다.
@@ -34,6 +35,7 @@ export default function AppendixSec6Page() {
         </li>
       </ul>
 
+      <PageNav />
     </article>
   );
 }
