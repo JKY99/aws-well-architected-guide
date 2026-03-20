@@ -4,48 +4,55 @@ import "../components/DocContent.css";
 export default function AppendixRel5Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>REL05-BP02 — 불변 인프라로 배포</h1>
+      <h1>REL05-BP02 — 요청 스로틀링</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 환경 드리프트와 일관성 없는 배포로 인해 예측 불가능한 장애가 발생할 수 있습니다.</p>
+        <div className="doc-note-title">위험 수준: 높음</div>
+        <p>이 모범 사례를 수립하지 않으면 높은 수준의 위험이 노출됩니다.</p>
       </div>
-      <p>불변 인프라는 한 번 배포된 서버나 컴포넌트를 직접 수정하지 않고 새 버전으로 교체하는 방식입니다. Blue/Green 배포와 이미지 기반 배포를 통해 환경 일관성을 보장하고 신뢰할 수 있는 롤백을 가능하게 합니다.</p>
+      <p>
+        갑작스러운 고객 트래픽 증가, 플러딩 공격 또는 재시도 폭풍으로 인한 대량 스파이크는
+        요청 스로틀링으로 완화하여 워크로드가 지원되는 요청 볼륨의 정상 처리를 계속할 수 있도록 합니다.
+      </p>
       <h2>원하는 결과</h2>
-      <p>모든 배포가 검증된 이미지 또는 아티팩트를 기반으로 이루어지며, 운영 중인 인프라에 대한 직접 변경이 없습니다. 문제 발생 시 이전 버전으로 즉시 롤백이 가능하고, 개발·스테이징·운영 환경이 동일한 이미지를 사용하여 일관성을 유지합니다.</p>
+      <p>
+        스로틀 한도를 설정한 워크로드는 예상치 못한 볼륨 스파이크 하에서 수락된 요청 로드를 정상적으로 처리합니다.
+        API와 큐에 대한 갑작스럽거나 지속적인 요청 스파이크가 스로틀링되어 요청 처리 리소스를 고갈시키지 않습니다.
+      </p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>운영 중인 인스턴스에 SSH로 접속하여 직접 패치나 설정 변경을 수행</li>
-        <li>배포마다 다른 설정이나 패키지 버전이 적용되어 환경 드리프트 발생</li>
-        <li>이미지 기반이 아닌 스크립트로만 구성된 프로비저닝으로 재현 불가능한 환경 생성</li>
-        <li>구 버전 이미지를 삭제하여 롤백 불가능한 상태 만들기</li>
-        <li>컨테이너 내부에서 런타임에 패키지를 추가로 설치하는 Dockerfile</li>
+        <li>API 엔드포인트 스로틀이 구현되지 않았거나 예상 볼륨을 고려하지 않고 기본값으로 방치</li>
+        <li>API 엔드포인트 부하 테스트 또는 스로틀링 한도 테스트 미실시</li>
+        <li>요청 크기나 복잡성을 고려하지 않고 요청 속도만 스로틀링</li>
+        <li>최대 요청 속도 또는 최대 요청 크기를 테스트하지만 두 가지를 함께 테스트하지 않음</li>
+        <li>테스트에서 수립된 한도와 동일하게 리소스가 프로비저닝되지 않음</li>
+        <li>애플리케이션 간(A2A) API 소비자에게 사용 계획이 구성되지 않음</li>
+        <li>수평으로 확장하는 큐 소비자에 최대 동시성 설정 미구성</li>
+        <li>IP 주소별 속도 제한 미구현</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>배포 환경 간의 일관성 확보로 "내 환경에서는 동작했는데" 문제 제거</li>
-        <li>빠르고 신뢰할 수 있는 롤백 가능 — 이전 이미지로 즉시 복구</li>
-        <li>보안 패치를 새 이미지로 배포하여 일관된 보안 상태 유지</li>
-        <li>배포 감사 추적이 용이하며, 언제 무엇이 배포되었는지 명확히 파악</li>
-        <li>Blue/Green 배포로 제로 다운타임 배포 실현</li>
+        <li>스로틀 한도를 설정한 워크로드가 예상치 못한 볼륨 스파이크 하에서 정상적으로 운영</li>
+        <li>API와 큐에 대한 갑작스러운 또는 지속적인 요청 스파이크 스로틀링</li>
+        <li>속도 제한으로 단일 IP 주소 또는 API 소비자의 대량 트래픽이 리소스를 고갈시키거나 다른 소비자에게 영향을 주지 않음</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>Amazon Machine Image(AMI) 또는 컨테이너 이미지를 기반으로 한 배포 파이프라인 구축</li>
-        <li>AWS CodePipeline과 AWS CodeBuild를 활용하여 이미지 빌드 및 테스트 자동화</li>
-        <li>Blue/Green 배포를 AWS CodeDeploy 또는 Amazon ECS를 통해 구현</li>
-        <li>배포 완료 후 구 버전(Green)을 일정 기간 유지하여 롤백 옵션 확보</li>
-        <li>EC2 Image Builder로 AMI 빌드 파이프라인 자동화 및 취약점 스캔 통합</li>
-        <li>인프라 변경은 항상 코드(IaC)로만 수행하고 콘솔 직접 변경을 방지하는 SCP 적용</li>
-        <li>컨테이너 이미지는 Amazon ECR에 버전 태그와 함께 저장하고 최신 이미지 외 삭제 방지 정책 설정</li>
+        <li>알려진 용량의 요청을 처리하도록 서비스 설계(부하 테스트를 통해 수립)</li>
+        <li>토큰 버킷 알고리즘 구현: 토큰은 초당 스로틀 속도로 보충되고 요청마다 하나씩 비워짐; HTTP 429 (Too Many Requests) 반환</li>
+        <li>Amazon API Gateway: 계정/리전별로 토큰 버킷 알고리즘 구현, 사용 계획으로 클라이언트별 구성 가능</li>
+        <li>Amazon SQS 및 Amazon Kinesis: 요청을 버퍼링하여 요청 속도를 고르게 하고 더 높은 스로틀링 속도 허용</li>
+        <li>AWS WAF: 비정상적으로 높은 부하를 생성하는 특정 API 소비자에 대한 속도 제한 구현</li>
+        <li>Lambda 최대 동시성 구성(SQS를 이벤트 소스로 사용 시)</li>
+        <li>구현 전 한도 테스트 및 테스트된 한도 문서화</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS CodeDeploy — Blue/Green 및 카나리 배포 자동화</li>
-        <li>EC2 Image Builder — AMI 빌드 파이프라인 및 보안 스캔</li>
-        <li>Amazon ECR — 컨테이너 이미지 저장소 및 취약점 스캔</li>
-        <li>AWS CodePipeline — 배포 파이프라인 오케스트레이션</li>
-        <li>AWS Systems Manager — 패치 관리 및 인스턴스 상태 추적</li>
-        <li>Amazon ECS / EKS — 컨테이너 기반 불변 인프라 운영</li>
+        <li>Amazon API Gateway</li>
+        <li>AWS AppSync</li>
+        <li>Amazon SQS (Simple Queue Service)</li>
+        <li>Amazon Kinesis</li>
+        <li>AWS WAF (Web Application Firewall)</li>
+        <li>AWS Lambda</li>
       </ul>
       <PageNav />
     </article>
