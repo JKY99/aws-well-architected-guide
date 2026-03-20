@@ -4,41 +4,42 @@ import "../components/DocContent.css";
 export default function AppendixPerf1Bp04Page() {
   return (
     <article className="doc-content">
-      <h1>PERF01-BP04 — 성능 아키텍처 선택 분석</h1>
+      <h1>PERF01-BP04 — 트레이드오프가 고객과 아키텍처 효율성에 미치는 영향 평가</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
+        <div className="doc-note-title">위험 수준: 보통</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
       </div>
-      <p>여러 아키텍처 옵션의 성능, 비용, 복잡도를 분석하고 워크로드의 특성에 가장 적합한 아키텍처를 선택합니다.</p>
+      <p>아키텍처 결정 시 발생하는 트레이드오프가 고객 경험과 아키텍처 효율성에 미치는 영향을 평가합니다. 일관성 대 가용성, 지연 시간 대 처리량 등의 트레이드오프를 명확히 분석합니다.</p>
       <h2>원하는 결과</h2>
-      <p>성능과 비용 목표를 모두 충족하는 최적 아키텍처를 선택합니다. 아키텍처 결정은 체계적인 트레이드오프 분석을 통해 이루어지며, 선택의 근거가 명확히 문서화됩니다.</p>
+      <p>트레이드오프를 명확히 이해하고, 비즈니스 목표와 고객 요구사항을 기반으로 최적의 균형 지점을 선택합니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>단일 아키텍처 옵션만 고려하여 대안 미검토</li>
-        <li>성능, 비용, 복잡도 간 트레이드오프 분석 없음</li>
-        <li>과거에 사용했던 아키텍처를 새로운 워크로드에 그대로 반복 적용</li>
-        <li>단기 비용만 고려하고 장기적인 운영 비용 미고려</li>
+        <li>트레이드오프를 분석하지 않고 단일 지표(성능만 또는 비용만)로 결정</li>
+        <li>고객 영향을 고려하지 않은 아키텍처 최적화</li>
+        <li>단기 최적화로 인한 장기 유지보수 부채 발생</li>
+        <li>트레이드오프 결정을 문서화하지 않아 향후 이해 어려움</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>최적화된 성능/비용 균형 달성</li>
-        <li>근거 있는 아키텍처 결정으로 리스크 감소</li>
-        <li>미래 확장성과 변경 용이성 고려</li>
-        <li>팀 내 아키텍처 결정 투명성 향상</li>
+        <li>비즈니스 목표와 기술 목표의 균형 달성</li>
+        <li>고객 경험을 최우선으로 한 아키텍처 설계</li>
+        <li>아키텍처 결정의 투명성 및 이해관계자 동의 확보</li>
+        <li>의도하지 않은 부작용 최소화</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS Well-Architected Framework 기준으로 복수의 아키텍처 옵션 검토</li>
-        <li>소규모 Proof of Concept(PoC)으로 핵심 가정 검증</li>
-        <li>AWS Pricing Calculator로 각 옵션의 비용 추정 및 비교</li>
-        <li>성능-비용 트레이드오프를 문서화하고 이해관계자와 공유</li>
+        <li>각 아키텍처 결정에 대한 트레이드오프 매트릭스 작성</li>
+        <li>AWS Well-Architected Framework의 6가지 기둥 간 균형 검토</li>
+        <li>고객 영향도(지연 시간, 가용성, 데이터 일관성) 평가</li>
+        <li>PoC를 통해 트레이드오프의 실제 영향 측정 및 검증</li>
+        <li>트레이드오프 결정을 아키텍처 결정 기록(ADR)으로 문서화</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Well-Architected Tool — 아키텍처 검토 및 위험 식별</li>
-        <li>AWS Pricing Calculator — 아키텍처 옵션별 비용 추정</li>
-        <li>AWS Compute Optimizer — 컴퓨팅 리소스 최적화 권고</li>
-        <li>AWS Trusted Advisor — 아키텍처 모범 사례 점검</li>
+        <li>AWS Well-Architected Tool — 아키텍처 트레이드오프 검토</li>
+        <li>Amazon CloudWatch — 트레이드오프 영향 측정 및 모니터링</li>
+        <li>AWS X-Ray — 아키텍처 변경의 성능 영향 분석</li>
+        <li>AWS Fault Injection Service — 아키텍처 복원력 검증</li>
       </ul>
       <PageNav />
     </article>

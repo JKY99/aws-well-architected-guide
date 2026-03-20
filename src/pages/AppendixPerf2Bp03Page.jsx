@@ -4,41 +4,42 @@ import "../components/DocContent.css";
 export default function AppendixPerf2Bp03Page() {
   return (
     <article className="doc-content">
-      <h1>PERF02-BP03 — 올바른 크기 조정</h1>
+      <h1>PERF02-BP03 — 컴퓨팅 관련 메트릭 수집</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 높음</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
+        <div className="doc-note-title">위험 수준: 보통</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
       </div>
-      <p>실제 사용 패턴과 메트릭을 기반으로 인스턴스 크기를 지속적으로 최적화하여 성능과 비용을 균형 있게 유지합니다.</p>
+      <p>컴퓨팅 리소스의 성능 메트릭을 지속적으로 수집하고 분석합니다. CPU 사용률, 메모리 사용률, 네트워크 처리량 등 핵심 지표를 추적하여 성능 문제를 조기에 감지합니다.</p>
       <h2>원하는 결과</h2>
-      <p>실제 워크로드에 맞게 적절히 크기가 조정된 컴퓨팅 리소스를 운영합니다. 과도한 프로비저닝 없이 성능 요구사항을 충족하고, 지속적인 모니터링으로 최적 상태를 유지합니다.</p>
+      <p>컴퓨팅 성능 메트릭을 지속적으로 수집하여 리소스 활용 현황을 파악하고, 성능 최적화 및 비용 절감 기회를 식별합니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>초기 선택한 인스턴스 크기를 재검토 없이 유지</li>
-        <li>리소스 사용률 모니터링 없이 운영</li>
-        <li>성능 분석 없이 과대 프로비저닝으로 안전 마진 확보</li>
-        <li>비용 최적화 기회를 정기적으로 검토하지 않음</li>
+        <li>컴퓨팅 메트릭을 수집하지 않아 성능 문제 감지 늦음</li>
+        <li>기본 CloudWatch 메트릭만 수집하고 상세 메트릭은 무시</li>
+        <li>메트릭을 수집하지만 분석하거나 활용하지 않음</li>
+        <li>메트릭 데이터를 단기간만 보존하여 트렌드 분석 불가</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>불필요한 리소스 제거로 비용 최적화</li>
-        <li>적절한 크기로 일관된 성능 보장</li>
-        <li>지속적인 효율성 개선 문화 정착</li>
-        <li>리소스 낭비 방지로 지속 가능한 운영</li>
+        <li>성능 문제 조기 감지 및 예방</li>
+        <li>리소스 활용률 데이터 기반 적정 크기 조정</li>
+        <li>오토스케일링 정책 최적화</li>
+        <li>용량 계획 및 비용 최적화 지원</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>Amazon CloudWatch로 CPU, 메모리, 네트워크 사용률 지속 모니터링</li>
-        <li>AWS Compute Optimizer의 권고 사항을 정기적으로 검토 및 적용</li>
-        <li>최소 2주 이상의 사용률 데이터를 기반으로 크기 조정 결정</li>
-        <li>크기 조정 후 성능 변화를 검증하고 문서화</li>
+        <li>Amazon CloudWatch Agent를 설치하여 메모리, 디스크 등 상세 메트릭 수집</li>
+        <li>EC2 세부 모니터링(1분 간격)을 활성화하여 더 빠른 이상 감지</li>
+        <li>AWS X-Ray로 컴퓨팅 리소스 내 처리 시간 추적</li>
+        <li>메트릭 임계값 기반 알람을 설정하여 성능 저하 즉시 감지</li>
+        <li>성능 기준선(baseline)을 설정하고 이탈 시 알람 구성</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>AWS Compute Optimizer — 인스턴스 크기 조정 권고</li>
-        <li>Amazon CloudWatch — 리소스 사용률 모니터링</li>
-        <li>Amazon EC2 — 다양한 인스턴스 크기 옵션</li>
-        <li>AWS Cost Explorer — 비용 분석 및 최적화 기회 식별</li>
+        <li>Amazon CloudWatch — 메트릭 수집, 대시보드, 알람</li>
+        <li>Amazon CloudWatch Agent — 상세 시스템 메트릭 수집</li>
+        <li>AWS X-Ray — 애플리케이션 성능 추적</li>
+        <li>AWS Compute Optimizer — 메트릭 기반 최적화 권고</li>
       </ul>
       <PageNav />
     </article>

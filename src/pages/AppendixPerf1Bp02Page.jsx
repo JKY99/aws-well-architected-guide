@@ -4,18 +4,19 @@ import "../components/DocContent.css";
 export default function AppendixPerf1Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>PERF01-BP02 — 참조 아키텍처 평가</h1>
+      <h1>PERF01-BP02 — 클라우드 공급자 또는 파트너의 지침 활용</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
+        <div className="doc-note-title">위험 수준: 보통</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
       </div>
-      <p>AWS 참조 아키텍처, AWS Quick Starts, AWS Solutions Library를 활용하여 검증된 아키텍처 패턴을 적용합니다.</p>
+      <p>클라우드 공급자(AWS) 또는 인증된 파트너의 지침을 활용하여 아키텍처 패턴과 모범 사례를 학습하고 적용합니다. AWS 솔루션 아키텍트, AWS Solutions, AWS Quick Starts를 활용합니다.</p>
       <h2>원하는 결과</h2>
-      <p>검증된 참조 아키텍처를 활용하여 성능 최적화 기반을 구축합니다. 이미 검증된 패턴을 사용함으로써 불필요한 시행착오를 줄이고 신뢰할 수 있는 아키텍처를 빠르게 도입합니다.</p>
+      <p>AWS 및 파트너의 전문 지식을 활용하여 검증된 아키텍처 패턴을 적용하고, 성능 최적화를 위한 모범 사례를 구현합니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
         <li>검증되지 않은 아키텍처로 처음부터 시작</li>
         <li>유사 사례 및 참조 아키텍처 검토 없이 설계 진행</li>
+        <li>AWS 솔루션 아키텍트와 상담 없이 복잡한 아키텍처 결정</li>
         <li>커뮤니티 및 AWS 전문가의 경험을 활용하지 않음</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
@@ -28,16 +29,16 @@ export default function AppendixPerf1Bp02Page() {
       <h2>구현 지침</h2>
       <ul>
         <li>AWS Solutions Library에서 워크로드 유형에 맞는 참조 아키텍처 검토</li>
-        <li>AWS Quick Starts를 활용하여 검증된 배포 자동화 활용</li>
-        <li>AWS Well-Architected Labs에서 실습 가이드 참조</li>
-        <li>참조 아키텍처를 워크로드 특성에 맞게 조정</li>
+        <li>AWS Well-Architected Review를 통해 아키텍처를 검토하고 개선 권고 적용</li>
+        <li>AWS Partner Network의 검증된 파트너와 협력하여 전문 지식 활용</li>
+        <li>AWS re:Post 커뮤니티에서 유사 사례 및 솔루션 검색</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
         <li>AWS Solutions Library — 검증된 솔루션 및 참조 아키텍처</li>
-        <li>AWS Quick Starts — 자동화된 참조 배포</li>
         <li>AWS Well-Architected Tool — 아키텍처 평가 및 개선</li>
-        <li>AWS Well-Architected Labs — 실습 기반 학습 리소스</li>
+        <li>AWS Partner Network — 검증된 파트너 솔루션 및 전문가</li>
+        <li>AWS re:Post — 커뮤니티 기술 지식 공유</li>
       </ul>
       <PageNav />
     </article>

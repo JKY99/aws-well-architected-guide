@@ -4,39 +4,42 @@ import "../components/DocContent.css";
 export default function AppendixPerf3Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>PERF03-BP02 — 액세스 패턴 평가</h1>
+      <h1>PERF03-BP02 — 데이터 스토어의 사용 가능한 구성 옵션 평가</h1>
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
+        <div className="doc-note-title">위험 수준: 보통</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 보통입니다.</p>
       </div>
-      <p>읽기/쓰기 비율, 랜덤/순차 액세스, 액세스 빈도를 분석하여 이에 최적화된 스토리지 서비스와 구성을 선택합니다.</p>
+      <p>데이터 스토어의 다양한 구성 옵션(인스턴스 크기, 스토리지 유형, 파라미터 그룹 등)을 평가하고 워크로드 성능 요구사항에 맞게 최적화합니다.</p>
       <h2>원하는 결과</h2>
-      <p>실제 액세스 패턴에 최적화된 스토리지 구성으로 성능을 극대화하고 불필요한 비용을 제거합니다.</p>
+      <p>성능 요구사항을 충족하는 최적화된 데이터 스토어 구성으로 안정적인 응답 시간과 리소스 효율성을 달성합니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>액세스 패턴 분석 없이 기본 설정 사용</li>
-        <li>읽기/쓰기 비율을 고려하지 않은 스토리지 구성</li>
-        <li>핫 데이터와 콜드 데이터를 동일한 스토리지에 혼합 저장</li>
+        <li>기본 구성 옵션을 검토 없이 그대로 사용</li>
+        <li>워크로드 분석 없이 데이터 스토어 인스턴스 크기 선택</li>
+        <li>인덱스 전략 없이 데이터 스토어 운영</li>
+        <li>데이터 스토어 파라미터를 워크로드 특성에 맞게 조정하지 않음</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>실제 액세스 패턴에 맞는 I/O 성능 최적화</li>
-        <li>불필요한 I/O 요청 감소로 지연 시간 단축</li>
-        <li>액세스 빈도 기반 스토리지 계층화로 비용 효율성 향상</li>
+        <li>최적화된 구성으로 쿼리 성능 향상</li>
+        <li>적절한 인스턴스 크기 선택으로 리소스 효율성 개선</li>
+        <li>안정적이고 예측 가능한 응답 시간 확보</li>
+        <li>데이터 스토어 비용 최적화</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>Amazon CloudWatch I/O 메트릭으로 읽기/쓰기 패턴 분석</li>
-        <li>워크로드 특성에 맞는 EBS 볼륨 유형 선택(gp3, io2 등)</li>
-        <li>액세스 빈도가 불규칙한 데이터에 S3 Intelligent-Tiering 적용</li>
-        <li>읽기 집약적 워크로드에 캐싱 계층 추가 검토</li>
+        <li>Amazon RDS Performance Insights로 쿼리 성능 병목 분석</li>
+        <li>워크로드 유형에 맞는 파라미터 그룹 최적화</li>
+        <li>인덱스 설계 검토 및 불필요한 인덱스 제거</li>
+        <li>읽기/쓰기 워크로드 분리를 위한 인스턴스 크기 및 복제본 구성</li>
+        <li>DynamoDB 용량 모드(온디맨드/프로비저닝) 최적 선택</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon EBS</li>
-        <li>Amazon S3 Intelligent-Tiering</li>
-        <li>Amazon ElastiCache</li>
-        <li>Amazon CloudWatch</li>
+        <li>Amazon RDS Performance Insights — 데이터베이스 성능 분석</li>
+        <li>Amazon DynamoDB — 용량 최적화 및 구성</li>
+        <li>AWS Database Migration Service — 데이터베이스 마이그레이션</li>
+        <li>AWS Compute Optimizer — 데이터베이스 인스턴스 최적화 권고</li>
       </ul>
       <PageNav />
     </article>

@@ -4,42 +4,42 @@ import "../components/DocContent.css";
 export default function AppendixPerf1Bp01Page() {
   return (
     <article className="doc-content">
-      <h1>PERF01-BP01 — 데이터 기반 아키텍처 결정 수행</h1>
+      <h1>PERF01-BP01 — 사용 가능한 클라우드 서비스 및 기능 파악</h1>
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 높음</div>
         <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 높습니다.</p>
       </div>
-      <p>벤치마킹, 부하 테스트, 실제 사용 데이터를 기반으로 성능 아키텍처를 결정합니다. 가정이 아닌 측정값을 기반으로 의사결정합니다.</p>
+      <p>사용 가능한 클라우드 서비스와 기능을 지속적으로 파악하고 이해합니다. AWS가 제공하는 다양한 서비스와 최신 기능을 숙지하여 워크로드 성능을 향상시킬 기회를 적극적으로 활용합니다.</p>
       <h2>원하는 결과</h2>
-      <p>실측 데이터를 기반으로 성능 요구사항을 충족하는 아키텍처 결정을 내립니다. 모든 아키텍처 선택은 실험과 측정에 의해 뒷받침되며, 가정이나 직관이 아닌 객관적인 데이터에 근거합니다.</p>
+      <p>AWS 서비스와 기능에 대한 깊은 이해를 바탕으로 워크로드에 적합한 최신 서비스와 기능을 선택하고 활용합니다.</p>
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>측정 없이 가정으로 아키텍처 결정</li>
-        <li>과거 패턴에만 의존하여 새로운 워크로드에 적용</li>
-        <li>성능 테스트 없이 프로덕션에 배포</li>
-        <li>실제 사용 데이터 없이 용량 계획 수립</li>
+        <li>익숙한 서비스만 반복 사용하고 새로운 서비스 검토하지 않음</li>
+        <li>AWS 릴리스 노트와 공지사항을 정기적으로 검토하지 않음</li>
+        <li>기존 서비스로 해결하기 어려운 문제를 새로운 서비스로 해결할 수 있음에도 시도하지 않음</li>
+        <li>팀 내 AWS 서비스 지식을 공유하지 않아 중복 학습 발생</li>
       </ul>
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>근거 있는 의사결정으로 아키텍처 리스크 감소</li>
-        <li>과도한 프로비저닝 방지로 비용 절감</li>
-        <li>성능 병목 사전 발견 및 해소</li>
-        <li>지속적인 성능 개선을 위한 기준선 확보</li>
+        <li>최신 AWS 서비스 활용으로 성능 및 비용 개선 기회 포착</li>
+        <li>더 나은 아키텍처 결정을 위한 폭넓은 선택지 확보</li>
+        <li>AWS가 제공하는 관리형 서비스 활용으로 운영 부담 감소</li>
+        <li>혁신적인 기능 조기 도입으로 경쟁 우위 확보</li>
       </ul>
       <h2>구현 지침</h2>
       <ul>
-        <li>AWS 환경에서 프로덕션과 유사한 조건으로 벤치마크 수행</li>
-        <li>실제 트래픽 패턴을 반영한 부하 테스트 시나리오 구성</li>
-        <li>Amazon CloudWatch로 성능 기준선(baseline) 설정 및 지속 모니터링</li>
-        <li>AWS X-Ray를 사용하여 분산 시스템의 성능 병목 추적</li>
-        <li>테스트 결과를 문서화하고 아키텍처 결정의 근거로 활용</li>
+        <li>AWS What's New 페이지를 정기적으로 구독하여 새로운 기능 파악</li>
+        <li>AWS re:Invent, AWS Summit 등 컨퍼런스를 통해 최신 서비스 학습</li>
+        <li>AWS Well-Architected Labs에서 실습을 통해 서비스 경험 축적</li>
+        <li>팀 내 AWS 학습 문화 조성 및 지식 공유 세션 운영</li>
+        <li>AWS Skill Builder로 체계적인 학습 계획 수립</li>
       </ul>
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon CloudWatch — 성능 메트릭 수집 및 모니터링</li>
-        <li>AWS X-Ray — 분산 추적 및 성능 분석</li>
-        <li>AWS Load Testing 솔루션 — 부하 테스트 자동화</li>
         <li>AWS Well-Architected Tool — 아키텍처 검토 및 개선 권고</li>
+        <li>AWS Trusted Advisor — 모범 사례 점검 및 권고</li>
+        <li>AWS Well-Architected Labs — 실습 기반 학습 리소스</li>
+        <li>AWS Skill Builder — 체계적인 AWS 교육 플랫폼</li>
       </ul>
       <PageNav />
     </article>
