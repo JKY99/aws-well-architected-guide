@@ -30,6 +30,14 @@ export default function AppendixCost2Page() {
           <strong><Link to="/appendix/cost-optimization/cost2/bp04">COST02-BP04: 공유 서비스 비용 할당 방법 결정</Link></strong><br />
           <span>공유 인프라(네트워킹, 공용 서비스)의 비용을 공정하게 각 팀에 할당하는 방법을 정의합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost2/bp05">COST02-BP05: 비용 제어 구현</Link></strong><br />
+          <span>정책 및 자동화를 통해 예산 초과를 방지하는 비용 제어 메커니즘을 구현합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost2/bp06">COST02-BP06: 프로젝트 수명 주기 추적</Link></strong><br />
+          <span>프로젝트 시작부터 종료까지 리소스와 비용을 추적하여 불필요한 지출을 방지합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

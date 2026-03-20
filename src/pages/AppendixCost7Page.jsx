@@ -30,6 +30,10 @@ export default function AppendixCost7Page() {
           <strong><Link to="/appendix/cost-optimization/cost7/bp04">COST07-BP04: 새로운 서비스 평가</Link></strong><br />
           <span>새로 출시된 AWS 서비스나 기능이 비용을 절감하거나 성능을 향상시킬 수 있는지 정기적으로 평가합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost7/bp05">COST07-BP05: 관리 계정 수준에서 요금 모델 분석 수행</Link></strong><br />
+          <span>AWS Organizations 관리 계정에서 전체 조직의 사용량을 분석하여 Savings Plans를 최적화합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

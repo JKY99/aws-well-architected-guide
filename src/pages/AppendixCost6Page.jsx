@@ -26,6 +26,10 @@ export default function AppendixCost6Page() {
           <strong><Link to="/appendix/cost-optimization/cost6/bp03">COST06-BP03: 동적 리소스 공급</Link></strong><br />
           <span>Auto Scaling을 사용하여 실제 수요에 맞게 리소스를 자동으로 확장/축소합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost6/bp04">COST06-BP04: 공유 리소스 사용 고려</Link></strong><br />
+          <span>여러 워크로드 또는 팀이 리소스를 공유하여 총 비용을 절감하고 활용도를 높입니다.</span>
+        </li>
       </ul>
 
       <PageNav />

@@ -34,6 +34,10 @@ export default function AppendixCost3Page() {
           <strong><Link to="/appendix/cost-optimization/cost3/bp05">COST03-BP05: 지역에 따른 비용 최적화</Link></strong><br />
           <span>동일한 서비스도 리전에 따라 가격이 다르므로, 지연 시간 및 규정 요건 내에서 비용이 낮은 리전을 활용합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost3/bp06">COST03-BP06: 워크로드 지표 기반 비용 할당</Link></strong><br />
+          <span>공유 리소스의 비용을 워크로드별 실제 사용 지표에 기반하여 공정하고 정확하게 할당합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

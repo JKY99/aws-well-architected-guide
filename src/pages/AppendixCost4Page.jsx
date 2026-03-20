@@ -46,6 +46,10 @@ export default function AppendixCost4Page() {
           <strong><Link to="/appendix/cost-optimization/cost4/bp04">COST04-BP04: 요금 모델 약정 분석 및 실행</Link></strong><br />
           <span>AWS Cost Explorer의 Savings Plans 추천 기능을 활용하여 최적의 약정 유형과 크기를 결정합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost4/bp05">COST04-BP05: 데이터 보존 정책 시행</Link></strong><br />
+          <span>데이터 보존 정책을 수립하고 수명 주기 관리를 자동화하여 불필요한 스토리지 비용을 절감합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

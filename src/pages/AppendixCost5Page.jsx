@@ -34,6 +34,10 @@ export default function AppendixCost5Page() {
           <strong><Link to="/appendix/cost-optimization/cost5/bp05">COST05-BP05: 사용되지 않는 리소스 분석</Link></strong><br />
           <span>AWS Trusted Advisor와 Cost Explorer를 사용하여 유휴 리소스와 과도하게 프로비저닝된 리소스를 식별합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost5/bp06">COST05-BP06: 시간 경과에 따른 다양한 사용량에 대한 비용 분석 수행</Link></strong><br />
+          <span>다양한 사용량 시나리오에 따른 비용을 모델링하여 최적의 서비스 구성을 선택합니다.</span>
+        </li>
       </ul>
 
       <PageNav />

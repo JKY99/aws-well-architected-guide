@@ -38,6 +38,18 @@ export default function AppendixCost1Page() {
           <strong><Link to="/appendix/cost-optimization/cost1/bp06">COST01-BP06: 비용 최적화 역량 구축</Link></strong><br />
           <span>개발팀이 비용을 고려한 설계 결정을 내릴 수 있도록 역량을 강화합니다.</span>
         </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost1/bp07">COST01-BP07: 새로운 서비스 릴리스 최신 정보 유지</Link></strong><br />
+          <span>AWS의 새로운 서비스 및 기능을 지속적으로 모니터링하여 비용 절감 기회를 발굴합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost1/bp08">COST01-BP08: 비용 인식 문화 조성</Link></strong><br />
+          <span>조직 전반에 비용 인식 문화를 구축하여 모든 팀원이 비용 효율적 의사결정에 참여합니다.</span>
+        </li>
+        <li>
+          <strong><Link to="/appendix/cost-optimization/cost1/bp09">COST01-BP09: 비용 최적화를 통한 비즈니스 가치 정량화</Link></strong><br />
+          <span>비용 최적화 활동이 비즈니스에 제공하는 가치를 측정하고 경영진에게 보고합니다.</span>
+        </li>
       </ul>
 
       <PageNav />
