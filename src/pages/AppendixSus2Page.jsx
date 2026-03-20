@@ -5,38 +5,38 @@ import "../components/DocContent.css";
 export default function AppendixSus2Page() {
   return (
     <article className="doc-content">
-      <h1>SUS 2 — 사용자 행동 패턴에 어떻게 맞춥니까?</h1>
+      <h1>SUS 2 — 클라우드 리소스를 수요에 어떻게 맞춥니까?</h1>
 
       <p>
-        실제 사용자 행동과 수요 패턴에 맞게 인프라를 조정하여
-        유휴 리소스를 최소화하고 효율성을 극대화합니다.
+        클라우드 리소스 공급을 수요에 맞게 조정하여 과잉 프로비저닝된 용량을 방지합니다.
+        수요 패턴을 분석하고 탄력성을 활용하여 환경적 영향을 최소화합니다.
       </p>
 
       <h2>모범 사례</h2>
       <ul>
         <li>
-          <strong><Link to="/appendix/sustainability/sus2/bp01">SUS02-BP01: 사용자 행동 패턴에 따른 인프라 규모 조정</Link></strong><br />
-          <span>Auto Scaling으로 실제 수요에 맞게 리소스를 자동 조정하여 유휴 용량을 줄입니다.</span>
+          <strong><Link to="/appendix/sustainability/sus2/bp01">SUS02-BP01: 워크로드 인프라를 동적으로 확장</Link></strong><br />
+          <span>클라우드의 탄력성을 활용하여 인프라를 동적으로 확장·축소함으로써 과잉 프로비저닝된 용량을 방지합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/sustainability/sus2/bp02">SUS02-BP02: SLA를 사용 패턴에 맞게 정렬</Link></strong><br />
-          <span>실제 필요한 수준의 가용성과 성능 SLA를 설정하여 과도한 리소스 프로비저닝을 방지합니다.</span>
+          <strong><Link to="/appendix/sustainability/sus2/bp02">SUS02-BP02: SLA를 지속 가능성 목표에 맞게 정렬</Link></strong><br />
+          <span>지속 가능성 목표에 따라 워크로드 SLA를 검토·최적화하여 비즈니스 요구를 충족하면서 필요한 리소스를 최소화합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/sustainability/sus2/bp03">SUS02-BP03: 미사용 자산, 리소스, 서비스 제거</Link></strong><br />
-          <span>정기적으로 유휴 리소스를 식별하고 제거하여 불필요한 에너지 소비를 줄입니다.</span>
+          <strong><Link to="/appendix/sustainability/sus2/bp03">SUS02-BP03: 미사용 자산의 생성 및 유지 관리 중단</Link></strong><br />
+          <span>워크로드의 미사용 자산을 폐기하여 수요를 지원하는 데 필요한 클라우드 리소스 수를 줄이고 낭비를 최소화합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/sustainability/sus2/bp04">SUS02-BP04: 비활성 기간에 리소스 종료</Link></strong><br />
-          <span>개발/테스트 환경을 비업무 시간에 자동으로 종료하여 에너지 사용을 절감합니다.</span>
+          <strong><Link to="/appendix/sustainability/sus2/bp04">SUS02-BP04: 네트워킹 요구사항에 따른 워크로드의 지리적 배치 최적화</Link></strong><br />
+          <span>네트워크 트래픽이 이동해야 하는 거리를 줄이는 클라우드 위치와 서비스를 선택합니다.</span>
         </li>
         <li>
-          <strong><Link to="/appendix/sustainability/sus2/bp05">SUS02-BP05: 완전히 활용되는 서비스를 선택하는 IaC 사용</Link></strong><br />
-          <span>Infrastructure as Code로 필요한 만큼만 정확하게 프로비저닝하여 낭비를 방지합니다.</span>
+          <strong><Link to="/appendix/sustainability/sus2/bp05">SUS02-BP05: 수행 활동에 맞게 팀 구성원 리소스 최적화</Link></strong><br />
+          <span>팀 구성원에게 제공되는 리소스를 최적화하여 필요를 지원하면서 환경적 지속 가능성 영향을 최소화합니다.</span>
         </li>
         <li>
           <strong><Link to="/appendix/sustainability/sus2/bp06">SUS02-BP06: 버퍼링 또는 스로틀링으로 수요 곡선 평탄화</Link></strong><br />
-          <span>버퍼링과 스로틀링으로 수요 피크를 분산하여 필요한 프로비저닝 용량과 에너지 소비를 줄입니다.</span>
+          <span>버퍼링과 스로틀링으로 수요 곡선을 평탄화하여 워크로드에 필요한 프로비저닝 용량을 줄입니다.</span>
         </li>
       </ul>
 

@@ -4,44 +4,64 @@ import "../components/DocContent.css";
 export default function AppendixSus4Bp05Page() {
   return (
     <article className="doc-content">
-      <h1>SUS04-BP05 — 가장 에너지 효율적인 스토리지 계층에 데이터 저장</h1>
+      <h1>SUS04-BP05 — 불필요하거나 중복된 데이터 제거</h1>
+
       <div className="doc-note">
         <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간 수준입니다.</p>
       </div>
-      <p>접근 패턴에 따라 HDD vs SSD, 콜드 vs 핫 스토리지를 최적으로 선택합니다. SSD는 HDD보다 빠르지만 일반적으로 더 많은 에너지를 소비합니다. 자주 접근하지 않는 데이터에 고에너지 SSD를 사용하는 것은 불필요한 에너지 낭비입니다. 데이터의 접근 빈도, 응답 시간 요구사항, 비즈니스 중요도에 따라 올바른 스토리지 미디어를 선택해야 합니다.</p>
+
+      <p>
+        불필요하거나 중복된 데이터를 제거하여 데이터셋을 저장하는 데 필요한 스토리지 리소스를
+        최소화합니다. 불필요하고 중복된 데이터셋을 제거하면 스토리지 비용과 환경 발자국을 줄일 수 있습니다.
+        또한 컴퓨팅 리소스가 불필요한 데이터 대신 중요한 데이터만 처리하므로 컴퓨팅이 더 효율적일 수 있습니다.
+      </p>
+
       <h2>원하는 결과</h2>
-      <p>각 데이터의 접근 패턴과 성능 요구사항에 맞는 가장 에너지 효율적인 스토리지 계층을 사용하여 전체 스토리지 인프라의 에너지 소비를 최소화합니다.</p>
+      <p>
+        워크로드에 필요한 스토리지 크기를 줄이고 워크로드의 환경적 영향을 최소화합니다.
+        스토리지 비용을 절감하고 중요한 데이터만 처리하여 컴퓨팅 효율성을 개선합니다.
+      </p>
+
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>거의 접근하지 않는 아카이브 데이터에 프로비저닝된 IOPS SSD를 사용합니다.</li>
-        <li>모든 EBS 볼륨을 최고 성능 타입(io2)으로 설정합니다.</li>
-        <li>데이터 접근 패턴을 분석하지 않고 기본 스토리지 클래스를 사용합니다.</li>
-        <li>성능 요구사항이 낮은 워크로드에 NVMe SSD를 사용합니다.</li>
+        <li>쉽게 얻거나 재생성할 수 있는 데이터를 복제하는 경우</li>
+        <li>중요도를 고려하지 않고 모든 데이터를 백업하는 경우</li>
+        <li>데이터를 비정기적으로만 삭제하거나 전혀 삭제하지 않는 경우</li>
+        <li>스토리지 서비스의 내구성과 관계없이 중복으로 데이터를 저장하는 경우</li>
+        <li>비즈니스 정당성 없이 Amazon S3 버전 관리를 활성화하는 경우</li>
       </ul>
+
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>스토리지 에너지 소비가 실제 접근 패턴에 맞게 최적화됩니다.</li>
-        <li>과도한 스토리지 성능 프로비저닝으로 인한 에너지 낭비가 제거됩니다.</li>
-        <li>스토리지 비용이 성능 요구사항에 비례하여 최적화됩니다.</li>
-        <li>전체 스토리지 인프라의 탄소 발자국이 감소합니다.</li>
+        <li>스토리지 비용 및 환경 발자국 감소</li>
+        <li>중요한 데이터만 처리하여 컴퓨팅 효율성 향상</li>
+        <li>전반적인 워크로드 성능 최적화</li>
       </ul>
+
       <h2>구현 지침</h2>
       <ul>
-        <li>Amazon S3 Storage Lens와 CloudWatch로 데이터 접근 패턴을 분석합니다.</li>
-        <li>순차 I/O 워크로드(로그, 빅데이터)에는 HDD 기반 EBS(st1)를 사용합니다.</li>
-        <li>콜드 데이터는 S3 Glacier Deep Archive와 같은 최저 에너지 스토리지를 활용합니다.</li>
-        <li>Amazon S3 Intelligent-Tiering으로 접근 패턴에 따라 자동으로 최적 스토리지를 선택합니다.</li>
-        <li>EBS 볼륨 타입을 정기적으로 검토하고 실제 IOPS 사용량에 맞게 다운그레이드합니다.</li>
+        <li>AWS Data Exchange와 Open Data on AWS를 활용하여 이미 존재하는 데이터를 저장하지 않습니다.</li>
+        <li>Amazon S3는 AWS Lake Formation FindMatches, Amazon FSx는 데이터 중복 제거, Amazon EBS 스냅샷은 증분 백업을 활용하여 데이터를 중복 제거합니다.</li>
+        <li>Amazon DynamoDB TTL, Amazon S3 Lifecycle 정책, Amazon CloudWatch 로그 보존 등 수명 주기 정책을 사용합니다.</li>
+        <li>Amazon Redshift Data Sharing으로 데이터 가상화를 구현하여 복제 없이 소스에서 데이터를 유지합니다.</li>
+        <li>증분 백업 기술을 구현하여 변경된 데이터만 백업합니다.</li>
+        <li>Amazon S3의 기본 내구성, Amazon EBS 복제 등 스토리지 서비스 내장 내구성을 활용하여 자가 관리 중복성(RAID)을 피합니다.</li>
+        <li>오래된 버전 자산을 객체 스토어 및 엣지 캐시에서 제거합니다.</li>
       </ul>
+
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon EBS — gp3, io2, st1, sc1 등 다양한 성능 수준의 볼륨 타입</li>
-        <li>Amazon S3 스토리지 클래스 — Standard, IA, Glacier 등 계층별 에너지 효율</li>
-        <li>Amazon S3 Intelligent-Tiering — 접근 패턴 기반 자동 계층 최적화</li>
-        <li>Amazon S3 Storage Lens — 스토리지 사용 및 접근 패턴 분석</li>
-        <li>AWS Compute Optimizer — EBS 볼륨 타입 최적화 권고</li>
+        <li>Amazon S3 — Lifecycle 정책, 버전 관리 관리</li>
+        <li>Amazon FSx — 윈도우 및 ONTAP용 데이터 중복 제거</li>
+        <li>Amazon DynamoDB — Time To Live(TTL)</li>
+        <li>Amazon EBS — 증분 스냅샷</li>
+        <li>Amazon Redshift — 데이터 공유</li>
+        <li>AWS Lake Formation — 중복 탐지</li>
+        <li>Amazon CloudWatch Logs — 로그 보존</li>
+        <li>AWS Backup — 백업 및 복구 자동화</li>
       </ul>
+
       <PageNav />
     </article>
   );

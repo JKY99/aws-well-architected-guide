@@ -4,44 +4,57 @@ import "../components/DocContent.css";
 export default function AppendixSus4Bp02Page() {
   return (
     <article className="doc-content">
-      <h1>SUS04-BP02 — 수명 주기 정책으로 데이터 냉각</h1>
+      <h1>SUS04-BP02 — 데이터 액세스 및 스토리지 패턴을 지원하는 기술 사용</h1>
+
       <div className="doc-note">
-        <div className="doc-note-title">위험 수준: 중간</div>
-        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 중간입니다.</p>
+        <div className="doc-note-title">위험 수준: 낮음</div>
+        <p>이 모범 사례를 따르지 않을 경우 비즈니스에 미치는 위험이 낮은 수준입니다.</p>
       </div>
-      <p>S3 Lifecycle, Amazon S3 Glacier 등을 활용하여 접근 빈도에 따라 최적의 스토리지 계층으로 데이터를 이동합니다. 자주 접근하지 않는 데이터를 고성능 스토리지에 유지하면 불필요한 에너지를 소비합니다. 데이터 접근 패턴에 기반한 자동 계층화를 통해 에너지 효율적인 콜드 스토리지로 데이터를 이동시킵니다.</p>
+
+      <p>
+        데이터 액세스 및 저장 방식을 가장 잘 지원하는 스토리지 기술을 사용하여
+        워크로드를 지원하는 데 필요한 리소스를 최소화합니다.
+      </p>
+
       <h2>원하는 결과</h2>
-      <p>데이터 접근 빈도에 따라 자동으로 적절한 스토리지 계층으로 이동되는 수명 주기 정책을 구현하여 스토리지 에너지 소비를 최적화합니다.</p>
+      <p>
+        비즈니스 요구를 충족하는 데 필요한 클라우드 리소스를 줄이고 클라우드 워크로드의 전반적인
+        효율성을 개선합니다. 실제 데이터 액세스 패턴에 맞는 성능 및 비용 최적화를 달성합니다.
+      </p>
+
       <h2>일반적인 안티패턴</h2>
       <ul>
-        <li>수년 된 아카이브 데이터를 S3 Standard와 같은 고성능 스토리지에 유지합니다.</li>
-        <li>수명 주기 정책 없이 모든 데이터에 동일한 스토리지 클래스를 적용합니다.</li>
-        <li>데이터 접근 패턴을 분석하지 않고 스토리지 계층을 선택합니다.</li>
-        <li>비즈니스 요구사항 변화에 따라 수명 주기 정책을 업데이트하지 않습니다.</li>
+        <li>모든 워크로드가 유사한 데이터 스토리지 및 액세스 패턴을 가진다고 가정하는 경우</li>
+        <li>모든 워크로드에 단일 스토리지 계층만 사용하는 경우</li>
+        <li>데이터 액세스 패턴이 시간이 지나도 일관하게 유지된다고 가정하는 경우</li>
       </ul>
+
       <h2>이 모범 사례 수립의 이점</h2>
       <ul>
-        <li>콜드 스토리지는 핫 스토리지 대비 훨씬 낮은 에너지를 사용합니다.</li>
-        <li>스토리지 비용이 접근 빈도에 비례하여 최적화됩니다.</li>
-        <li>자동화된 수명 주기 관리로 운영 오버헤드가 감소합니다.</li>
-        <li>규정 준수 요구사항을 충족하면서 에너지 효율을 높입니다.</li>
+        <li>클라우드 리소스 요구사항 감소</li>
+        <li>클라우드 워크로드 효율성 향상</li>
+        <li>실제 사용 패턴에 맞는 성능 정렬</li>
+        <li>적정 규모 조정을 통한 비용 최적화</li>
       </ul>
+
       <h2>구현 지침</h2>
       <ul>
-        <li>Amazon S3 Intelligent-Tiering을 활용하여 접근 패턴에 따라 자동으로 계층을 전환합니다.</li>
-        <li>S3 Lifecycle 규칙을 설정하여 일정 기간 후 S3 Glacier로 자동 이동합니다.</li>
-        <li>Amazon S3 Storage Lens로 데이터 접근 패턴을 분석하고 최적 계층화 전략을 수립합니다.</li>
-        <li>데이터베이스의 오래된 레코드는 Amazon S3로 아카이브하여 데이터베이스 크기를 관리합니다.</li>
-        <li>S3 Glacier Instant Retrieval, Flexible Retrieval, Deep Archive 중 복구 시간 요구사항에 맞는 계층을 선택합니다.</li>
+        <li>데이터 유형(정형·반정형·비정형), 성장(경계·무경계), 내구성(영구·임시·일시), 액세스 패턴(읽기/쓰기, 빈도, 급격·일관적)을 평가합니다.</li>
+        <li>특성에 맞는 스토리지로 데이터를 마이그레이션하고 효율성에 맞게 액세스 패턴 변경을 고려합니다.</li>
+        <li>Amazon CloudWatch 지표를 수집·분석하고 임계값에서 자동으로 스토리지를 할당합니다.</li>
+        <li>객체 수준에서 S3 스토리지 클래스를 구성하고 S3 Lifecycle 정책으로 자동 전환을 설정합니다.</li>
       </ul>
+
       <h2>관련 AWS 서비스 및 리소스</h2>
       <ul>
-        <li>Amazon S3 Lifecycle — 자동 스토리지 계층 전환 정책</li>
-        <li>Amazon S3 Intelligent-Tiering — AI 기반 자동 스토리지 최적화</li>
-        <li>Amazon S3 Glacier — 장기 아카이브용 저비용 콜드 스토리지</li>
-        <li>Amazon S3 Storage Lens — 스토리지 사용 패턴 분석</li>
-        <li>AWS Storage Gateway — 온프레미스와 클라우드 스토리지 계층화</li>
+        <li>Amazon S3 — 무제한 확장성의 객체 스토리지 (S3 스토리지 클래스, Lifecycle, Intelligent-Tiering)</li>
+        <li>Amazon EFS — 자동 확장 공유 파일 시스템</li>
+        <li>Amazon FSx — 관리형 파일 시스템 (Windows, Lustre, NetApp ONTAP, OpenZFS)</li>
+        <li>Amazon EBS — SSD 기반(트랜잭션) 및 HDD 기반(처리량 집약) 블록 스토리지</li>
+        <li>Amazon Aurora / RDS / Redshift — 관계형 데이터베이스</li>
+        <li>Amazon DynamoDB — 일반 액세스 패턴에 최적화된 키-값 데이터베이스</li>
       </ul>
+
       <PageNav />
     </article>
   );
